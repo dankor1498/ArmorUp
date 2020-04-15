@@ -1,0 +1,14 @@
+E:\Documents\Predmety\Mobile\ArmorUp\ArmorUp\bin\Debug\netstandard2.0\ArmorUp.deps.json
+E:\Documents\Predmety\Mobile\ArmorUp\ArmorUp\bin\Debug\netstandard2.0\ArmorUp.dll
+E:\Documents\Predmety\Mobile\ArmorUp\ArmorUp\bin\Debug\netstandard2.0\ref\ArmorUp.dll
+E:\Documents\Predmety\Mobile\ArmorUp\ArmorUp\bin\Debug\netstandard2.0\ArmorUp.pdb
+E:\Documents\Predmety\Mobile\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.csprojAssemblyReference.cache
+E:\Documents\Predmety\Mobile\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\App.xaml.g.cs
+E:\Documents\Predmety\Mobile\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+E:\Documents\Predmety\Mobile\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.csproj.CoreCompileInputs.cache
+E:\Documents\Predmety\Mobile\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.AssemblyInfoInputs.cache
+E:\Documents\Predmety\Mobile\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.AssemblyInfo.cs
+E:\Documents\Predmety\Mobile\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\XamlC.stamp
+E:\Documents\Predmety\Mobile\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.dll
+E:\Documents\Predmety\Mobile\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ref\ArmorUp.dll
+E:\Documents\Predmety\Mobile\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.pdb
