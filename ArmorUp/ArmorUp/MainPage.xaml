@@ -33,26 +33,15 @@
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                         <Image WidthRequest="24" HeightRequest="24" Aspect="AspectFit" Source="logoABC.png" HorizontalOptions="Start"/>
-                        <Button Text="Item1" BackgroundColor="Purple" TextColor="White" FontSize="12" Clicked="Item1_clicked" HorizontalOptions="FillAndExpand"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                        <Image WidthRequest="24" HeightRequest="24" Aspect="AspectFit" Source="logoABC.png" HorizontalOptions="Start"/>
-                        <Button Text="Item2" BackgroundColor="Purple" TextColor="White" FontSize="12" Clicked="Item2_Clicked" HorizontalOptions="FillAndExpand"/>
-                    </StackLayout>
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                        <Image WidthRequest="24" HeightRequest="24" Aspect="AspectFit" Source="logoABC.png" HorizontalOptions="Start"/>
-                        <Button Text="Item3" BackgroundColor="Purple" TextColor="White" FontSize="12" Clicked="Item3_Clicked" HorizontalOptions="FillAndExpand"/>
-                    </StackLayout>
+                        <Button Text="Item1" BackgroundColor="Purple" TextColor="White" FontSize="12" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>                   
                 </StackLayout>
             </ContentPage.Content>
         </ContentPage>
     </MasterDetailPage.Master>
 
     <MasterDetailPage.Detail>
-        <ContentPage>
-            <ContentPage.Content>
-                <Label Text="Welcome to ArmorUp!" HorizontalOptions="Center" VerticalOptions="Center"/>
-            </ContentPage.Content>
+        <ContentPage>            
         </ContentPage>
     </MasterDetailPage.Detail>
 </MasterDetailPage>
