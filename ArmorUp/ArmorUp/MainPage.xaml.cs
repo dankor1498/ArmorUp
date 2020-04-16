@@ -12,7 +12,7 @@ namespace ArmorUp
 
             Detail = new NavigationPage(new Item1())
             {
-                BarBackgroundColor = Color.FromHex("#546bf0"),
+                BarBackgroundColor = Color.FromHex("#546bf0")
             };
             IsPresented = false;
         }
