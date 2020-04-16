@@ -9,7 +9,7 @@ namespace ArmorUp
         {
             InitializeComponent();
             Detail = new ProfilePage();
-            IsPresented = true;
+            IsPresented = false;
         }
     }
 }

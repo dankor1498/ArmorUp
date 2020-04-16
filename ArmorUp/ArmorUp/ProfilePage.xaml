@@ -8,22 +8,45 @@
              Title="ProfilePage">
     <ContentPage.Content>
         <Grid>
-            <ScrollView>
-                <StackLayout Orientation="Vertical" VerticalOptions="Start" Padding="0, 0, 0, 20" BackgroundColor="#c46dcf  ">
-                    <Button Text="hello"/>
-                    <Button Text="hello1"/>
-                    <Button Text="hello2"/>
-                    <Button Text="hello3"/>
-                    <Button Text="hello4"/>
-                    <Button Text="hello5"/>
-                    <Button Text="hello6"/>
-                    <Button Text="hello7"/>
-                    <Button Text="hello8"/>
-                    <Button Text="hello9"/>
-                    <Button Text="hello10"/>
-                    <Button Text="hello11"/>
+            <StackLayout Orientation="Vertical" VerticalOptions="Start">
+                <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <Frame CornerRadius="80"
+                           HeightRequest="160"
+                           WidthRequest="160"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Padding="0"
+                           IsClippedToBounds="True"
+                           Margin="0, 5, 0, 0" >
+                        <Image Source="photo.jpg"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+                    </Frame>
+                    <Label Text="Roman Cholkan"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           FontSize="25"
+                           TextColor="#65186e"/>
                 </StackLayout>
-            </ScrollView>
+                <StackLayout HeightRequest="340">
+                    <ScrollView>
+                        <StackLayout Orientation="Vertical" Padding="0, 0, 0, 20">
+                            <Button Text="hello"/>
+                            <Button Text="hello1"/>
+                            <Button Text="hello2"/>
+                            <Button Text="hello3"/>
+                            <Button Text="hello4"/>
+                            <Button Text="hello5"/>
+                            <Button Text="hello6"/>
+                            <Button Text="hello7"/>
+                            <Button Text="hello8"/>
+                            <Button Text="hello9"/>
+                            <Button Text="hello10"/>
+                            <Button Text="hello11"/>
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+            </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" BackgroundColor="#65186e">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0, 5, 0, 0">
                     <StackLayout Orientation="Vertical" Spacing="0">
@@ -51,7 +74,8 @@
                     <StackLayout Orientation="Vertical" Spacing="0">
                         <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="Exercises.png" VerticalOptions="Start" HorizontalOptions="Center"/>
                         <Button HeightRequest="33" 
-                                Text="Exercises"                                
+                                Text="Exercises"
+                                Clicked="NewExercisePage_Clicked"
                                 FontSize="10" 
                                 WidthRequest="110" 
                                 HorizontalOptions="Center"

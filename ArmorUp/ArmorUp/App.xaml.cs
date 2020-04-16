@@ -10,7 +10,10 @@ namespace ArmorUp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new ArmorUp.MainPage())
+            {
+                BarBackgroundColor = Color.FromHex("#65186e")
+            };
         }
 
         protected override void OnStart()

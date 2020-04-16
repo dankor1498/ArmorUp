@@ -5,32 +5,13 @@
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   mc:Ignorable="d"
                   x:Class="ArmorUp.MainPage"
-                  Title="MasterApp">
+                  Title="Profile">
     
     <MasterDetailPage.Master>
         <ContentPage Title="Master"
                      BackgroundColor="#65186e">
             <ContentPage.Content>
                 <StackLayout Padding="5, 30, 5, 5">
-                    <StackLayout Orientation="Vertical">
-                        <Frame CornerRadius="45"
-                               HeightRequest="90"
-                               WidthRequest="90"
-                               HorizontalOptions="Start"
-                               Padding="0">
-                            <Image WidthRequest="90" 
-                                   HeightRequest="90" 
-                                   Aspect="AspectFit"
-                                   Source="photo.jpg"
-                                   VerticalOptions="Center"
-                                   HorizontalOptions="Start"/>
-                        </Frame>
-                        <Label Text="Test Username"
-                                   FontSize="20"
-                                   TextColor="White"
-                                   VerticalOptions="Center" 
-                                   HorizontalOptions="Start"/>
-                    </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                         <Image WidthRequest="24" HeightRequest="24" Aspect="AspectFit" Source="logoABC.png" HorizontalOptions="Start"/>
                         <Button Text="Item1" BackgroundColor="Purple" TextColor="White" FontSize="12" HorizontalOptions="FillAndExpand"/>
