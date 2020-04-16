@@ -1,16 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="ArmorUp.MainPage">
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  mc:Ignorable="d"
+                  x:Class="ArmorUp.MainPage"
+                  Title="MasterApp">
+    
+    <MasterDetailPage.Master>
+        <ContentPage Title="Master"
+                     BackgroundColor="#8696f0">
+            <ContentPage.Content>
+                <StackLayout Padding="5, 30, 5, 5">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Image WidthRequest="56" 
+                               HeightRequest="65" 
+                               Aspect="AspectFit"
+                               Source="logoABC.png"
+                               VerticalOptions="Center"/>
+                        <Label Text="User" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Image WidthRequest="24" HeightRequest="24" Aspect="AspectFit" Source="logoABC.png" HorizontalOptions="Start"/>
+                        <Button Text="Item1" Clicked="Item1_clicked" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Image WidthRequest="24" HeightRequest="24" Aspect="AspectFit" Source="logoABC.png" HorizontalOptions="Start"/>
+                        <Button Text="Item2" Clicked="Item2_Clicked" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Master>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to ArmorUp! Rocho was here." 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" FontAttributes="Bold" TextColor="#FF0000" Scale="2" ScaleY="2" />
-    </StackLayout>
-
-</ContentPage>
+    <MasterDetailPage.Detail>
+        <ContentPage>
+            <ContentPage.Content>
+                <Label Text="Welcome to ArmorUp!" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
