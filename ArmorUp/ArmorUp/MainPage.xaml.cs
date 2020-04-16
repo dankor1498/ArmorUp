@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;   
 using Xamarin.Forms;
 
 namespace ArmorUp
@@ -17,7 +12,7 @@ namespace ArmorUp
 
             Detail = new NavigationPage(new Item1())
             {
-                BarBackgroundColor = Color.FromHex("#546bf0")
+                BarBackgroundColor = Color.FromHex("#546bf0"),
             };
             IsPresented = false;
         }

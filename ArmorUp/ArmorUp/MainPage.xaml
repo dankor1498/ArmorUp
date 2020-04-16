@@ -18,7 +18,11 @@
                                Aspect="AspectFit"
                                Source="logoABC.png"
                                VerticalOptions="Center"/>
-                        <Label Text="User" VerticalOptions="Center"/>
+                        <Label Text="User" 
+                               VerticalOptions="Center" 
+                               HorizontalTextAlignment="Center" 
+                               VerticalTextAlignment="Center"
+                               HorizontalOptions="Center"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                         <Image WidthRequest="24" HeightRequest="24" Aspect="AspectFit" Source="logoABC.png" HorizontalOptions="Start"/>
