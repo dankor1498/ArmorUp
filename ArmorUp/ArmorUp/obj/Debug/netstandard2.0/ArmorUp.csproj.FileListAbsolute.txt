@@ -28,3 +28,5 @@ G:\All\GitHub\ArmorUp\ArmorUp\ArmorUp\bin\Debug\netstandard2.0\ArmorUp.pdb
 G:\All\GitHub\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\XamlC.stamp
 G:\All\GitHub\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\Item1.xaml.g.cs
 G:\All\GitHub\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\Item2.xaml.g.cs
+G:\All\GitHub\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\Item3.xaml.g.cs
+G:\All\GitHub\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\NewExercisePage.xaml.g.cs

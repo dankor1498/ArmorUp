@@ -9,28 +9,39 @@
     
     <MasterDetailPage.Master>
         <ContentPage Title="Master"
-                     BackgroundColor="#8696f0">
+                     BackgroundColor="#65186e">
             <ContentPage.Content>
                 <StackLayout Padding="5, 30, 5, 5">
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                        <Image WidthRequest="56" 
-                               HeightRequest="65" 
-                               Aspect="AspectFit"
-                               Source="logoABC.png"
-                               VerticalOptions="Center"/>
-                        <Label Text="User" 
-                               VerticalOptions="Center" 
-                               HorizontalTextAlignment="Center" 
-                               VerticalTextAlignment="Center"
-                               HorizontalOptions="Center"/>
+                    <StackLayout Orientation="Vertical">
+                        <Frame CornerRadius="45"
+                               HeightRequest="90"
+                               WidthRequest="90"
+                               HorizontalOptions="Start"
+                               Padding="0">
+                            <Image WidthRequest="90" 
+                                   HeightRequest="90" 
+                                   Aspect="AspectFit"
+                                   Source="photo.jpg"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Start"/>
+                        </Frame>
+                        <Label Text="Test Username"
+                                   FontSize="20"
+                                   TextColor="White"
+                                   VerticalOptions="Center" 
+                                   HorizontalOptions="Start"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                         <Image WidthRequest="24" HeightRequest="24" Aspect="AspectFit" Source="logoABC.png" HorizontalOptions="Start"/>
-                        <Button Text="Item1" Clicked="Item1_clicked" HorizontalOptions="FillAndExpand"/>
+                        <Button Text="Item1" BackgroundColor="Purple" TextColor="White" FontSize="12" Clicked="Item1_clicked" HorizontalOptions="FillAndExpand"/>
                     </StackLayout>
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                         <Image WidthRequest="24" HeightRequest="24" Aspect="AspectFit" Source="logoABC.png" HorizontalOptions="Start"/>
-                        <Button Text="Item2" Clicked="Item2_Clicked" HorizontalOptions="FillAndExpand"/>
+                        <Button Text="Item2" BackgroundColor="Purple" TextColor="White" FontSize="12" Clicked="Item2_Clicked" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Image WidthRequest="24" HeightRequest="24" Aspect="AspectFit" Source="logoABC.png" HorizontalOptions="Start"/>
+                        <Button Text="Item3" BackgroundColor="Purple" TextColor="White" FontSize="12" Clicked="Item3_Clicked" HorizontalOptions="FillAndExpand"/>
                     </StackLayout>
                 </StackLayout>
             </ContentPage.Content>

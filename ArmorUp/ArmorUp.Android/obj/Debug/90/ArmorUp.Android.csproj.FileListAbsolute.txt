@@ -953,3 +953,7 @@ G:\All\GitHub\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\stamp\_GenerateJavaSt
 G:\All\GitHub\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 G:\All\GitHub\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
 G:\All\GitHub\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\logoabc.png
+G:\All\GitHub\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\train.png
+G:\All\GitHub\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\exercises.png
+G:\All\GitHub\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\profile.png
+G:\All\GitHub\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\photo.jpg
