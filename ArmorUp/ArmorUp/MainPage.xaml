@@ -5,8 +5,9 @@
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   mc:Ignorable="d"
                   x:Class="ArmorUp.MainPage"
-                  Title="Profile">
-    
+                  Title="Profile"
+                  NavigationPage.HasNavigationBar="false">
+
     <MasterDetailPage.Master>
         <ContentPage Title="Master"
                      BackgroundColor="#65186e">
@@ -15,14 +16,14 @@
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                         <Image WidthRequest="24" HeightRequest="24" Aspect="AspectFit" Source="logoABC.png" HorizontalOptions="Start"/>
                         <Button Text="Item1" BackgroundColor="Purple" TextColor="White" FontSize="12" HorizontalOptions="FillAndExpand"/>
-                    </StackLayout>                   
+                    </StackLayout>
                 </StackLayout>
             </ContentPage.Content>
         </ContentPage>
     </MasterDetailPage.Master>
 
     <MasterDetailPage.Detail>
-        <ContentPage>            
-        </ContentPage>
+        <ContentPage></ContentPage>
     </MasterDetailPage.Detail>
+    
 </MasterDetailPage>

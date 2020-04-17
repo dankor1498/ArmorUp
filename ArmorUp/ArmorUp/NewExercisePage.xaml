@@ -5,14 +5,39 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ArmorUp.NewExercisePage"
+             NavigationPage.HasNavigationBar="false"
              Title="New exercise page">
-    
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="New exercise page!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="0">
+            <StackLayout x:Name="MainStackLayout">
+                <Label Text="New exercise" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Center" />
+                <Label Text="  Name: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Entry x:Name="NameEntry" Placeholder="" />
+                <Label Text="  Information: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Editor x:Name="InformationEditor"/>
+                <Label Text="  Link: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Label Text="   Name: " FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Entry x:Name="NameLinkEntry" Placeholder="" />
+                <Label Text="   URL: " FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Entry x:Name="UrlLinkEntry" Placeholder="" />
+                <Label Text="  Type: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Picker x:Name="TypePicker">
+                    <Picker.Items>
+                        <x:String>Amount</x:String>
+                        <x:String>Time</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Text="  Purpose: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Entry x:Name="PurposeEntry" Placeholder="" />
+                <Button x:Name="AddApproachButton" Text="Add approach" Clicked="AddApproachButton__Clicked"  />
+            </StackLayout>
+        </ScrollView>
+        <StackLayout Grid.Row="1">
+            <Button x:Name="CreateApproachButton" Text="Create approach" />
         </StackLayout>
-    </ContentPage.Content>
-    
+    </Grid>
 </ContentPage>

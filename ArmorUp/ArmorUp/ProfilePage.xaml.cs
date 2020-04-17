@@ -19,5 +19,15 @@ namespace ArmorUp
         {
             Navigation.PushAsync(new NewExercisePage());
         }
+
+        private void StatisticsButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new StatisticPage());
+        }
+
+        private void ProfileButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ProfilePage());
+        }
     }
 }

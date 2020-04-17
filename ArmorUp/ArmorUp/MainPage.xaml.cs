@@ -8,7 +8,7 @@ namespace ArmorUp
         public MainPage()
         {
             InitializeComponent();
-            Detail = new ProfilePage();
+            Detail = new NavigationPage(new ProfilePage());
             IsPresented = false;
         }
     }

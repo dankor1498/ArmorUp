@@ -12,7 +12,7 @@ namespace ArmorUp
 
             MainPage = new NavigationPage(new ArmorUp.MainPage())
             {
-                BarBackgroundColor = Color.FromHex("#65186e")
+                BarBackgroundColor = Color.FromHex("#65186e"),
             };
         }
 

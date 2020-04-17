@@ -61,3 +61,4 @@ C:\Users\rocho\Desktop\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\XamlC.st
 C:\Users\rocho\Desktop\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.dll
 C:\Users\rocho\Desktop\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ref\ArmorUp.dll
 C:\Users\rocho\Desktop\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.pdb
+C:\Users\rocho\Desktop\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\StatisticPage.xaml.g.cs

@@ -5,9 +5,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="ArmorUp.ProfilePage"
-             Title="ProfilePage">
+             Title="ProfilePage"
+             NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
-        <Grid>
+        <Grid BackgroundColor="Black">
             <StackLayout Orientation="Vertical" VerticalOptions="Start">
                 <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                     <Frame CornerRadius="80"
@@ -26,28 +27,28 @@
                            VerticalOptions="Center"
                            HorizontalOptions="Center"
                            FontSize="25"
-                           TextColor="#65186e"/>
+                           TextColor="White"/>
                 </StackLayout>
                 <StackLayout HeightRequest="340">
                     <ScrollView>
                         <StackLayout Orientation="Vertical" Padding="0, 0, 0, 20">
-                            <Button Text="hello"/>
-                            <Button Text="hello1"/>
-                            <Button Text="hello2"/>
-                            <Button Text="hello3"/>
-                            <Button Text="hello4"/>
-                            <Button Text="hello5"/>
-                            <Button Text="hello6"/>
-                            <Button Text="hello7"/>
-                            <Button Text="hello8"/>
-                            <Button Text="hello9"/>
-                            <Button Text="hello10"/>
-                            <Button Text="hello11"/>
+                            <Button Text="hello" BackgroundColor="#292929" TextColor="White"/>
+                            <Button Text="hello1" BackgroundColor="#292929" TextColor="White"/>
+                            <Button Text="hello2" BackgroundColor="#292929" TextColor="White"/>
+                            <Button Text="hello3" BackgroundColor="#292929" TextColor="White"/>
+                            <Button Text="hello4" BackgroundColor="#292929" TextColor="White"/>
+                            <Button Text="hello5" BackgroundColor="#292929" TextColor="White"/>
+                            <Button Text="hello6" BackgroundColor="#292929" TextColor="White"/>
+                            <Button Text="hello7" BackgroundColor="#292929" TextColor="White"/>
+                            <Button Text="hello8" BackgroundColor="#292929" TextColor="White"/>
+                            <Button Text="hello9" BackgroundColor="#292929" TextColor="White"/>
+                            <Button Text="hello10" BackgroundColor="#292929" TextColor="White"/>
+                            <Button Text="hello11" BackgroundColor="#292929" TextColor="White"/>
                         </StackLayout>
                     </ScrollView>
                 </StackLayout>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" BackgroundColor="#65186e">
+            <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" BackgroundColor="Black">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0, 5, 0, 0">
                     <StackLayout Orientation="Vertical" Spacing="0">
                         <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="train.png" VerticalOptions="Start" HorizontalOptions="Center"/>
@@ -57,8 +58,9 @@
                                 WidthRequest="110" 
                                 HorizontalOptions="Center"
                                 TextColor="White"
-                                BackgroundColor="Purple" 
-                                Margin="0, 5, 0, 5"/>
+                                BackgroundColor="#292929" 
+                                Margin="0, 5, 0, 5"
+                                Clicked="StatisticsButton_Clicked"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Spacing="0">
                         <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="Profile.png" VerticalOptions="Start" HorizontalOptions="Center"/>
@@ -69,7 +71,7 @@
                                 HorizontalOptions="CenterAndExpand" 
                                 VerticalOptions="CenterAndExpand"
                                 TextColor="White"
-                                BackgroundColor="Purple" Margin="0, 5, 0, 5"/>
+                                BackgroundColor="#205be6" Margin="0, 5, 0, 5"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Spacing="0">
                         <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="Exercises.png" VerticalOptions="Start" HorizontalOptions="Center"/>
@@ -80,7 +82,7 @@
                                 WidthRequest="110" 
                                 HorizontalOptions="Center"
                                 TextColor="White"
-                                BackgroundColor="Purple" 
+                                BackgroundColor="#292929" 
                                 Margin="0, 5, 0, 5"/>
                     </StackLayout>
                 </StackLayout>

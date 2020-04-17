@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ArmorUp.StatisticPage"
+             NavigationPage.HasNavigationBar="false">
+    
+    <ContentPage.Content>
+        <Grid BackgroundColor="Black">
+            <StackLayout Orientation="Vertical" VerticalOptions="Start">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <StackLayout>
+                        <Frame CornerRadius="10" Padding="0" Margin="5" IsClippedToBounds="True">
+                            <Image VerticalOptions="Center" 
+                                   HorizontalOptions="Center"
+                                   Source="sport.jpg"
+                                   HeightRequest="175"
+                                   WidthRequest="350"
+                                   Aspect="AspectFill"/>
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                    <ScrollView>
+                        <StackLayout x:Name="ExercisesStackLayout"  Orientation="Vertical" Padding="5, 5, 5, 80">
+                            
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" BackgroundColor="Black">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0, 5, 0, 0">
+                    <StackLayout Orientation="Vertical" Spacing="0">
+                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="train.png" VerticalOptions="Start" HorizontalOptions="Center"/>
+                        <Button HeightRequest="33" 
+                                Text="Statistics" 
+                                FontSize="10" 
+                                WidthRequest="110" 
+                                HorizontalOptions="Center"
+                                TextColor="White"
+                                BackgroundColor="#205be6" 
+                                Margin="0, 5, 0, 5"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Spacing="0">
+                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="Profile.png" VerticalOptions="Start" HorizontalOptions="Center"/>
+                        <Button HeightRequest="33" 
+                                Text="Profile" 
+                                FontSize="10" 
+                                WidthRequest="110" 
+                                HorizontalOptions="CenterAndExpand" 
+                                VerticalOptions="CenterAndExpand"
+                                TextColor="White"
+                                BackgroundColor="#292929" Margin="0, 5, 0, 5"
+                                Clicked="ProfileButton_Clicked"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Spacing="0">
+                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="Exercises.png" VerticalOptions="Start" HorizontalOptions="Center"/>
+                        <Button HeightRequest="33" 
+                                Text="Exercises"
+                                Clicked="NewExercisePage_Clicked"
+                                FontSize="10" 
+                                WidthRequest="110" 
+                                HorizontalOptions="Center"
+                                TextColor="White"
+                                BackgroundColor="#292929" 
+                                Margin="0, 5, 0, 5"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+    
+</ContentPage>

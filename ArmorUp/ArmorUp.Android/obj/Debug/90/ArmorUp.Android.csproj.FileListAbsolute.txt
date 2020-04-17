@@ -1921,3 +1921,4 @@ C:\Users\rocho\Desktop\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\stamp\_Conve
 C:\Users\rocho\Desktop\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\rocho\Desktop\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\rocho\Desktop\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\rocho\Desktop\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\sport.jpg
