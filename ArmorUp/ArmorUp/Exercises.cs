@@ -4,12 +4,13 @@ using System.Text;
 
 namespace ArmorUp
 {
-    class Exercises
+    public class Exercises
     {
         public string Name { get; set; }
         public string ImageSource { get; set; }
         public int Percent { get; set; }
         public string Sucsess { get; set; }
+        public static Exercises CurrentExercises { get; set; }
         public Exercises() { }
         public Exercises(string Name, string ImageSource, int Percent, string Sucsess)
         {

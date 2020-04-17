@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rocho\\Desktop\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {}
+    "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rocho\\Desktop\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
+    "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rocho\\Desktop\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
+        "projectUniqueName": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
         "projectName": "ArmorUp",
-        "projectPath": "C:\\Users\\rocho\\Desktop\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
+        "projectPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
         "packagesPath": "C:\\Users\\rocho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rocho\\Desktop\\ArmorUp\\ArmorUp\\ArmorUp\\obj\\",
+        "outputPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

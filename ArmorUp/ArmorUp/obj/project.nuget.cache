@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "55THMMrpTp2NImB0D7Nk/VLwl7toTzD2HYbVByIu0HtQEw8htyBz6Li2n+ZIwxbkJwuvgbwRK/oCHpHegP/2Og==",
+  "dgSpecHash": "xGm9lIqOUO4Q21paCbyVDFtzTp6vVbRRQ4F2siLXcvEl9OBjPNoBFfjWjqPw8A8eFJ9jr0hp7DE+mwdYd/uSpw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rocho\\Desktop\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
+  "projectFilePath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rocho\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\rocho\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

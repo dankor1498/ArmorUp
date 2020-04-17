@@ -1940,11 +1940,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rocho\\Desktop\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
+      "projectUniqueName": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
       "projectName": "ArmorUp.Android",
-      "projectPath": "C:\\Users\\rocho\\Desktop\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
+      "projectPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
       "packagesPath": "C:\\Users\\rocho\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rocho\\Desktop\\ArmorUp\\ArmorUp\\ArmorUp.Android\\obj\\",
+      "outputPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1965,8 +1965,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\rocho\\Desktop\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
-              "projectPath": "C:\\Users\\rocho\\Desktop\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj"
+            "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
+              "projectPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj"
             }
           }
         }

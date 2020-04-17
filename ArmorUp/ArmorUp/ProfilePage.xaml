@@ -21,7 +21,10 @@
                            Margin="0, 5, 0, 0" >
                         <Image Source="photo.jpg"
                                VerticalOptions="Center"
-                               HorizontalOptions="Center"/>
+                               HorizontalOptions="Center"
+                               Aspect="AspectFill"
+                               HeightRequest="160"
+                               WidthRequest="160"/>
                     </Frame>
                     <Label Text="Roman Cholkan"
                            VerticalOptions="Center"
@@ -31,19 +34,8 @@
                 </StackLayout>
                 <StackLayout HeightRequest="340">
                     <ScrollView>
-                        <StackLayout Orientation="Vertical" Padding="0, 0, 0, 20">
-                            <Button Text="hello" BackgroundColor="#292929" TextColor="White"/>
-                            <Button Text="hello1" BackgroundColor="#292929" TextColor="White"/>
-                            <Button Text="hello2" BackgroundColor="#292929" TextColor="White"/>
-                            <Button Text="hello3" BackgroundColor="#292929" TextColor="White"/>
-                            <Button Text="hello4" BackgroundColor="#292929" TextColor="White"/>
-                            <Button Text="hello5" BackgroundColor="#292929" TextColor="White"/>
-                            <Button Text="hello6" BackgroundColor="#292929" TextColor="White"/>
-                            <Button Text="hello7" BackgroundColor="#292929" TextColor="White"/>
-                            <Button Text="hello8" BackgroundColor="#292929" TextColor="White"/>
-                            <Button Text="hello9" BackgroundColor="#292929" TextColor="White"/>
-                            <Button Text="hello10" BackgroundColor="#292929" TextColor="White"/>
-                            <Button Text="hello11" BackgroundColor="#292929" TextColor="White"/>
+                        <StackLayout x:Name="AllExercisesStackLayout" VerticalOptions="FillAndExpand" Orientation="Vertical" Padding="0, 0, 0, 20">
+                            
                         </StackLayout>
                     </ScrollView>
                 </StackLayout>

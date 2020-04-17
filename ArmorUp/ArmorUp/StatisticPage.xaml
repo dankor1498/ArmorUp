@@ -10,17 +10,15 @@
     <ContentPage.Content>
         <Grid BackgroundColor="Black">
             <StackLayout Orientation="Vertical" VerticalOptions="Start">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-                    <StackLayout>
-                        <Frame CornerRadius="10" Padding="0" Margin="5" IsClippedToBounds="True">
-                            <Image VerticalOptions="Center" 
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Frame CornerRadius="10" Padding="0" Margin="5" IsClippedToBounds="True">
+                        <Image VerticalOptions="Center" 
                                    HorizontalOptions="Center"
                                    Source="sport.jpg"
                                    HeightRequest="175"
                                    WidthRequest="350"
                                    Aspect="AspectFill"/>
-                        </Frame>
-                    </StackLayout>
+                    </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
                     <ScrollView>

@@ -11,7 +11,8 @@ namespace ArmorUp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class StatisticPage : ContentPage
     {
-        static List<Exercises> Exercises = new List<Exercises>()
+        //Test Test Test
+        static List<Exercises> ExercisesList = new List<Exercises>()
         {
             new Exercises("jumping", "sport.jpg", 100, "+3"),
             new Exercises("skating", "sport.jpg", 69, "+7"),
@@ -23,9 +24,9 @@ namespace ArmorUp
         public StatisticPage()
         {
             InitializeComponent();
-            if (Exercises.Count != 0)
+            if (ExercisesList.Count != 0)
             {
-                foreach (var exercises in Exercises)
+                foreach (var exercises in ExercisesList)
                     ExercisesStackLayout.Children.Add(AddStatisticByExercise(exercises));
             }
         }
@@ -82,8 +83,9 @@ namespace ArmorUp
                 WidthRequest = 100,
                 HeightRequest = 60,
                 BackgroundColor = Color.FromHex("#262626"),
-                TextColor = Color.White
+                TextColor = Color.White,
             };
+            ExercisesButton.Clicked += YourButtonClick;
             //Done 2
             TextFrame.Content = ExercisesButton;
 
@@ -130,6 +132,14 @@ namespace ArmorUp
             stackLayout.Children.Add(SucsessFrame);
 
             return stackLayout;
+        }
+        private void YourButtonClick(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            StackLayout stack = button.Parent.Parent as StackLayout;
+            int ButtonIndex = ExercisesStackLayout.Children.IndexOf(stack);
+            Exercises.CurrentExercises = ExercisesList[ButtonIndex];
+            Navigation.PushAsync(new CurrentExercise());
         }
     }
 }

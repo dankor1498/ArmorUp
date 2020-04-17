@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lud1yLHY7DXCF0N4R7pZMwM1B5YZ7J+mBOQkRkGiE5QmZgHbsw1XGQKYMTDGICSrq9pnUZtcTUv1/UJ3tXqp6w==",
+  "dgSpecHash": "cqz3JFoUmOl75a7AveQvyG5dWQy4Zdv++ufWCqM7PXGJE7+AA7kS4qwrAp+4dYSWyWM4MHVm+vpEQKKzaKArLg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rocho\\Desktop\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
+  "projectFilePath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rocho\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",
