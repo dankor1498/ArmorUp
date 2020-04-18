@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Runtime.Serialization;
 
 namespace ArmorUp
 {
+    [DataContract]
     public class ExercisesCount : Exercises
     {
+        [DataMember]
         public int Purpose { get; set; }
 
         public override string PrintExercises()

@@ -27,8 +27,7 @@
                 <Label Text="  Type: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
                 <Picker x:Name="TypePicker">
                     <Picker.Items>
-                        <x:String>Amount</x:String>
-                        <x:String>Time</x:String>
+                        <x:String>Count</x:String>
                     </Picker.Items>
                 </Picker>
                 <Label Text="  Purpose: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
@@ -37,7 +36,7 @@
             </StackLayout>
         </ScrollView>
         <StackLayout Grid.Row="1">
-            <Button x:Name="CreateApproachButton" Text="Create approach" />
+            <Button x:Name="CreateApproachButton" Text="Create approach" Clicked="CreateApproachButton_Clicked"/>
         </StackLayout>
     </Grid>
 </ContentPage>

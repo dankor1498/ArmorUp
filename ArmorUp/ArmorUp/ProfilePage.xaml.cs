@@ -11,27 +11,18 @@ namespace ArmorUp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProfilePage : ContentPage
     {
-        //Test Test Test
-        //static List<Exercises> ExercisesList = new List<Exercises>()
-        //{
-        //    new Exercises("jumping", "sport.jpg", 100, "+3"),
-        //    new Exercises("skating", "sport.jpg", 69, "+7"),
-        //    new Exercises("long jump", "sport.jpg", 50, "-1"),
-        //    new Exercises("pulling up", "sport.jpg", 31, "-9"),
-        //    new Exercises("push-ups", "sport.jpg", 71, "+5"),
-        //    new Exercises("squatting", "sport.jpg", 100, "+3")
-        //};
         public ProfilePage()
         {
             InitializeComponent();
-            //if (ExercisesList.Count != 0)
-            //{
-            //    foreach (var exercises in ExercisesList)
-            //        AllExercisesStackLayout.Children.Add(AddExercisesToProfilePage(exercises));
-            //}
-            if (ExercisesTest.exercisesTest.Count != 0)
+            DBSaverLoader dBSaverLoader = new DBSaverLoader();
+            try
             {
-                foreach (var exercises in ExercisesTest.exercisesTest)
+                ExercisesDB.CurrentExercisesList = dBSaverLoader.LOAD_USER();
+            }
+            catch (Exception) { }
+            if (ExercisesDB.CurrentExercisesList.ExercisesList != null)
+            {
+                foreach (var exercises in ExercisesDB.CurrentExercisesList.ExercisesList)
                 {
                     Label label = new Label
                     {

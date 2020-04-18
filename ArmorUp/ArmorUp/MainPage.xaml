@@ -15,7 +15,7 @@
                 <StackLayout Padding="5, 30, 5, 5">
                     <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                         <Image WidthRequest="24" HeightRequest="24" Aspect="AspectFit" Source="logoABC.png" HorizontalOptions="Start"/>
-                        <Button Text="Item1" BackgroundColor="Purple" TextColor="White" FontSize="12" HorizontalOptions="FillAndExpand"/>
+                        <Button Text="Exit" BackgroundColor="Purple" TextColor="White" FontSize="12" HorizontalOptions="FillAndExpand" Clicked="Exit_Clicked"/>
                     </StackLayout>
                 </StackLayout>
             </ContentPage.Content>

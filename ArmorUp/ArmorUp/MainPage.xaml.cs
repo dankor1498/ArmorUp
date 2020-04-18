@@ -11,5 +11,12 @@ namespace ArmorUp
             Detail = new NavigationPage(new ProfilePage());
             IsPresented = false;
         }
+
+        private void Exit_Clicked(object sender, EventArgs e)
+        {
+            DBSaverLoader dBSaverLoader = new DBSaverLoader();
+            if (ExercisesDB.CurrentExercisesList.ExercisesList.Count != 0)
+                dBSaverLoader.SAVE_USER(ExercisesDB.CurrentExercisesList);
+        }
     }
 }

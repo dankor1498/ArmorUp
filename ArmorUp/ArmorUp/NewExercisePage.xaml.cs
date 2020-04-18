@@ -15,6 +15,7 @@ namespace ArmorUp
         public NewExercisePage()
         {
             InitializeComponent();
+            CountClick = 1;
         }
 
 
@@ -29,6 +30,27 @@ namespace ArmorUp
             Entry entry = new Entry();
             MainStackLayout.Children.Add(label);
             MainStackLayout.Children.Add(entry);
+        }
+
+        private void CreateApproachButton_Clicked(object sender, EventArgs e)
+        {
+            Exercises NewExercises = new Exercises();
+            if (NameEntry != null && PurposeEntry != null && TypePicker.SelectedIndex != -1)
+            {
+                switch(TypePicker.SelectedIndex)
+                {
+                    case 0: NewExercises = new ExercisesCount()
+                    {
+                        Name = NameEntry.Text,
+                        Information = InformationEditor.Text,
+                        LinkName = NameLinkEntry.Text,
+                        LinkURL = UrlLinkEntry.Text,
+                        Purpose = Int32.Parse(PurposeEntry.Text)
+                    }; break;
+                }
+                ExercisesDB.CurrentExercisesList.ExercisesList.Add(NewExercises);
+            }
+            Navigation.PushAsync(new ProfilePage());
         }
     }
 }

@@ -1,14 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Runtime.Serialization;
 
 namespace ArmorUp
 {
-    public abstract class Exercises
+    [DataContract]
+    [KnownType(typeof(ExercisesCount))]
+    public class Exercises
     {
+        [DataMember]
         public string Name { get; set; }
+        [DataMember]
         public string Information { get; set; }
+        [DataMember]
         public string LinkName { get; set; }
+        [DataMember]
         public string LinkURL { get; set; }
 
         public virtual string PrintExercises()//метод для тесту
