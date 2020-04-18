@@ -15,10 +15,8 @@ namespace ArmorUp
         public CurrentExercise()
         {
             InitializeComponent();
-            //MissionLabel.Text = Exercises.CurrentExercises.Percent.ToString() + "%";
-            //InfoEditor.Text = Exercises.CurrentExercises.Name;
-            //UsfullLinkEditor.Text = Exercises.CurrentExercises.Name;
-            //ProgressForToday.Text = Exercises.CurrentExercises.Sucsess;
+            InfoEditor.Text = Exercises.CurrentExercises.Name;
+            UsfullLinkEditor.Text = Exercises.CurrentExercises.LinkName + "\n" + Exercises.CurrentExercises.LinkURL;
         }
         private void NewExercisePage_Clicked(object sender, EventArgs e)
         {

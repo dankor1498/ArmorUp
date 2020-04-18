@@ -1,4 +1,5 @@
-﻿using System;   
+﻿using System;
+using System.IO;
 using Xamarin.Forms;
 
 namespace ArmorUp
@@ -8,13 +9,21 @@ namespace ArmorUp
         public MainPage()
         {
             InitializeComponent();
-            DBSaverLoader dBSaverLoader = new DBSaverLoader();
-            try
+            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var path = Path.Combine(documentsPath, "ExercisesList.json");
+            if (File.Exists(path))
             {
-                ExercisesDB.CurrentExercisesList = dBSaverLoader.LOAD_USER();
+                DBSaverLoader dBSaverLoader = new DBSaverLoader();
+                try
+                {
+                    ExercisesDB.CurrentExercisesList = dBSaverLoader.LOAD_USER();
+                }
+                catch (Exception) { }
             }
-            catch (Exception) { }
-
+            else
+            {
+                ExercisesDB.CurrentExercisesList = new ExercisesDB();
+            }
             Detail = new NavigationPage(new ProfilePage());
             IsPresented = false;
         }
