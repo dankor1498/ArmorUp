@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "xGm9lIqOUO4Q21paCbyVDFtzTp6vVbRRQ4F2siLXcvEl9OBjPNoBFfjWjqPw8A8eFJ9jr0hp7DE+mwdYd/uSpw==",
+  "dgSpecHash": "RIKEF3K6gRnY4hglDGEp3YOOhBjUMccpsg2XONkwOVkhdnS4YkI6PviXbCSihoaNl/ZSLAdu3wHCNunS86W62A==",
   "success": true,
-  "projectFilePath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
+  "projectFilePath": "E:\\Documents\\Predmety\\Mobile\\WorkFolder2\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\rocho\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\rocho\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\rocho\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Danyil Korotych\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Danyil Korotych\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.4.0.991265\\xamarin.forms.4.4.0.991265.nupkg.sha512"
   ],

@@ -12,23 +12,23 @@ namespace ArmorUp
     public partial class StatisticPage : ContentPage
     {
         //Test Test Test
-        static List<Exercises> ExercisesList = new List<Exercises>()
-        {
-            new Exercises("jumping", "sport.jpg", 100, "+3"),
-            new Exercises("skating", "sport.jpg", 69, "+7"),
-            new Exercises("long jump", "sport.jpg", 50, "-1"),
-            new Exercises("pulling up", "sport.jpg", 31, "-9"),
-            new Exercises("push-ups", "sport.jpg", 71, "+5"),
-            new Exercises("squatting", "sport.jpg", 100, "+3")
-        };
+        //static List<Exercises> ExercisesList = new List<Exercises>()
+        //{
+        //    new Exercises("jumping", "sport.jpg", 100, "+3"),
+        //    new Exercises("skating", "sport.jpg", 69, "+7"),
+        //    new Exercises("long jump", "sport.jpg", 50, "-1"),
+        //    new Exercises("pulling up", "sport.jpg", 31, "-9"),
+        //    new Exercises("push-ups", "sport.jpg", 71, "+5"),
+        //    new Exercises("squatting", "sport.jpg", 100, "+3")
+        //};
         public StatisticPage()
         {
             InitializeComponent();
-            if (ExercisesList.Count != 0)
-            {
-                foreach (var exercises in ExercisesList)
-                    ExercisesStackLayout.Children.Add(AddStatisticByExercise(exercises));
-            }
+            //if (ExercisesList.Count != 0)
+            //{
+            //    foreach (var exercises in ExercisesList)
+            //        ExercisesStackLayout.Children.Add(AddStatisticByExercise(exercises));
+            //}
         }
         private void NewExercisePage_Clicked(object sender, EventArgs e)
         {
@@ -43,103 +43,103 @@ namespace ArmorUp
         {
             Navigation.PushAsync(new ProfilePage());
         }
-        private StackLayout AddStatisticByExercise(Exercises exercises)
-        {
-            StackLayout stackLayout = new StackLayout()
-            {
-                Orientation = StackOrientation.Horizontal
-            };
-            Frame PictureFrame = new Frame()
-            {
-                CornerRadius = 10,
-                Padding = new Thickness(0),
-                Margin = new Thickness(5),
-                IsClippedToBounds = true,
-                HorizontalOptions = LayoutOptions.Start
-            };
-            Image image = new Image()
-            {
-                VerticalOptions = LayoutOptions.Center,
-                HorizontalOptions = LayoutOptions.Center,
-                Source = exercises.ImageSource,
-                HeightRequest = 60,
-                WidthRequest = 60,
-                Aspect = Aspect.AspectFill
-            };
-            //done 1
-            PictureFrame.Content = image;
+        //private StackLayout AddStatisticByExercise(Exercises exercises)
+        //{
+            //StackLayout stackLayout = new StackLayout()
+            //{
+            //    Orientation = StackOrientation.Horizontal
+            //};
+            //Frame PictureFrame = new Frame()
+            //{
+            //    CornerRadius = 10,
+            //    Padding = new Thickness(0),
+            //    Margin = new Thickness(5),
+            //    IsClippedToBounds = true,
+            //    HorizontalOptions = LayoutOptions.Start
+            //};
+            //Image image = new Image()
+            //{
+            //    VerticalOptions = LayoutOptions.Center,
+            //    HorizontalOptions = LayoutOptions.Center,
+            //    Source = exercises.ImageSource,
+            //    HeightRequest = 60,
+            //    WidthRequest = 60,
+            //    Aspect = Aspect.AspectFill
+            //};
+            ////done 1
+            //PictureFrame.Content = image;
 
-            Frame TextFrame = new Frame()
-            {
-                CornerRadius = 10,
-                Padding = new Thickness(0),
-                Margin = new Thickness(0, 5, 0, 5),
-                IsClippedToBounds = true,
-                HorizontalOptions = LayoutOptions.FillAndExpand
-            };
-            Button ExercisesButton = new Button()
-            {
-                Text = exercises.Name,
-                WidthRequest = 100,
-                HeightRequest = 60,
-                BackgroundColor = Color.FromHex("#262626"),
-                TextColor = Color.White,
-            };
-            ExercisesButton.Clicked += YourButtonClick;
-            //Done 2
-            TextFrame.Content = ExercisesButton;
+            //Frame TextFrame = new Frame()
+            //{
+            //    CornerRadius = 10,
+            //    Padding = new Thickness(0),
+            //    Margin = new Thickness(0, 5, 0, 5),
+            //    IsClippedToBounds = true,
+            //    HorizontalOptions = LayoutOptions.FillAndExpand
+            //};
+            //Button ExercisesButton = new Button()
+            //{
+            //    Text = exercises.Name,
+            //    WidthRequest = 100,
+            //    HeightRequest = 60,
+            //    BackgroundColor = Color.FromHex("#262626"),
+            //    TextColor = Color.White,
+            //};
+            //ExercisesButton.Clicked += YourButtonClick;
+            ////Done 2
+            //TextFrame.Content = ExercisesButton;
 
-            Frame PercentFrame = new Frame()
-            {
-                CornerRadius = 10,
-                Padding = new Thickness(0),
-                Margin = new Thickness(2, 5, 0, 5),
-                BackgroundColor = Color.FromHex("#262626"),
-                WidthRequest = 60
-            };
-            Label PercentLabel = new Label()
-            {
-                Text = exercises.Percent.ToString() + "%",
-                TextColor = Color.White,
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center
-            };
-            //Done 3
-            PercentFrame.Content = PercentLabel;
+            //Frame PercentFrame = new Frame()
+            //{
+            //    CornerRadius = 10,
+            //    Padding = new Thickness(0),
+            //    Margin = new Thickness(2, 5, 0, 5),
+            //    BackgroundColor = Color.FromHex("#262626"),
+            //    WidthRequest = 60
+            //};
+            //Label PercentLabel = new Label()
+            //{
+            //    Text = exercises.Percent.ToString() + "%",
+            //    TextColor = Color.White,
+            //    HorizontalOptions = LayoutOptions.Center,
+            //    VerticalOptions = LayoutOptions.Center
+            //};
+            ////Done 3
+            //PercentFrame.Content = PercentLabel;
 
-            Frame SucsessFrame = new Frame()
-            {
-                CornerRadius = 10,
-                Padding = new Thickness(0),
-                Margin = new Thickness(2, 5, 5, 5),
-                BackgroundColor = Color.FromHex("#262626"),
-                WidthRequest = 60
-            };
+            //Frame SucsessFrame = new Frame()
+            //{
+            //    CornerRadius = 10,
+            //    Padding = new Thickness(0),
+            //    Margin = new Thickness(2, 5, 5, 5),
+            //    BackgroundColor = Color.FromHex("#262626"),
+            //    WidthRequest = 60
+            //};
 
-            Label SucsessLabel = new Label()
-            {
-                Text = exercises.Sucsess,
-                TextColor = Color.White,
-                HorizontalOptions = LayoutOptions.Center,
-                VerticalOptions = LayoutOptions.Center
-            };
-            //done 4
-            SucsessFrame.Content = SucsessLabel;
+            //Label SucsessLabel = new Label()
+            //{
+            //    Text = exercises.Sucsess,
+            //    TextColor = Color.White,
+            //    HorizontalOptions = LayoutOptions.Center,
+            //    VerticalOptions = LayoutOptions.Center
+            //};
+            ////done 4
+            //SucsessFrame.Content = SucsessLabel;
 
-            stackLayout.Children.Add(PictureFrame);
-            stackLayout.Children.Add(TextFrame);
-            stackLayout.Children.Add(PercentFrame);
-            stackLayout.Children.Add(SucsessFrame);
+            //stackLayout.Children.Add(PictureFrame);
+            //stackLayout.Children.Add(TextFrame);
+            //stackLayout.Children.Add(PercentFrame);
+            //stackLayout.Children.Add(SucsessFrame);
 
-            return stackLayout;
-        }
+            //return stackLayout;
+        //}
         private void YourButtonClick(object sender, EventArgs e)
         {
-            Button button = sender as Button;
-            StackLayout stack = button.Parent.Parent as StackLayout;
-            int ButtonIndex = ExercisesStackLayout.Children.IndexOf(stack);
-            Exercises.CurrentExercises = ExercisesList[ButtonIndex];
-            Navigation.PushAsync(new CurrentExercise());
+            //Button button = sender as Button;
+            //StackLayout stack = button.Parent.Parent as StackLayout;
+            //int ButtonIndex = ExercisesStackLayout.Children.IndexOf(stack);
+            //Exercises.CurrentExercises = ExercisesList[ButtonIndex];
+            //Navigation.PushAsync(new CurrentExercise());
         }
     }
 }
