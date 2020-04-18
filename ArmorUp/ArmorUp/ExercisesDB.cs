@@ -11,6 +11,6 @@ namespace ArmorUp
         [DataMember]
         public List<Exercises> ExercisesList = new List<Exercises>();
         [DataMember]
-        public static ExercisesDB CurrentExercisesList;
+        public static ExercisesDB CurrentExercisesList { get; set; }
     }
 }

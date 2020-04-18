@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Json;
-using System.Text;
 
 namespace ArmorUp
 {
@@ -12,14 +10,22 @@ namespace ArmorUp
         {
             var json_formatter = new DataContractJsonSerializer(typeof(ExercisesDB));
 
-            using (var file = new FileStream("ExercisesList.json", FileMode.Create))
+            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+
+            var path = Path.Combine(documentsPath, "ExercisesList.json");
+
+            using (var file = new FileStream(path, FileMode.Create))
                 json_formatter.WriteObject(file, exercises_List);
         }
         public ExercisesDB LOAD_USER()
         {
             var json_formatter = new DataContractJsonSerializer(typeof(ExercisesDB));
 
-            using (var file = new FileStream("ExercisesList.json", FileMode.OpenOrCreate))
+            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+
+            var path = Path.Combine(documentsPath, "ExercisesList.json");
+
+            using (var file = new FileStream(path, FileMode.OpenOrCreate))
             {
                 var user_list = json_formatter.ReadObject(file) as ExercisesDB;
                 if (user_list != null)

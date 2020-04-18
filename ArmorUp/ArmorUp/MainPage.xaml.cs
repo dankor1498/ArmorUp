@@ -8,6 +8,13 @@ namespace ArmorUp
         public MainPage()
         {
             InitializeComponent();
+            DBSaverLoader dBSaverLoader = new DBSaverLoader();
+            try
+            {
+                ExercisesDB.CurrentExercisesList = dBSaverLoader.LOAD_USER();
+            }
+            catch (Exception) { }
+
             Detail = new NavigationPage(new ProfilePage());
             IsPresented = false;
         }

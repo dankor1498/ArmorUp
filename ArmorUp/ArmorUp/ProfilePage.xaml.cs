@@ -14,13 +14,7 @@ namespace ArmorUp
         public ProfilePage()
         {
             InitializeComponent();
-            DBSaverLoader dBSaverLoader = new DBSaverLoader();
             try
-            {
-                ExercisesDB.CurrentExercisesList = dBSaverLoader.LOAD_USER();
-            }
-            catch (Exception) { }
-            if (ExercisesDB.CurrentExercisesList.ExercisesList != null)
             {
                 foreach (var exercises in ExercisesDB.CurrentExercisesList.ExercisesList)
                 {
@@ -32,8 +26,9 @@ namespace ArmorUp
                         Text = exercises.PrintExercises(),
                     };
                     AllExercisesStackLayout.Children.Add(label);
-                }                    
+                }
             }
+            catch (Exception) { }
         }
         private void NewExercisePage_Clicked(object sender, EventArgs e)
         {
