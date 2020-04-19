@@ -12,18 +12,16 @@ namespace ArmorUp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProfilePage : ContentPage
     {
+        
         public ProfilePage()
         {
             InitializeComponent();
-            try
+            foreach (var item in App.MainTableList)
             {
-                foreach (var exercises in ExercisesDB.CurrentExercisesList.ExercisesList)
-                {
-                    AllExercisesStackLayout.Children.Add(AddExercisesToProfilePage(exercises));
-                }
+                AllExercisesStackLayout.Children.Add(AddExercisesToProfilePage(item));
             }
-            catch (Exception) { }
         }
+
         private void NewExercisePage_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new NewExercisePage());
@@ -38,7 +36,7 @@ namespace ArmorUp
         {
             Navigation.PushAsync(new ProfilePage());
         }
-        private StackLayout AddExercisesToProfilePage(Exercises exercises)
+        private StackLayout AddExercisesToProfilePage(MainTable mainTable)
         {
             StackLayout stackLayout = new StackLayout()
             {
@@ -56,12 +54,13 @@ namespace ArmorUp
             };
             Button button = new Button()
             {
-                Text = exercises.Name,
+                ClassId = mainTable.ID.ToString(),
+                Text = mainTable.Name,
                 WidthRequest = 95,
                 HeightRequest = 60,
                 BackgroundColor = Color.FromHex("#262626"),
                 TextColor = Color.White
-            };
+            };     
             button.Clicked += YourButtonClick;
 
             Frame frame1 = new Frame()
@@ -74,6 +73,7 @@ namespace ArmorUp
             };
             Button button1 = new Button()
             {
+                ClassId = mainTable.ID.ToString(),
                 Text = "Del",
                 WidthRequest = 5,
                 HeightRequest = 60,
@@ -93,17 +93,15 @@ namespace ArmorUp
         {
             Button button = sender as Button;
             StackLayout stack = button.Parent.Parent as StackLayout;
-            int ButtonIndex = AllExercisesStackLayout.Children.IndexOf(stack);
-            Exercises.CurrentExId = ButtonIndex;
-            Exercises.CurrentExercises = ExercisesDB.CurrentExercisesList.ExercisesList[ButtonIndex];
+            Exercises.CurrentExercisesId = int.Parse(button.ClassId);
             Navigation.PushAsync(new CurrentExercise());
         }
         private void DeleteExerciseButton_Click(object sender, EventArgs e)
         {
             Button button = sender as Button;
             StackLayout stack = button.Parent.Parent as StackLayout;
-            int ButtonIndex = AllExercisesStackLayout.Children.IndexOf(stack);
-            ExercisesDB.CurrentExercisesList.ExercisesList.RemoveAt(ButtonIndex);
+            App.Database.DeleteItem(int.Parse(button.ClassId));
+            App.UpdateMainTableList();
             Navigation.PushAsync(new ProfilePage());
         }
     }

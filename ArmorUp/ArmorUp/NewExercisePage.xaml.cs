@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,13 +7,13 @@ namespace ArmorUp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewExercisePage : ContentPage
     {
-        static int CountClick = 1;
+        private static int CountClick = 1;
+
         public NewExercisePage()
         {
             InitializeComponent();
             CountClick = 1;
         }
-
 
         private void AddApproachButton__Clicked(object sender, EventArgs e)
         {
@@ -34,21 +30,21 @@ namespace ArmorUp
 
         private void CreateApproachButton_Clicked(object sender, EventArgs e)
         {
-            Exercises NewExercises = new Exercises();
             if (NameEntry != null && PurposeEntry != null && TypePicker.SelectedIndex != -1)
             {
-                switch(TypePicker.SelectedIndex)
+                switch (TypePicker.SelectedIndex)
                 {
-                    case 0: NewExercises = new ExercisesCount()
-                    {
-                        Name = NameEntry.Text,
-                        Information = InformationEditor.Text,
-                        LinkName = NameLinkEntry.Text,
-                        LinkURL = UrlLinkEntry.Text,
-                        Purpose = Int32.Parse(PurposeEntry.Text)
-                    }; break;
+                    case 0:
+                        DBSaverLoader.SAVE_EXERCISE(new ExercisesCount()
+                        {
+                            Name = NameEntry.Text,
+                            Information = InformationEditor.Text,
+                            LinkName = NameLinkEntry.Text,
+                            LinkURL = UrlLinkEntry.Text,
+                            Purpose = Int32.Parse(PurposeEntry.Text)
+                        }, App.Database);
+                        App.UpdateMainTableList(); break;
                 }
-                ExercisesDB.CurrentExercisesList.ExercisesList.Add(NewExercises);
             }
             Navigation.PushAsync(new ProfilePage());
         }

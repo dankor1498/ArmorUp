@@ -1,35 +1,41 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.Serialization.Json;
+using SQLite;
+
+//@"C:\Users\Danyil Korotych\Desktop\ConsoleApp1\JSON\"
 
 namespace ArmorUp
 {
-    class DBSaverLoader
+    public class DBSaverLoader
     {
-        public void SAVE_USER(ExercisesDB exercises_List)
+        static DataContractJsonSerializer json_formatter = new DataContractJsonSerializer(typeof(Exercises));
+        public static string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+
+        static public void SAVE_EXERCISE(Exercises exercises, MainTableRepository Database)
         {
-            var json_formatter = new DataContractJsonSerializer(typeof(ExercisesDB));
+            string stringID = Guid.NewGuid().ToString();
+            Database.SaveItem(new MainTable() { StringID = stringID, Name = exercises.Name });
 
-            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            ExercisesTableRepository exercisesFileRepository = new ExercisesTableRepository(documentsPath + stringID + ".db");
+            exercisesFileRepository.CreateTable();
 
-            var path = Path.Combine(documentsPath, "ExercisesList.json");
+            var path = Path.Combine(documentsPath, stringID + ".json");
 
             using (var file = new FileStream(path, FileMode.Create))
-                json_formatter.WriteObject(file, exercises_List);
+                json_formatter.WriteObject(file, exercises);
         }
-        public ExercisesDB LOAD_USER()
+
+        static public ExercisesCount LOAD_EXERCISE(int id, MainTableRepository Database)
         {
-            var json_formatter = new DataContractJsonSerializer(typeof(ExercisesDB));
-
-            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-
-            var path = Path.Combine(documentsPath, "ExercisesList.json");
+            var item = Database.GetItem(id);
+            var path = Path.Combine(documentsPath, item.StringID + ".json");
 
             using (var file = new FileStream(path, FileMode.OpenOrCreate))
             {
-                var user_list = json_formatter.ReadObject(file) as ExercisesDB;
-                if (user_list != null)
-                    return user_list;
+                var exercises = json_formatter.ReadObject(file) as ExercisesCount;
+                if (exercises != null)
+                    return exercises;
             }
             return null;
         }

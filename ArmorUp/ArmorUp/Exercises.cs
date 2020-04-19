@@ -15,9 +15,8 @@ namespace ArmorUp
         public string LinkName { get; set; }
         [DataMember]
         public string LinkURL { get; set; }
-        public static int CurrentExId { get; set; }
-        public static Exercises CurrentExercises { get; set; }
 
+        public static int CurrentExercisesId { get; set; }
         public virtual string PrintExercises()//метод для тесту
         {
             return String.Format($"{this.Name}\n{this.Information}" +

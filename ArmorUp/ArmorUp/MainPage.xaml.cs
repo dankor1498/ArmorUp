@@ -9,30 +9,18 @@ namespace ArmorUp
         public MainPage()
         {
             InitializeComponent();
-            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            var path = Path.Combine(documentsPath, "ExercisesList.json");
-            if (File.Exists(path))
-            {
-                DBSaverLoader dBSaverLoader = new DBSaverLoader();
-                try
-                {
-                    ExercisesDB.CurrentExercisesList = dBSaverLoader.LOAD_USER();
-                }
-                catch (Exception) { }
-            }
-            else
-            {
-                ExercisesDB.CurrentExercisesList = new ExercisesDB();
-            }
             Detail = new NavigationPage(new ProfilePage());
             IsPresented = false;
         }
 
         private void Exit_Clicked(object sender, EventArgs e)
         {
-            DBSaverLoader dBSaverLoader = new DBSaverLoader();
-            if (ExercisesDB.CurrentExercisesList.ExercisesList.Count != 0)
-                dBSaverLoader.SAVE_USER(ExercisesDB.CurrentExercisesList);
+            for (int i = 0; i < ExercisesTest.exercisesTest.Count; i++)
+            {
+                DBSaverLoader.SAVE_EXERCISE(ExercisesTest.exercisesTest[i], App.Database);                
+            }
+            App.UpdateMainTableList();
+            Navigation.PushAsync(new ProfilePage());
         }
     }
 }

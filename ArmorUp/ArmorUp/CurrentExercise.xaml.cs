@@ -12,11 +12,13 @@ namespace ArmorUp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CurrentExercise : ContentPage
     {
+        ExercisesCount currentExercises = DBSaverLoader.LOAD_EXERCISE(Exercises.CurrentExercisesId, App.Database);
         public CurrentExercise()
         {
             InitializeComponent();
-            InfoEditor.Text = Exercises.CurrentExercises.Name;
-            UsfullLinkEditor.Text = Exercises.CurrentExercises.LinkName + "\n" + Exercises.CurrentExercises.LinkURL;
+            MissionLabel.Text = currentExercises.Purpose.ToString();
+            InfoEditor.Text = String.Format($"{currentExercises.Name}\n{currentExercises.Information}");
+            UsfullLinkEditor.Text = String.Format($"{currentExercises.LinkName}\n{currentExercises.LinkURL}");
         }
         private void NewExercisePage_Clicked(object sender, EventArgs e)
         {
@@ -27,6 +29,7 @@ namespace ArmorUp
         {
             Navigation.PushAsync(new StatisticPage());
         }
+
         private void ProfileButton_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new ProfilePage());

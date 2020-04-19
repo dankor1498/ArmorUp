@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace ArmorUp
 {
@@ -15,6 +16,26 @@ namespace ArmorUp
                 BarBackgroundColor = Color.FromHex("#65186e"),
             };
         }
+
+        public static MainTableRepository database;
+
+        public static MainTableRepository Database
+        {
+            get
+            {
+                if (database == null)
+                {
+                    database = new MainTableRepository(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "table.db"));
+                }
+                return database;
+            }
+        }
+
+        public static IEnumerable<MainTable> MainTableList = Database.GetItems();
+        public static void UpdateMainTableList()
+        {
+            MainTableList = Database.GetItems();
+        }      
 
         protected override void OnStart()
         {

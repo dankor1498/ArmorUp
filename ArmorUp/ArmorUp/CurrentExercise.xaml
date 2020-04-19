@@ -61,7 +61,7 @@
                                        WidthRequest="350"
                                        HeightRequest="60"
                                        BackgroundColor="#205be6">
-                                    <Label Text="Інформація про вправу" TextColor="White"
+                                    <Label Text="Назва та Інформація про вправу" TextColor="White"
                                            HorizontalOptions="Center"
                                            VerticalOptions="Center"
                                            FontFamily="Helvetica"
