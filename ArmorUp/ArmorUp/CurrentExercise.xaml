@@ -11,21 +11,21 @@
             <StackLayout Orientation="Vertical" VerticalOptions="Start">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
                     <Frame CornerRadius="10" Padding="0" Margin="5" IsClippedToBounds="True">
-                        <Image VerticalOptions="Center" 
+                        <Image VerticalOptions="Center"
                                    HorizontalOptions="Center"
                                    Source="CurrentExercises2.png"
                                    HeightRequest="175"
                                    WidthRequest="350"
-                                   Aspect="AspectFill"/>
+                                   Aspect="AspectFill" />
                     </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
                     <ScrollView>
                         <StackLayout Orientation="Vertical" Padding="5, 5, 5, 80">
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                                <Frame CornerRadius="10" 
-                                       Padding="0" 
-                                       Margin="5, 5, 0, 5" 
+                                <Frame CornerRadius="10"
+                                       Padding="0"
+                                       Margin="5, 5, 0, 5"
                                        IsClippedToBounds="True"
                                        WidthRequest="120"
                                        HeightRequest="60"
@@ -35,11 +35,11 @@
                                            VerticalOptions="Center"
                                            FontFamily="Helvetica"
                                            FontAttributes="Bold"
-                                           FontSize="20"/>
+                                           FontSize="20" />
                                 </Frame>
-                                <Frame CornerRadius="10" 
-                                       Padding="0" 
-                                       Margin="0,5,5,5" 
+                                <Frame CornerRadius="10"
+                                       Padding="0"
+                                       Margin="0,5,5,5"
                                        IsClippedToBounds="True"
                                        WidthRequest="225"
                                        HeightRequest="60"
@@ -50,13 +50,13 @@
                                            FontFamily="Helvetica"
                                            FontAttributes="Bold"
                                            FontSize="20"
-                                           x:Name="MissionLabel"/>
+                                           x:Name="MissionLabel" />
                                 </Frame>
                             </StackLayout>
-                            <BoxView Color="White" HeightRequest="1"/>
+                            <BoxView Color="White" HeightRequest="1" />
                             <StackLayout Orientation="Vertical" HorizontalOptions="Center">
-                                <Frame CornerRadius="10" 
-                                       Padding="0" 
+                                <Frame CornerRadius="10"
+                                       Padding="0"
                                        IsClippedToBounds="True"
                                        WidthRequest="350"
                                        HeightRequest="60"
@@ -66,7 +66,7 @@
                                            VerticalOptions="Center"
                                            FontFamily="Helvetica"
                                            FontAttributes="Bold"
-                                           FontSize="20"/>
+                                           FontSize="20" />
                                 </Frame>
                                 <Frame CornerRadius="10"
                                        Padding="0"
@@ -80,13 +80,13 @@
                                             Margin="5"
                                             FontFamily="Helvetica"
                                             x:Name="InfoEditor"
-                                            IsReadOnly="True"/>
+                                            IsReadOnly="True" />
                                 </Frame>
                             </StackLayout>
-                            <BoxView Color="White" HeightRequest="1" Margin="0, 5, 0, 5"/>
+                            <BoxView Color="White" HeightRequest="1" Margin="0, 5, 0, 5" />
                             <StackLayout Orientation="Vertical" HorizontalOptions="Center">
-                                <Frame CornerRadius="10" 
-                                       Padding="0" 
+                                <Frame CornerRadius="10"
+                                       Padding="0"
                                        IsClippedToBounds="True"
                                        WidthRequest="350"
                                        HeightRequest="60"
@@ -96,7 +96,7 @@
                                            VerticalOptions="Center"
                                            FontFamily="Helvetica"
                                            FontAttributes="Bold"
-                                           FontSize="20"/>
+                                           FontSize="20" />
                                 </Frame>
                                 <Frame CornerRadius="10"
                                        Padding="0"
@@ -110,13 +110,13 @@
                                             Margin="5"
                                             FontFamily="Helvetica"
                                             x:Name="UsfullLinkEditor"
-                                            IsReadOnly="True"/>
+                                            IsReadOnly="True" />
                                 </Frame>
                             </StackLayout>
-                            <BoxView Color="White" HeightRequest="1" Margin="0, 5, 0, 5"/>
+                            <BoxView Color="White" HeightRequest="1" Margin="0, 5, 0, 5" />
                             <StackLayout Orientation="Vertical" HorizontalOptions="Center">
-                                <Frame CornerRadius="10" 
-                                       Padding="0" 
+                                <Frame CornerRadius="10"
+                                       Padding="0"
                                        IsClippedToBounds="True"
                                        WidthRequest="350"
                                        HeightRequest="60"
@@ -126,7 +126,7 @@
                                            VerticalOptions="Center"
                                            FontFamily="Helvetica"
                                            FontAttributes="Bold"
-                                           FontSize="20"/>
+                                           FontSize="20" />
                                 </Frame>
                                 <Frame CornerRadius="10"
                                        Padding="0"
@@ -134,13 +134,13 @@
                                        WidthRequest="350"
                                        HeightRequest="120"
                                        BackgroundColor="#292929">
-                                    <Editor TextColor="White"
+                                    <Editor x:Name="ProgressForToday"  TextColor="White"
                                             Text=""
                                             FontSize="16"
                                             Margin="5"
-                                            FontFamily="Helvetica"
-                                            x:Name="ProgressForToday"/>
+                                            FontFamily="Helvetica" />
                                 </Frame>
+                                <Button x:Name="SendButton" Text="Відправити" Clicked="SendButton_Clicked" />
                             </StackLayout>
                         </StackLayout>
                     </ScrollView>
@@ -149,40 +149,40 @@
             <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" BackgroundColor="Black">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0, 5, 0, 0">
                     <StackLayout Orientation="Vertical" Spacing="0">
-                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="train.png" VerticalOptions="Start" HorizontalOptions="Center"/>
-                        <Button HeightRequest="33" 
-                                Text="Statistics" 
-                                FontSize="10" 
-                                WidthRequest="110" 
+                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="train.png" VerticalOptions="Start" HorizontalOptions="Center" />
+                        <Button HeightRequest="33"
+                                Text="Statistics"
+                                FontSize="10"
+                                WidthRequest="110"
                                 HorizontalOptions="Center"
                                 TextColor="White"
-                                BackgroundColor="#292929" 
+                                BackgroundColor="#292929"
                                 Margin="0, 5, 0, 5"
-                                Clicked="StatisticsButton_Clicked"/>
+                                Clicked="StatisticsButton_Clicked" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Spacing="0">
-                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="Profile.png" VerticalOptions="Start" HorizontalOptions="Center"/>
-                        <Button HeightRequest="33" 
-                                Text="Profile" 
-                                FontSize="10" 
-                                WidthRequest="110" 
-                                HorizontalOptions="CenterAndExpand" 
+                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="Profile.png" VerticalOptions="Start" HorizontalOptions="Center" />
+                        <Button HeightRequest="33"
+                                Text="Profile"
+                                FontSize="10"
+                                WidthRequest="110"
+                                HorizontalOptions="CenterAndExpand"
                                 VerticalOptions="CenterAndExpand"
                                 TextColor="White"
                                 BackgroundColor="#292929" Margin="0, 5, 0, 5"
-                                Clicked="ProfileButton_Clicked"/>
+                                Clicked="ProfileButton_Clicked" />
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Spacing="0">
-                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="Exercises.png" VerticalOptions="Start" HorizontalOptions="Center"/>
-                        <Button HeightRequest="33" 
+                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="Exercises.png" VerticalOptions="Start" HorizontalOptions="Center" />
+                        <Button HeightRequest="33"
                                 Text="Exercises"
                                 Clicked="NewExercisePage_Clicked"
-                                FontSize="10" 
-                                WidthRequest="110" 
+                                FontSize="10"
+                                WidthRequest="110"
                                 HorizontalOptions="Center"
                                 TextColor="White"
-                                BackgroundColor="#292929" 
-                                Margin="0, 5, 0, 5"/>
+                                BackgroundColor="#292929"
+                                Margin="0, 5, 0, 5" />
                     </StackLayout>
                 </StackLayout>
             </StackLayout>

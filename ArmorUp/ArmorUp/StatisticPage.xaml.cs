@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;   
@@ -37,6 +38,21 @@ namespace ArmorUp
 
         private StackLayout AddStatisticByExercise(MainTable mainTable)
         {
+            ExercisesCount currentExercises = DBSaverLoader.LOAD_EXERCISE(mainTable.ID, App.Database);
+            var currentExercisesArray = new ExercisesTableRepository(Path.Combine(DBSaverLoader.documentsPath, mainTable.StringID + ".db")).GetItems();
+            int currentExercisesArrayLength = currentExercisesArray.Length;
+            int progress = 0;
+            double percent = 0.0;
+            if(currentExercisesArrayLength >= 2)
+            {
+                progress = currentExercisesArray[currentExercisesArrayLength - 1].Count - currentExercisesArray[currentExercisesArrayLength - 2].Count;
+                percent = (double)currentExercisesArray[currentExercisesArrayLength - 1].Count / (double)currentExercises.Purpose * 100.0;
+            }
+            if(currentExercisesArrayLength == 1)
+            {
+                percent = (double)currentExercisesArray[0].Count / (double)currentExercises.Purpose * 100.0;
+            }
+
             StackLayout stackLayout = new StackLayout()
             {
                 Orientation = StackOrientation.Horizontal
@@ -91,7 +107,7 @@ namespace ArmorUp
             };
             Label PercentLabel = new Label()
             {
-                Text = "50%",
+                Text = (int)percent + "%",
                 TextColor = Color.White,
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center
@@ -110,7 +126,7 @@ namespace ArmorUp
 
             Label SucsessLabel = new Label()
             {
-                Text = "+4",
+                Text = progress > 0 ? "+" + progress : progress.ToString(),
                 TextColor = Color.White,
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center
@@ -127,11 +143,7 @@ namespace ArmorUp
         }
         private void YourButtonClick(object sender, EventArgs e)
         {
-            //Button button = sender as Button;
-            //StackLayout stack = button.Parent.Parent as StackLayout;
-            //int ButtonIndex = ExercisesStackLayout.Children.IndexOf(stack);
-            //Exercises.CurrentExercises = ExercisesList[ButtonIndex];
-            //Navigation.PushAsync(new CurrentExercise());
+           
         }
     }
 }

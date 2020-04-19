@@ -10,16 +10,13 @@ namespace ArmorUp
         SQLiteConnection database;
         public ExercisesTableRepository(string databasePath)
         {
-            database = new SQLiteConnection(databasePath);            
-        }
-
-        public void CreateTable()
-        {
+            database = new SQLiteConnection(databasePath);
             database.CreateTable<ExercisesTable>();
         }
-        public IEnumerable<ExercisesTable> GetItems()
+
+        public ExercisesTable[] GetItems()
         {
-            return database.Table<ExercisesTable>().ToList();
+            return database.Table<ExercisesTable>().ToArray();
         }
         public ExercisesTable GetItem(int id)
         {

@@ -18,7 +18,6 @@ namespace ArmorUp
             Database.SaveItem(new MainTable() { StringID = stringID, Name = exercises.Name });
 
             ExercisesTableRepository exercisesFileRepository = new ExercisesTableRepository(documentsPath + stringID + ".db");
-            exercisesFileRepository.CreateTable();
 
             var path = Path.Combine(documentsPath, stringID + ".json");
 
