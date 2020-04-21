@@ -14,9 +14,17 @@ namespace ArmorUp
             database = new SQLiteConnection(databasePath);
             database.CreateTable<MainTable>();
         }
-        public IEnumerable<MainTable> GetItems()
+
+        public int Count
         {
-            return database.Table<MainTable>().ToList();
+            get
+            {
+                return database.Table<MainTable>().Count();
+            }
+        }
+        public MainTable[] GetItems()
+        {
+            return database.Table<MainTable>().ToArray();
         }
         public MainTable GetItem(int id)
         {

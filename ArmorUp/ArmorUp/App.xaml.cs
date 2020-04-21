@@ -31,10 +31,10 @@ namespace ArmorUp
             }
         }
 
-        public static IEnumerable<MainTable> MainTableList = Database.GetItems();
+        public static MainTable[] MainTableArray = Database.GetItems();
         public static void UpdateMainTableList()
         {
-            MainTableList = Database.GetItems();
+            MainTableArray = Database.GetItems();
         }      
 
         protected override void OnStart()

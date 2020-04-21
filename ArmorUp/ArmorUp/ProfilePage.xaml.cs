@@ -11,12 +11,11 @@ namespace ArmorUp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProfilePage : ContentPage
-    {
-        
+    {        
         public ProfilePage()
         {
             InitializeComponent();
-            foreach (var item in App.MainTableList)
+            foreach (var item in App.MainTableArray)
             {
                 AllExercisesStackLayout.Children.Add(AddExercisesToProfilePage(item));
             }
@@ -56,7 +55,7 @@ namespace ArmorUp
             {
                 ClassId = mainTable.ID.ToString(),
                 Text = mainTable.Name,
-                WidthRequest = 95,
+                WidthRequest = 90,
                 HeightRequest = 60,
                 BackgroundColor = Color.FromHex("#262626"),
                 TextColor = Color.White
@@ -82,24 +81,51 @@ namespace ArmorUp
             };
             button1.Clicked += DeleteExerciseButton_Click;
 
+            Frame frame2 = new Frame()
+            {
+                CornerRadius = 10,
+                Padding = new Thickness(0),
+                Margin = new Thickness(0, 5, 0, 5),
+                IsClippedToBounds = true,
+                HorizontalOptions = LayoutOptions.FillAndExpand
+            };
+            Button button2 = new Button()
+            {
+                ClassId = mainTable.ID.ToString(),
+                Text = "Upd",
+                WidthRequest = 5,
+                HeightRequest = 60,
+                BackgroundColor = Color.FromHex("#262626"),
+                TextColor = Color.White
+            };
+            button2.Clicked += UpdateExerciseButton_Click;
+
             frame.Content = button;
             frame1.Content = button1;
+            frame2.Content = button2;
             stackLayout.Children.Add(frame);
             stackLayout.Children.Add(frame1);
+            stackLayout.Children.Add(frame2);
 
             return stackLayout;
         }
-        private void YourButtonClick(object sender, EventArgs e)
+
+        private void UpdateExerciseButton_Click(object sender, EventArgs e)
         {
             Button button = sender as Button;
-            StackLayout stack = button.Parent.Parent as StackLayout;
+            Exercises.CurrentExercisesId = int.Parse(button.ClassId);
+            Navigation.PushAsync(new UpdateExercisePage());
+        }
+
+        private void YourButtonClick(object sender, EventArgs e)
+        {
+            Button button = sender as Button;            
             Exercises.CurrentExercisesId = int.Parse(button.ClassId);
             Navigation.PushAsync(new CurrentExercise());
         }
         private void DeleteExerciseButton_Click(object sender, EventArgs e)
         {
-            Button button = sender as Button;
-            StackLayout stack = button.Parent.Parent as StackLayout;
+            Button button = sender as Button;            
             App.Database.DeleteItem(int.Parse(button.ClassId));
             App.UpdateMainTableList();
             Navigation.PushAsync(new ProfilePage());

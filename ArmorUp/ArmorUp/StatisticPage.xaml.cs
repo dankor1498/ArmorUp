@@ -15,7 +15,7 @@ namespace ArmorUp
         public StatisticPage()
         {
             InitializeComponent();
-            foreach (var item in App.MainTableList)
+            foreach (var item in App.MainTableArray)
             {
                 ExercisesStackLayout.Children.Add(AddStatisticByExercise(item));
             }
@@ -38,19 +38,21 @@ namespace ArmorUp
 
         private StackLayout AddStatisticByExercise(MainTable mainTable)
         {
-            ExercisesCount currentExercises = DBSaverLoader.LOAD_EXERCISE(mainTable.ID, App.Database);
-            var currentExercisesArray = new ExercisesTableRepository(Path.Combine(DBSaverLoader.documentsPath, mainTable.StringID + ".db")).GetItems();
-            int currentExercisesArrayLength = currentExercisesArray.Length;
+            var exercisesTableRepository = new ExercisesTableRepository(Path.Combine(DBSaverLoader.documentsPath, mainTable.StringID + ".db"));
+            int exercisesTableLength = exercisesTableRepository.Count;
+            var lastItem = exercisesTableLength == 0 ? null : exercisesTableRepository.GetItem(exercisesTableLength);
+            double purpose = double.Parse(mainTable.Purpose);
             int progress = 0;
             double percent = 0.0;
-            if(currentExercisesArrayLength >= 2)
+            if(exercisesTableLength >= 2)
             {
-                progress = currentExercisesArray[currentExercisesArrayLength - 1].Count - currentExercisesArray[currentExercisesArrayLength - 2].Count;
-                percent = (double)currentExercisesArray[currentExercisesArrayLength - 1].Count / (double)currentExercises.Purpose * 100.0;
+                var penultItem = exercisesTableRepository.GetItem(exercisesTableLength - 1);
+                progress = lastItem.Count - penultItem.Count;
+                percent = (double)lastItem.Count / purpose * 100.0;
             }
-            if(currentExercisesArrayLength == 1)
+            if(exercisesTableLength == 1)
             {
-                percent = (double)currentExercisesArray[0].Count / (double)currentExercises.Purpose * 100.0;
+                percent = (double)lastItem.Count / purpose * 100.0;
             }
 
             StackLayout stackLayout = new StackLayout()

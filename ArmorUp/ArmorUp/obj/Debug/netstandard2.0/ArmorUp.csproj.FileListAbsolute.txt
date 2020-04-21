@@ -99,3 +99,4 @@ G:\All\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.csproj.CoreCompi
 G:\All\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\XamlC.stamp
 E:\Documents\Predmety\Mobile\WorkFolder2\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.csproj.CoreCompileInputs.cache
 E:\Documents\Predmety\Mobile\WorkFolder2\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\XamlC.stamp
+E:\Documents\Predmety\Mobile\WorkFolder2\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\UpdateExercisePage.xaml.g.cs

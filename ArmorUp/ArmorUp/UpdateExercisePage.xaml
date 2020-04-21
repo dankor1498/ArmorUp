@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ArmorUp.UpdateExercisePage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="0">
+            <StackLayout x:Name="UpdateStackLayout">
+                <Label Text="New exercise" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Center" />
+                <Label Text="  Name: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Entry x:Name="NameEntry" Placeholder="" />
+                <Label Text="  Information: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Editor x:Name="InformationEditor"/>
+                <Label Text="  Link: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Label Text="   Name: " FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Entry x:Name="NameLinkEntry" Placeholder="" />
+                <Label Text="   URL: " FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Entry x:Name="UrlLinkEntry" Placeholder="" />
+                <Label x:Name="TypeLabel" Text="  Type: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Label Text="  Purpose: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Entry x:Name="PurposeEntry" Placeholder="" />                
+            </StackLayout>
+        </ScrollView>
+        <StackLayout Grid.Row="1">
+            <Button x:Name="UpdateApproachButton" Text="Update approach" Clicked="UpdateApproachButton_Clicked"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

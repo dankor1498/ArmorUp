@@ -15,7 +15,7 @@ namespace ArmorUp
         static public void SAVE_EXERCISE(Exercises exercises, MainTableRepository Database)
         {
             string stringID = Guid.NewGuid().ToString();
-            Database.SaveItem(new MainTable() { StringID = stringID, Name = exercises.Name });
+            Database.SaveItem(new MainTable() { StringID = stringID, Name = exercises.Name, Purpose = exercises.PurposeToString() });
 
             ExercisesTableRepository exercisesFileRepository = new ExercisesTableRepository(documentsPath + stringID + ".db");
 
@@ -37,6 +37,16 @@ namespace ArmorUp
                     return exercises;
             }
             return null;
+        }
+
+        static public void UPDATE_EXERCISE(int id, Exercises exercises, MainTableRepository Database)
+        {
+            var item = Database.GetItem(id);
+            Database.SaveItem(new MainTable { ID = id, Name = exercises.Name, StringID = item.StringID, Purpose = exercises.PurposeToString() });
+            var path = Path.Combine(documentsPath, item.StringID + ".json");
+
+            using (var file = new FileStream(path, FileMode.Create))
+                json_formatter.WriteObject(file, exercises);
         }
     }
 }

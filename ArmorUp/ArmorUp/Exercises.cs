@@ -5,7 +5,7 @@ namespace ArmorUp
 {
     [DataContract]
     [KnownType(typeof(ExercisesCount))]
-    public class Exercises
+    public abstract class Exercises
     {
         [DataMember]
         public string Name { get; set; }
@@ -16,6 +16,7 @@ namespace ArmorUp
         [DataMember]
         public string LinkURL { get; set; }
 
+        public abstract string PurposeToString();
         public static int CurrentExercisesId { get; set; }
         public virtual string PrintExercises()//метод для тесту
         {
