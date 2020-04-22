@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Syncfusion.SfGauge.XForms;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -29,28 +30,31 @@ namespace ArmorUp
         {
             InitializeComponent();
 
-            ExerciseName.Text = currentExercises.Name;
-            var percent = GetPercent(currentExercises);
-
-            PercentSFCircularGaugeLabel.Text = percent.ToString() + "%";
-            ProgresSFCircularGauge.Value = (int)percent;
-            CheckForProgress(ProgresLabelWithConclusion, currentExercises);
-            ProgresLabel.Text = GetProgressInCorrectFormat(currentExercises);
-
-            var array = exercisesTableRepository.GetItems();
-
-            for (int i = 0; i < exercisesTableRepository.Count; ++i)
+            if (exercisesTableRepository.Count != 0)
             {
-                var exerciseHist = array[i];
-                //data
-                var dataHist = exerciseHist.Data.ToString();
-                //percent
-                var percentHist = GetPercent(currentExercises, exerciseHist);
-                //Progress
-                string progressHist = "0";
-                if (i != 0)
-                    progressHist = GetProgress(array, i);
-                ExerciseByDataStackLayout.Children.Add(CreateNewItem(dataHist, percentHist, progressHist));
+                ExerciseName.Text = currentExercises.Name;
+                var percent = GetPercent(currentExercises);
+
+                PercentSFCircularGaugeLabel.Text = ((int)percent).ToString() + "%";
+                ProgresSFCircularGauge.Value = (int)percent;
+                CheckForProgress(ProgresLabelWithConclusion, currentExercises, ProgresSFCircularGauge, ProgresLabel);
+                ProgresLabel.Text = GetProgressInCorrectFormat(currentExercises);
+
+                var array = exercisesTableRepository.GetItems();
+
+                for (int i = 0; i < exercisesTableRepository.Count; ++i)
+                {
+                    var exerciseHist = array[i];
+                    //data
+                    var dataHist = exerciseHist.Data.ToString();
+                    //percent
+                    var percentHist = (int)GetPercent(currentExercises, exerciseHist);
+                    //Progress
+                    string progressHist = "0";
+                    if (i != 0)
+                        progressHist = GetProgress(array, i);
+                    ExerciseByDataStackLayout.Children.Add(CreateNewItem(dataHist, percentHist, progressHist));
+                }
             }
         }
         private string GetProgressInCorrectFormat(ExercisesCount mainTable)
@@ -99,18 +103,29 @@ namespace ArmorUp
             }
             return progress;
         }
-        private void CheckForProgress(Label label, ExercisesCount mainTable)
+        private void CheckForProgress(Label label, ExercisesCount mainTable, RangePointer rangePointer, Label label1)
         {
             int progress = GetProgress(mainTable);
             if (progress > 0)
             {
                 label.TextColor = Color.Green;
                 label.Text = "+" + $"{progress}" + " Good job!";
+                rangePointer.Color = Color.Green;
+                label1.TextColor = Color.Green;
             }
-            else
+            if (progress == 0)
+            {
+                label.TextColor = Color.White;
+                label.Text = $"{progress}" + " It's fine.";
+                rangePointer.Color = Color.FromHex("#205be6");
+                label1.TextColor = Color.FromHex("#205be6");
+            }
+            if (progress < 0)
             {
                 label.TextColor = Color.Red;
                 label.Text = $"{progress}" + " Bad job!";
+                rangePointer.Color = Color.Red;
+                label1.TextColor = Color.Red;
             }
         }
         private void NewExercisePage_Clicked(object sender, EventArgs e)
@@ -127,7 +142,7 @@ namespace ArmorUp
         {
             Navigation.PushAsync(new ProfilePage());
         }
-        private StackLayout CreateNewItem(string data, double percent, string progress)
+        private StackLayout CreateNewItem(string data, int percent, string progress)
         {
             StackLayout stackLayout = new StackLayout()
             {

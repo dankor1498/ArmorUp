@@ -40,7 +40,7 @@
                                         </StackLayout>
                                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                                             <Label x:Name="ProgresLabelWithConclusion" Margin="5"
-                                                   Text="+4 Good job!" TextColor="Green" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+                                                   Text="Nothing" TextColor="LightGray" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center"/>
                                         </StackLayout>
                                     </StackLayout>
                                 </Frame>
@@ -59,7 +59,7 @@
                                                 <gauge:SfCircularGauge.Annotations>
                                                     <gauge:GaugeAnnotation HorizontalAlignment="Center" VerticalAlignment="Center">
                                                         <gauge:GaugeAnnotation.View>
-                                                            <Label x:Name="PercentSFCircularGaugeLabel" Text="50%" TextColor="White" FontSize="25"/>
+                                                            <Label x:Name="PercentSFCircularGaugeLabel" Text="0%" TextColor="White" FontSize="25"/>
                                                         </gauge:GaugeAnnotation.View>
                                                     </gauge:GaugeAnnotation>
                                                 </gauge:SfCircularGauge.Annotations>
@@ -67,7 +67,7 @@
                                                     <gauge:Scale ShowLabels="False" ShowTicks="False" RimThickness="10" RadiusFactor="1" RimColor="#e0e0e0"
                                                                  StartAngle="270" SweepAngle="360" StartValue="0" EndValue="100" Interval="10">
                                                         <gauge:Scale.Pointers>
-                                                            <gauge:RangePointer x:Name="ProgresSFCircularGauge" Value="50" Offset="1" Thickness="10" RangeCap="Both" Color="#205be6"/>
+                                                            <gauge:RangePointer x:Name="ProgresSFCircularGauge" Value="0" Offset="1" Thickness="10" RangeCap="Both" Color="#205be6"/>
                                                         </gauge:Scale.Pointers>
                                                     </gauge:Scale>
                                                 </gauge:SfCircularGauge.Scales>
@@ -83,7 +83,7 @@
                                                    BackgroundColor="Black">
                                                 <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
                                                     <Label Text="General progres:" TextColor="White" FontSize="15"/>
-                                                    <Label x:Name="ProgresLabel" Text="45/90" TextColor="#205be6" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold"/>
+                                                    <Label x:Name="ProgresLabel" Text="0/0" TextColor="#205be6" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold"/>
                                                 </StackLayout>
                                             </Frame>
                                         </StackLayout>
