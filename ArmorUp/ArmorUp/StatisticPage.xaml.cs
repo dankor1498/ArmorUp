@@ -145,7 +145,7 @@ namespace ArmorUp
         }
         private void YourButtonClick(object sender, EventArgs e)
         {
-           
+            Navigation.PushAsync(new CurrentExerciseStatistic());
         }
     }
 }

@@ -4,6 +4,9 @@ SQLitePCLRaw.batteries_v2
 SQLitePCLRaw.core
 SQLitePCLRaw.lib.e_sqlite3
 SQLitePCLRaw.provider.e_sqlite3
+Syncfusion.Core.XForms.Android
+Syncfusion.SfGauge.Android
+Syncfusion.SfGauge.XForms.Android
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Core.Runtime
 Xamarin.Android.Arch.Lifecycle.Common

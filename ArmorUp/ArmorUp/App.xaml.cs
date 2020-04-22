@@ -9,6 +9,8 @@ namespace ArmorUp
     {
         public App()
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjQzMzg4QDMxMzgyZTMxMmUzME04UFpEaGZSZlBPcXpBaVBFS0ZBbFFPNVJXbkFVcEtvNnNBWlBlOXhNaEE9");
+
             InitializeComponent();
 
             MainPage = new NavigationPage(new ArmorUp.MainPage())
