@@ -89,6 +89,7 @@ namespace ArmorUp
             };
             Button ExercisesButton = new Button()
             {
+                ClassId = mainTable.ID.ToString(),
                 Text = mainTable.Name,
                 WidthRequest = 100,
                 HeightRequest = 60,
@@ -145,6 +146,8 @@ namespace ArmorUp
         }
         private void YourButtonClick(object sender, EventArgs e)
         {
+            Button button = sender as Button;
+            Exercises.CurrentExercisesId = int.Parse(button.ClassId);
             Navigation.PushAsync(new CurrentExerciseStatistic());
         }
     }
