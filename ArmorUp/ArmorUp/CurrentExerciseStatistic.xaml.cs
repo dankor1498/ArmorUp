@@ -17,7 +17,7 @@ namespace ArmorUp
     //ExerciseByDataStackLayout - динамічно створювати елементи в які передавати дату/процент/приріст для відповідних значень.
     public partial class CurrentExerciseStatistic : ContentPage
     {
-         private MainTable mainTable = App.Database.GetItem(Exercises.CurrentExercisesId);
+        private MainTable mainTable = App.Database.GetItem(Exercises.CurrentExercisesId);
         private ExerciseByDataViewModel exerciseByDataViewModel = new ExerciseByDataViewModel();
 
         public CurrentExerciseStatistic()
@@ -58,7 +58,7 @@ namespace ArmorUp
                         var exerciseHist = arrayExercisesCountTable[i];
                         var dataHist = exerciseHist.Data.ToString();
                         var percentHist = (int)GetPercent(mainTable.Purpose, arrayExercisesCountTable[i].Count);
-                        if (exerciseByDataViewModel.exerciseInfoByDates.Count != exercisesCountTableRepository.Count)
+                        if ((exerciseByDataViewModel.exerciseInfoByDates.Count != exercisesCountTableRepository.Count) && exerciseHist.Data.Month == DateTime.Now.Month)
                             exerciseByDataViewModel.exerciseInfoByDates.Add(new ExerciseInfoByDate() { Data = exerciseHist.Data.Day.ToString() + "/" + exerciseHist.Data.Month.ToString(), Count = exerciseHist.Count, Purpose = int.Parse(mainTable.Purpose) });
                         ExerciseByDataStackLayout.Children.Add(CreateNewItem(dataHist, percentHist, arrayExercisesCountTable[i].Count.ToString()));
                     }
@@ -93,13 +93,14 @@ namespace ArmorUp
                     ProgresLabel.Text = $"{LastCount}/{Purpose}";
                     for (int i = 0; i < exercisesApproachTableRepository.Count; ++i)
                     {
+                        LastCount = GetSum(arrayExercisesApproachTable[i].Count);
                         var exerciseHist = arrayExercisesApproachTable[i];
                         var dataHist = exerciseHist.Data.ToString();
                         int count = GetSum(arrayExercisesApproachTable[i].Count);
                         var percentHist = (int)GetPercent(Purpose, count);
-                        if (exerciseByDataViewModel.exerciseInfoByDates.Count != exercisesApproachTableRepository.Count)
+                        if ((exerciseByDataViewModel.exerciseInfoByDates.Count != exercisesApproachTableRepository.Count) && exerciseHist.Data.Month == DateTime.Now.Month)
                             exerciseByDataViewModel.exerciseInfoByDates.Add(new ExerciseInfoByDate() { Data = exerciseHist.Data.Day.ToString() + "/" + exerciseHist.Data.Month.ToString(), Count = count, Purpose = Purpose });
-                        ExerciseByDataStackLayout.Children.Add(CreateNewItem(dataHist, percentHist, arrayExercisesApproachTable[i].Count));
+                        ExerciseByDataStackLayout.Children.Add(CreateNewItem(dataHist, percentHist, $"{LastCount}/{Purpose}"));
                     }
                 }
             }
