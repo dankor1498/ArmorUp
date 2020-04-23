@@ -4,19 +4,52 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns:local="clr-namespace:ArmorUp"
              mc:Ignorable="d"
-             x:Class="ArmorUp.CurrentExerciseStatistic">
+             x:Class="ArmorUp.CurrentExerciseStatistic"
+             NavigationPage.HasNavigationBar="false">
+
+    <ContentPage.BindingContext>
+        <local:ExerciseByDataViewModel/>
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
         <Grid BackgroundColor="Black">
             <StackLayout Orientation="Vertical" VerticalOptions="Start">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="5">
-                    <Frame CornerRadius="10" Padding="0" Margin="5" IsClippedToBounds="True" HeightRequest="200" WidthRequest="350">
-                        <Image VerticalOptions="Center"
-                               HorizontalOptions="Center"
-                               Source="chart.png"
-                               Aspect="AspectFill"
-                               Margin="5, 0, 5, 0"/>
-                    </Frame>
+                <StackLayout>
+                    <chart:SfChart HeightRequest="200">
+
+                        <chart:SfChart.Title>
+                            <chart:ChartTitle Text="Purpose vs Count"/>
+                        </chart:SfChart.Title>
+
+                        <chart:SfChart.Legend>
+                            <chart:ChartLegend/>
+                        </chart:SfChart.Legend>
+
+                        <chart:SfChart.PrimaryAxis>
+                            <chart:CategoryAxis>
+                                <chart:CategoryAxis.Title>
+                                    <chart:ChartAxisTitle Text="Data"/>
+                                </chart:CategoryAxis.Title>
+                            </chart:CategoryAxis>
+                        </chart:SfChart.PrimaryAxis>
+
+                        <chart:SfChart.SecondaryAxis>
+                            <chart:NumericalAxis/>
+                        </chart:SfChart.SecondaryAxis>
+
+                        <chart:ColumnSeries ItemsSource="{Binding exerciseInfoByDates}"
+                            XBindingPath="Data"
+                            YBindingPath="Purpose"
+                            Label="Purpose"/>
+
+                        <chart:ColumnSeries ItemsSource="{Binding exerciseInfoByDates}"
+                            XBindingPath="Data"
+                            YBindingPath="Count"
+                            Label="Count"/>
+
+                    </chart:SfChart>
                 </StackLayout>
                 <BoxView Color="White" HeightRequest="1" />
                 <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
@@ -67,7 +100,7 @@
                                                     <gauge:Scale ShowLabels="False" ShowTicks="False" RimThickness="10" RadiusFactor="1" RimColor="#e0e0e0"
                                                                  StartAngle="270" SweepAngle="360" StartValue="0" EndValue="100" Interval="10">
                                                         <gauge:Scale.Pointers>
-                                                            <gauge:RangePointer x:Name="ProgresSFCircularGauge" Value="0" Offset="1" Thickness="10" RangeCap="Both" Color="#205be6"/>
+                                                            <gauge:RangePointer x:Name="ProgresSFCircularGauge" Value="0" Offset="1" Thickness="10" Color="#205be6"/>
                                                         </gauge:Scale.Pointers>
                                                     </gauge:Scale>
                                                 </gauge:SfCircularGauge.Scales>
@@ -83,7 +116,7 @@
                                                    BackgroundColor="Black">
                                                 <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
                                                     <Label Text="General progres:" TextColor="White" FontSize="15"/>
-                                                    <Label x:Name="ProgresLabel" Text="0/0" TextColor="#205be6" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold"/>
+                                                    <Label x:Name="ProgresLabel" Text="0/0" TextColor="White" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold"/>
                                                 </StackLayout>
                                             </Frame>
                                         </StackLayout>
@@ -94,59 +127,7 @@
                             <StackLayout Orientation="Vertical" x:Name="ExerciseByDataStackLayout">
                                 <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                                     <Label Text="This Exercise statistic by data" TextColor="White" FontSize="20"/>
-                                </StackLayout>
-                                <!--<StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="5"  WidthRequest="350" HeightRequest="60">
-                                    <Frame CornerRadius="10"
-                                           Padding="0"
-                                           IsClippedToBounds="True"
-                                           WidthRequest="230"
-                                           HeightRequest="60">
-                                        <Button WidthRequest="90" HeightRequest="60" BackgroundColor="#262626" TextColor="White"
-                                                Text="14.07.2000"/>
-                                    </Frame>
-                                    <Frame CornerRadius="10"
-                                           Padding="0"
-                                           IsClippedToBounds="True"
-                                           HeightRequest="60"
-                                           WidthRequest="60"
-                                           BackgroundColor="#262626">
-                                        <Label Text="71%" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    </Frame>
-                                    <Frame CornerRadius="10"
-                                           Padding="0"
-                                           IsClippedToBounds="True"
-                                           HeightRequest="60"
-                                           WidthRequest="60"
-                                           BackgroundColor="#262626">
-                                        <Label Text="+3" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    </Frame>
-                                </StackLayout>
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="5"  WidthRequest="350" HeightRequest="60">
-                                    <Frame CornerRadius="10"
-                                           Padding="0"
-                                           IsClippedToBounds="True"
-                                           WidthRequest="230"
-                                           HeightRequest="60">
-                                        <Button WidthRequest="90" HeightRequest="60" BackgroundColor="#262626" TextColor="White"
-                                                Text="17.07.2000"/>
-                                    </Frame>
-                                    <Frame CornerRadius="10"
-                                           Padding="0"
-                                           IsClippedToBounds="True"
-                                           HeightRequest="60"
-                                           WidthRequest="60"
-                                           BackgroundColor="#262626">
-                                        <Label Text="71%" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    </Frame>
-                                    <Frame CornerRadius="10"
-                                           Padding="0"
-                                           IsClippedToBounds="True"
-                                           HeightRequest="60"
-                                           WidthRequest="60"
-                                           BackgroundColor="#262626">
-                                        <Label Text="+3" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
-                                    </Frame>
-                                </StackLayout>-->
+                                </StackLayout>                               
                             </StackLayout>
                         </StackLayout>
                     </ScrollView>

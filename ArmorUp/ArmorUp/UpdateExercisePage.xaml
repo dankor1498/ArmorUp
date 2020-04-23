@@ -8,6 +8,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
+            <RowDefinition Height="130" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         <ScrollView Grid.Row="0">
@@ -23,11 +24,13 @@
                 <Label Text="   URL: " FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start" />
                 <Entry x:Name="UrlLinkEntry" Placeholder="" />
                 <Label x:Name="TypeLabel" Text="  Type: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
-                <Label Text="  Purpose: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
-                <Entry x:Name="PurposeEntry" Placeholder="" />                
-            </StackLayout>
+                <Label Text = "  Purpose: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+            </StackLayout>     
         </ScrollView>
-        <StackLayout Grid.Row="1">
+        <ScrollView Grid.Row="1">
+            <StackLayout x:Name="PurposeStackLayout"></StackLayout>
+        </ScrollView>            
+        <StackLayout Grid.Row="2">
             <Button x:Name="UpdateApproachButton" Text="Update approach" Clicked="UpdateApproachButton_Clicked"/>
         </StackLayout>
     </Grid>

@@ -14,6 +14,8 @@ public class MonoPackageManager_Resources {
 		"Syncfusion.Core.XForms.Android.dll",
 		"Syncfusion.Core.XForms.dll",
 		"Syncfusion.Licensing.dll",
+		"Syncfusion.SfChart.XForms.Android.dll",
+		"Syncfusion.SfChart.XForms.dll",
 		"Syncfusion.SfGauge.Android.dll",
 		"Syncfusion.SfGauge.XForms.Android.dll",
 		"Syncfusion.SfGauge.XForms.dll",

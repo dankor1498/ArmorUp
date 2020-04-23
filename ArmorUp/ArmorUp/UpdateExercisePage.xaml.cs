@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -8,32 +8,83 @@ namespace ArmorUp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class UpdateExercisePage : ContentPage
     {
-        private Exercises exercises = DBSaverLoader.LOAD_EXERCISE(Exercises.CurrentExercisesId, App.Database);
-
+        private object exercises = DBSaverLoader.LOAD_EXERCISE(Exercises.CurrentExercisesId, App.Database);
+        private App.TypeExercises type;
         public UpdateExercisePage()
         {
             InitializeComponent();
-            NameEntry.Text = exercises.Name;
-            InformationEditor.Text = exercises.Information;
-            NameLinkEntry.Text = exercises.LinkName;
-            UrlLinkEntry.Text = exercises.LinkURL;
-            TypeLabel.Text += "Count";
-            PurposeEntry.Text = (exercises as ExercisesCount).Purpose.ToString();
+            PrintInfoExercises();
+        }
+
+        private void PrintInfoExercises()
+        {
+            if(exercises is ExercisesCount)
+            {
+                ExercisesCount exercisesCount = (ExercisesCount)exercises;
+                NameEntry.Text = exercisesCount.Name;
+                InformationEditor.Text = exercisesCount.Information;
+                NameLinkEntry.Text = exercisesCount.LinkName;
+                UrlLinkEntry.Text = exercisesCount.LinkURL;
+                TypeLabel.Text += "Count";
+                type = App.TypeExercises.Count;
+                PurposeStackLayout.Children.Add(new Entry() { Text = exercisesCount.Purpose.ToString() });
+            }
+            else if(exercises is ExercisesApproach)
+            {
+                ExercisesApproach exercisesApproach = (ExercisesApproach)exercises;
+                NameEntry.Text = exercisesApproach.Name;
+                InformationEditor.Text = exercisesApproach.Information;
+                NameLinkEntry.Text = exercisesApproach.LinkName;
+                UrlLinkEntry.Text = exercisesApproach.LinkURL;
+                TypeLabel.Text += "Approach";
+                for (int i = 0; i < exercisesApproach.ApproachList.Count; i++)
+                {
+                    PurposeStackLayout.Children.Add(new Entry() { Text = exercisesApproach.ApproachList[i].ToString() });
+                }
+                type = App.TypeExercises.Approach;
+            }
         }
 
         private void UpdateApproachButton_Clicked(object sender, EventArgs e)
         {
-            if (NameEntry != null && PurposeEntry != null)
+            if (type == App.TypeExercises.Count)
             {
-                DBSaverLoader.UPDATE_EXERCISE(Exercises.CurrentExercisesId, new ExercisesCount()
+                Entry entry = PurposeStackLayout.Children[0] as Entry;
+                if(NameEntry != null && entry != null)
                 {
-                    Name = NameEntry.Text,
-                    Information = InformationEditor.Text,
-                    LinkName = NameLinkEntry.Text,
-                    LinkURL = UrlLinkEntry.Text,
-                    Purpose = Int32.Parse(PurposeEntry.Text)
-                }, App.Database);
-                App.UpdateMainTableList();
+                    DBSaverLoader.UPDATE_EXERCISE(Exercises.CurrentExercisesId, new ExercisesCount()
+                    {
+                        Name = NameEntry.Text,
+                        Information = InformationEditor.Text,
+                        LinkName = NameLinkEntry.Text,
+                        LinkURL = UrlLinkEntry.Text,
+                        Purpose = Int32.Parse(entry.Text)
+                    }, App.Database);
+                    App.UpdateMainTableList();
+                }                
+            }
+            else if (type == App.TypeExercises.Approach)
+            {
+                int Count = PurposeStackLayout.Children.Count;
+                List<int> result = new List<int>();
+                for (int i = 0; i < Count - 1; i++)
+                {
+                    if (PurposeStackLayout.Children[i] == null) return;
+                    result.Add(Int32.Parse((PurposeStackLayout.Children[i] as Entry).Text));
+                }
+                result.Add(Int32.Parse((PurposeStackLayout.Children[Count - 1] as Entry).Text));
+                if (NameEntry != null)
+                {
+                    DBSaverLoader.UPDATE_EXERCISE(Exercises.CurrentExercisesId, new ExercisesApproach()
+                    {
+                        Name = NameEntry.Text,
+                        Information = InformationEditor.Text,
+                        LinkName = NameLinkEntry.Text,
+                        LinkURL = UrlLinkEntry.Text,
+                        ApproachList = result
+                    }, App.Database);
+                    App.UpdateMainTableList();
+                }
             }
             Navigation.PushAsync(new ProfilePage());
         }

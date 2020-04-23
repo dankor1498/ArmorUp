@@ -5,6 +5,7 @@ namespace ArmorUp
 {
     [DataContract]
     [KnownType(typeof(ExercisesCount))]
+    [KnownType(typeof(ExercisesApproach))]
     public abstract class Exercises
     {
         [DataMember]

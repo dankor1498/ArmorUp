@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+    <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="18.1.0.45" />
     <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="18.1.0.45" />
     <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.617" />

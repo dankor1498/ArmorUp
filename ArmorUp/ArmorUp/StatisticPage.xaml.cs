@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;   
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -36,25 +33,8 @@ namespace ArmorUp
             Navigation.PushAsync(new ProfilePage());
         }
 
-        private StackLayout AddStatisticByExercise(MainTable mainTable)
+        private StackLayout AddStatisticFromScreen(string name, int id, int progress, double percent)
         {
-            var exercisesTableRepository = new ExercisesTableRepository(Path.Combine(DBSaverLoader.documentsPath, mainTable.StringID + ".db"));
-            int exercisesTableLength = exercisesTableRepository.Count;
-            var lastItem = exercisesTableLength == 0 ? null : exercisesTableRepository.GetItem(exercisesTableLength);
-            double purpose = double.Parse(mainTable.Purpose);
-            int progress = 0;
-            double percent = 0.0;
-            if(exercisesTableLength >= 2)
-            {
-                var penultItem = exercisesTableRepository.GetItem(exercisesTableLength - 1);
-                progress = lastItem.Count - penultItem.Count;
-                percent = (double)lastItem.Count / purpose * 100.0;
-            }
-            if(exercisesTableLength == 1)
-            {
-                percent = (double)lastItem.Count / purpose * 100.0;
-            }
-
             StackLayout stackLayout = new StackLayout()
             {
                 Orientation = StackOrientation.Horizontal
@@ -89,8 +69,8 @@ namespace ArmorUp
             };
             Button ExercisesButton = new Button()
             {
-                ClassId = mainTable.ID.ToString(),
-                Text = mainTable.Name,
+                ClassId = id.ToString(),
+                Text = name,
                 WidthRequest = 100,
                 HeightRequest = 60,
                 BackgroundColor = Color.FromHex("#262626"),
@@ -144,6 +124,58 @@ namespace ArmorUp
 
             return stackLayout;
         }
+
+        private StackLayout AddStatisticByExercise(MainTable mainTable)
+        {
+            int progress = 0;
+            double percent = 0.0;
+            if (mainTable.Type == (byte)App.TypeExercises.Count)
+            {
+                ExercisesCountTableRepository exercisesCountTableRepository = new ExercisesCountTableRepository(Path.Combine(DBSaverLoader.documentsPath, mainTable.StringID + ".db"));
+                int exercisesTableLength = exercisesCountTableRepository.Count;
+                if (exercisesTableLength == 0)
+                {
+                    return AddStatisticFromScreen(mainTable.Name, mainTable.ID, 0, 0.0);
+                }
+                ExercisesCountTable lastItem = exercisesCountTableRepository.GetItem(exercisesTableLength);//exercisesTableLength == 0 ? null :
+                double purpose = double.Parse(mainTable.Purpose);
+                if (exercisesTableLength >= 2)
+                {
+                    ExercisesCountTable penultItem = exercisesCountTableRepository.GetItem(exercisesTableLength - 1);
+                    progress = lastItem.Count - penultItem.Count;
+                    percent = (double)lastItem.Count / purpose * 100.0;
+                }
+                if (exercisesTableLength == 1)
+                {
+                    percent = (double)lastItem.Count / purpose * 100.0;
+                }
+            }
+            else if (mainTable.Type == (byte)App.TypeExercises.Approach)
+            {
+                ExercisesApproachTableRepository exercisesApproachTableRepository = new ExercisesApproachTableRepository(Path.Combine(DBSaverLoader.documentsPath, mainTable.StringID + ".db"));
+                int exercisesTableLength = exercisesApproachTableRepository.Count;
+                if (exercisesTableLength == 0)
+                {
+                    return AddStatisticFromScreen(mainTable.Name, mainTable.ID, 0, 0.0);
+                }
+                int lastItem = (from item in exercisesApproachTableRepository.GetItem(exercisesTableLength).Count.Split('/')
+                                select int.Parse(item)).Sum();
+                double purpose = (from item in mainTable.Purpose.Split('/') select double.Parse(item)).Sum();
+                if (exercisesTableLength >= 2)
+                {
+                    int penultItem = (from item in exercisesApproachTableRepository.GetItem(exercisesTableLength - 1).Count.Split('/')
+                                      select int.Parse(item)).Sum();
+                    progress = lastItem - penultItem;
+                    percent = (double)lastItem / purpose * 100.0;
+                }
+                if (exercisesTableLength == 1)
+                {
+                    percent = (double)lastItem / purpose * 100.0;
+                }
+            }
+            return AddStatisticFromScreen(mainTable.Name, mainTable.ID, progress, percent);
+        }
+
         private void YourButtonClick(object sender, EventArgs e)
         {
             Button button = sender as Button;

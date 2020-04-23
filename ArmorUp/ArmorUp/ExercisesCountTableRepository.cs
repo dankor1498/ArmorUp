@@ -2,40 +2,40 @@
 
 namespace ArmorUp
 {
-    internal class ExercisesTableRepository
+    internal class ExercisesCountTableRepository 
     {
         private SQLiteConnection database;
 
-        public ExercisesTableRepository(string databasePath)
+        public ExercisesCountTableRepository(string databasePath)
         {
             database = new SQLiteConnection(databasePath);
-            database.CreateTable<ExercisesTable>();
+            database.CreateTable<ExercisesCountTable>();
         }
 
         public int Count
         {
             get
             {
-                return database.Table<ExercisesTable>().Count();
+                return database.Table<ExercisesCountTable>().Count();
             }
         }
 
-        public ExercisesTable[] GetItems()
+        public ExercisesCountTable[] GetItems()
         {
-            return database.Table<ExercisesTable>().ToArray();
+            return database.Table<ExercisesCountTable>().ToArray();
         }
 
-        public ExercisesTable GetItem(int id)
+        public ExercisesCountTable GetItem(int id)
         {
-            return database.Get<ExercisesTable>(id);
+            return database.Get<ExercisesCountTable>(id);
         }
 
         public int DeleteItem(int id)
         {
-            return database.Delete<ExercisesTable>(id);
+            return database.Delete<ExercisesCountTable>(id);
         }
 
-        public int SaveItem(ExercisesTable item)
+        public int SaveItem(ExercisesCountTable item)
         {
             if (item.ID != 0)
             {

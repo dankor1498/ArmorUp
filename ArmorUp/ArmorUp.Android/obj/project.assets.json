@@ -84,6 +84,21 @@
           "lib/MonoAndroid10/Syncfusion.Core.XForms.dll": {}
         }
       },
+      "Syncfusion.Xamarin.SfChart/18.1.0.45": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.45",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/MonoAndroid10/Syncfusion.SfChart.XForms.Android.dll": {},
+          "lib/MonoAndroid10/Syncfusion.SfChart.XForms.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Syncfusion.SfChart.XForms.Android.dll": {},
+          "lib/MonoAndroid10/Syncfusion.SfChart.XForms.dll": {}
+        }
+      },
       "Syncfusion.Xamarin.SfGauge/18.1.0.45": {
         "type": "package",
         "dependencies": {
@@ -896,6 +911,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Syncfusion.Xamarin.SfChart": "18.1.0.45",
           "Syncfusion.Xamarin.SfGauge": "18.1.0.45",
           "System.Runtime.Serialization.Json": "4.3.0",
           "Xamarin.Essentials": "1.5.2",
@@ -1081,6 +1097,33 @@
         "lib/uap10.0/Syncfusion.Core.XForms.xml",
         "syncfusion.xamarin.core.18.1.0.45.nupkg.sha512",
         "syncfusion.xamarin.core.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.SfChart/18.1.0.45": {
+      "sha512": "KRlub3c6S1SDhWqWNni0MBb7tKG2hVPI2I9vEALmxdhnNMT98ksZWMiqd9AF6LjP5NucI3xcTq1vLRqkybT20Q==",
+      "type": "package",
+      "path": "syncfusion.xamarin.sfchart/18.1.0.45",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.SfChart.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfChart.XForms.dll",
+        "lib/MonoAndroid10/Syncfusion.SfChart.XForms.xml",
+        "lib/Xamarin.Mac/Syncfusion.SfChart.XForms.dll",
+        "lib/Xamarin.Mac/Syncfusion.SfChart.XForms.macOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfChart.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfChart.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfChart.XForms.xml",
+        "lib/netstandard2.0/Syncfusion.SfChart.XForms.dll",
+        "lib/netstandard2.0/Syncfusion.SfChart.XForms.xml",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfChart.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfChart.XForms.xml",
+        "lib/uap10.0/Syncfusion.SfChart.XForms.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfChart.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfChart.XForms.dll",
+        "lib/uap10.0/Syncfusion.SfChart.XForms.xml",
+        "syncfusion.xamarin.sfchart.18.1.0.45.nupkg.sha512",
+        "syncfusion.xamarin.sfchart.nuspec"
       ]
     },
     "Syncfusion.Xamarin.SfGauge/18.1.0.45": {
@@ -2294,6 +2337,7 @@
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v9.0": [
       "ArmorUp >= 1.0.0",
+      "Syncfusion.Xamarin.SfChart >= 18.1.0.45",
       "Syncfusion.Xamarin.SfGauge >= 18.1.0.45",
       "System.Runtime.Serialization.Json >= 4.3.0",
       "Xamarin.Essentials >= 1.5.2",
@@ -2302,24 +2346,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rocho\\.nuget\\packages\\": {},
+    "C:\\Users\\Danyil Korotych\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
+      "projectUniqueName": "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
       "projectName": "ArmorUp.Android",
-      "projectPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
-      "packagesPath": "C:\\Users\\rocho\\.nuget\\packages\\",
-      "outputPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\obj\\",
+      "projectPath": "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
+      "packagesPath": "C:\\Users\\Danyil Korotych\\.nuget\\packages\\",
+      "outputPath": "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\rocho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Danyil Korotych\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2333,8 +2377,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
-              "projectPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj"
+            "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
+              "projectPath": "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj"
             }
           }
         }
@@ -2343,6 +2387,10 @@
     "frameworks": {
       "monoandroid90": {
         "dependencies": {
+          "Syncfusion.Xamarin.SfChart": {
+            "target": "Package",
+            "version": "[18.1.0.45, )"
+          },
           "Syncfusion.Xamarin.SfGauge": {
             "target": "Package",
             "version": "[18.1.0.45, )"

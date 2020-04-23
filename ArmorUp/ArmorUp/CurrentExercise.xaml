@@ -127,20 +127,10 @@
                                            FontFamily="Helvetica"
                                            FontAttributes="Bold"
                                            FontSize="20" />
-                                </Frame>
-                                <Frame CornerRadius="10"
-                                       Padding="0"
-                                       IsClippedToBounds="True"
-                                       WidthRequest="350"
-                                       HeightRequest="120"
-                                       BackgroundColor="#292929">
-                                    <Editor x:Name="ProgressForToday"  TextColor="White"
-                                            Text=""
-                                            FontSize="16"
-                                            Margin="5"
-                                            FontFamily="Helvetica" />
-                                </Frame>
-                                <Button x:Name="SendButton" Text="Відправити" Clicked="SendButton_Clicked" />
+                                </Frame>                                
+                            </StackLayout>
+                            <StackLayout x:Name="ResultStackLayout">
+                                
                             </StackLayout>
                         </StackLayout>
                     </ScrollView>

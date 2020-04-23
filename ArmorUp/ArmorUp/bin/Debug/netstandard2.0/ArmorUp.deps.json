@@ -10,6 +10,7 @@
       "ArmorUp/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
+          "Syncfusion.Xamarin.SfChart": "18.1.0.45",
           "Syncfusion.Xamarin.SfGauge": "18.1.0.45",
           "System.Runtime.Serialization.Json": "4.3.0",
           "Xamarin.Essentials": "1.5.2",
@@ -81,6 +82,18 @@
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.Core.XForms.dll": {
+            "assemblyVersion": "18.1451.0.45",
+            "fileVersion": "18.1451.0.45"
+          }
+        }
+      },
+      "Syncfusion.Xamarin.SfChart/18.1.0.45": {
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.45",
+          "Xamarin.Forms": "4.5.0.617"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.SfChart.XForms.dll": {
             "assemblyVersion": "18.1451.0.45",
             "fileVersion": "18.1451.0.45"
           }
@@ -632,6 +645,13 @@
       "sha512": "sha512-ybi81ZS3LthUObIE6Z2HD9sgWz+huuM86J6erFuQlkQzPiOPyr3MhB0cD1jsJ2uIdJfE00R75NMgc1i3dqXOnw==",
       "path": "syncfusion.xamarin.core/18.1.0.45",
       "hashPath": "syncfusion.xamarin.core.18.1.0.45.nupkg.sha512"
+    },
+    "Syncfusion.Xamarin.SfChart/18.1.0.45": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KRlub3c6S1SDhWqWNni0MBb7tKG2hVPI2I9vEALmxdhnNMT98ksZWMiqd9AF6LjP5NucI3xcTq1vLRqkybT20Q==",
+      "path": "syncfusion.xamarin.sfchart/18.1.0.45",
+      "hashPath": "syncfusion.xamarin.sfchart.18.1.0.45.nupkg.sha512"
     },
     "Syncfusion.Xamarin.SfGauge/18.1.0.45": {
       "type": "package",

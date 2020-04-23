@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -42,6 +43,16 @@ namespace ArmorUp
                             LinkName = NameLinkEntry.Text,
                             LinkURL = UrlLinkEntry.Text,
                             Purpose = Int32.Parse(PurposeEntry.Text)
+                        }, App.Database);
+                        App.UpdateMainTableList(); break;
+                    case 1:
+                        DBSaverLoader.SAVE_EXERCISE(new ExercisesApproach()
+                        {
+                            Name = NameEntry.Text,
+                            Information = InformationEditor.Text,
+                            LinkName = NameLinkEntry.Text,
+                            LinkURL = UrlLinkEntry.Text,
+                            ApproachList = new List<int>() { 30, 30, 30 }
                         }, App.Database);
                         App.UpdateMainTableList(); break;
                 }

@@ -19,6 +19,8 @@ namespace ArmorUp
             };
         }
 
+        public enum TypeExercises : byte { Count = 1, Approach, Time };
+        
         public static MainTableRepository database;
 
         public static MainTableRepository Database

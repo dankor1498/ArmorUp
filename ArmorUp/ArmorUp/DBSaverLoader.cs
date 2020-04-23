@@ -3,8 +3,6 @@ using System.IO;
 using System.Runtime.Serialization.Json;
 using SQLite;
 
-//@"C:\Users\Danyil Korotych\Desktop\ConsoleApp1\JSON\"
-
 namespace ArmorUp
 {
     public class DBSaverLoader
@@ -15,9 +13,15 @@ namespace ArmorUp
         static public void SAVE_EXERCISE(Exercises exercises, MainTableRepository Database)
         {
             string stringID = Guid.NewGuid().ToString();
-            Database.SaveItem(new MainTable() { StringID = stringID, Name = exercises.Name, Purpose = exercises.PurposeToString() });
 
-            ExercisesTableRepository exercisesFileRepository = new ExercisesTableRepository(documentsPath + stringID + ".db");
+            if(exercises is ExercisesCount)
+            {
+                Database.SaveItem(new MainTable() { StringID = stringID, Type = (byte)App.TypeExercises.Count, Name = exercises.Name, Purpose = exercises.PurposeToString() });
+            }
+            else if(exercises is ExercisesApproach)
+            {
+                Database.SaveItem(new MainTable() { StringID = stringID, Type = (byte)App.TypeExercises.Approach, Name = exercises.Name, Purpose = exercises.PurposeToString() });
+            }
 
             var path = Path.Combine(documentsPath, stringID + ".json");
 
@@ -25,24 +29,28 @@ namespace ArmorUp
                 json_formatter.WriteObject(file, exercises);
         }
 
-        static public ExercisesCount LOAD_EXERCISE(int id, MainTableRepository Database)
+        static public object LOAD_EXERCISE(int id, MainTableRepository Database)
         {
             var item = Database.GetItem(id);
             var path = Path.Combine(documentsPath, item.StringID + ".json");
 
             using (var file = new FileStream(path, FileMode.OpenOrCreate))
-            {
-                var exercises = json_formatter.ReadObject(file) as ExercisesCount;
-                if (exercises != null)
-                    return exercises;
+            {                
+                return json_formatter.ReadObject(file);
             }
-            return null;
         }
 
         static public void UPDATE_EXERCISE(int id, Exercises exercises, MainTableRepository Database)
         {
             var item = Database.GetItem(id);
-            Database.SaveItem(new MainTable { ID = id, Name = exercises.Name, StringID = item.StringID, Purpose = exercises.PurposeToString() });
+            if (exercises is ExercisesCount)
+            {
+                Database.SaveItem(new MainTable() { ID = id, Name = exercises.Name, StringID = item.StringID, Purpose = exercises.PurposeToString(), Type = (byte)App.TypeExercises.Count });
+            }
+            else if (exercises is ExercisesApproach)
+            {
+                Database.SaveItem(new MainTable() { ID = id, Name = exercises.Name, StringID = item.StringID, Purpose = exercises.PurposeToString(), Type = (byte)App.TypeExercises.Approach });
+            }            
             var path = Path.Combine(documentsPath, item.StringID + ".json");
 
             using (var file = new FileStream(path, FileMode.Create))

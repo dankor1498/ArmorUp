@@ -1,10 +1,7 @@
 ﻿using Syncfusion.SfGauge.XForms;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -20,92 +17,112 @@ namespace ArmorUp
     //ExerciseByDataStackLayout - динамічно створювати елементи в які передавати дату/процент/приріст для відповідних значень.
     public partial class CurrentExerciseStatistic : ContentPage
     {
-        //Json with name and other information
-        private ExercisesCount currentExercises = DBSaverLoader.LOAD_EXERCISE(Exercises.CurrentExercisesId, App.Database);
-        //Data base with count for exercise
-        private ExercisesTableRepository exercisesTableRepository = new ExercisesTableRepository(
-            Path.Combine(DBSaverLoader.documentsPath, App.Database.GetItem(Exercises.CurrentExercisesId).StringID + ".db"));
+         private MainTable mainTable = App.Database.GetItem(Exercises.CurrentExercisesId);
+        private ExerciseByDataViewModel exerciseByDataViewModel = new ExerciseByDataViewModel();
 
         public CurrentExerciseStatistic()
         {
             InitializeComponent();
+            PrintInfoExercises();
+        }
 
-            if (exercisesTableRepository.Count != 0)
+        private void PrintInfoExercises()
+        {
+            if (mainTable.Type == (byte)App.TypeExercises.Count)
             {
-                ExerciseName.Text = currentExercises.Name;
-                var percent = GetPercent(currentExercises);
-
-                PercentSFCircularGaugeLabel.Text = ((int)percent).ToString() + "%";
-                ProgresSFCircularGauge.Value = (int)percent;
-                CheckForProgress(ProgresLabelWithConclusion, currentExercises, ProgresSFCircularGauge, ProgresLabel);
-                ProgresLabel.Text = GetProgressInCorrectFormat(currentExercises);
-
-                var array = exercisesTableRepository.GetItems();
-
-                for (int i = 0; i < exercisesTableRepository.Count; ++i)
+                ExercisesCountTableRepository exercisesCountTableRepository = new ExercisesCountTableRepository(Path.Combine(DBSaverLoader.documentsPath, mainTable.StringID + ".db"));
+                if (exerciseByDataViewModel.exerciseInfoByDates.Count != exercisesCountTableRepository.Count)
+                    exerciseByDataViewModel.exerciseInfoByDates.Clear();
+                int tableCount = exercisesCountTableRepository.Count;
+                if (tableCount != 0)
                 {
-                    var exerciseHist = array[i];
-                    //data
-                    var dataHist = exerciseHist.Data.ToString();
-                    //percent
-                    var percentHist = (int)GetPercent(currentExercises, exerciseHist);
-                    //Progress
-                    string progressHist = "0";
-                    if (i != 0)
-                        progressHist = GetProgress(array, i);
-                    ExerciseByDataStackLayout.Children.Add(CreateNewItem(dataHist, percentHist, progressHist));
+                    ExerciseName.Text = mainTable.Name;
+                    double percent = 0.0;
+                    int progress = 0;
+                    var arrayExercisesCountTable = exercisesCountTableRepository.GetItems();
+                    if (tableCount >= 2)
+                    {
+                        percent = GetPercent(mainTable.Purpose, arrayExercisesCountTable[arrayExercisesCountTable.Length - 1].Count);
+                        progress = arrayExercisesCountTable[arrayExercisesCountTable.Length - 1].Count - arrayExercisesCountTable[arrayExercisesCountTable.Length - 2].Count;
+                    }
+                    if (tableCount == 1)
+                    {
+                        percent = GetPercent(mainTable.Purpose, arrayExercisesCountTable[arrayExercisesCountTable.Length - 1].Count);
+                    }
+                    PercentSFCircularGaugeLabel.Text = ((int)percent).ToString() + "%";
+                    ProgresSFCircularGauge.Value = (int)percent;
+                    CheckForProgress(ProgresLabelWithConclusion, ProgresSFCircularGauge, ProgresLabel, progress);
+                    ProgresLabel.Text = $"{arrayExercisesCountTable[arrayExercisesCountTable.Length - 1].Count}/{mainTable.Purpose}";
+                    for (int i = 0; i < exercisesCountTableRepository.Count; ++i)
+                    {
+                        var exerciseHist = arrayExercisesCountTable[i];
+                        var dataHist = exerciseHist.Data.ToString();
+                        var percentHist = (int)GetPercent(mainTable.Purpose, arrayExercisesCountTable[i].Count);
+                        if (exerciseByDataViewModel.exerciseInfoByDates.Count != exercisesCountTableRepository.Count)
+                            exerciseByDataViewModel.exerciseInfoByDates.Add(new ExerciseInfoByDate() { Data = exerciseHist.Data.Day.ToString() + "/" + exerciseHist.Data.Month.ToString(), Count = exerciseHist.Count, Purpose = int.Parse(mainTable.Purpose) });
+                        ExerciseByDataStackLayout.Children.Add(CreateNewItem(dataHist, percentHist, arrayExercisesCountTable[i].Count.ToString()));
+                    }
+                }
+            }
+            else if (mainTable.Type == (byte)App.TypeExercises.Approach)
+            {
+                ExercisesApproachTableRepository exercisesApproachTableRepository = new ExercisesApproachTableRepository(Path.Combine(DBSaverLoader.documentsPath, mainTable.StringID + ".db"));
+                if (exerciseByDataViewModel.exerciseInfoByDates.Count != exercisesApproachTableRepository.Count)
+                    exerciseByDataViewModel.exerciseInfoByDates.Clear();
+                int tableCount = exercisesApproachTableRepository.Count;
+                if (tableCount != 0)
+                {
+                    ExerciseName.Text = mainTable.Name;
+                    double percent = 0.0;
+                    int progress = 0;
+                    var arrayExercisesApproachTable = exercisesApproachTableRepository.GetItems();
+                    int Purpose = GetSum(mainTable.Purpose);
+                    int LastCount = GetSum(arrayExercisesApproachTable[arrayExercisesApproachTable.Length - 1].Count);
+                    if (tableCount >= 2)
+                    {
+                        percent = GetPercent(Purpose, LastCount);
+                        progress = LastCount - GetSum(arrayExercisesApproachTable[arrayExercisesApproachTable.Length - 2].Count);
+                    }
+                    if (tableCount == 1)
+                    {
+                        percent = GetPercent(Purpose, LastCount);
+                    }
+                    PercentSFCircularGaugeLabel.Text = ((int)percent).ToString() + "%";
+                    ProgresSFCircularGauge.Value = (int)percent;
+                    CheckForProgress(ProgresLabelWithConclusion, ProgresSFCircularGauge, ProgresLabel, progress);
+                    ProgresLabel.Text = $"{LastCount}/{Purpose}";
+                    for (int i = 0; i < exercisesApproachTableRepository.Count; ++i)
+                    {
+                        var exerciseHist = arrayExercisesApproachTable[i];
+                        var dataHist = exerciseHist.Data.ToString();
+                        int count = GetSum(arrayExercisesApproachTable[i].Count);
+                        var percentHist = (int)GetPercent(Purpose, count);
+                        if (exerciseByDataViewModel.exerciseInfoByDates.Count != exercisesApproachTableRepository.Count)
+                            exerciseByDataViewModel.exerciseInfoByDates.Add(new ExerciseInfoByDate() { Data = exerciseHist.Data.Day.ToString() + "/" + exerciseHist.Data.Month.ToString(), Count = count, Purpose = Purpose });
+                        ExerciseByDataStackLayout.Children.Add(CreateNewItem(dataHist, percentHist, arrayExercisesApproachTable[i].Count));
+                    }
                 }
             }
         }
-        private string GetProgressInCorrectFormat(ExercisesCount mainTable)
+
+        private double GetPercent(string purpose, double count)
         {
-            var lastItem = exercisesTableRepository.Count == 0 ? null : exercisesTableRepository.GetItem(exercisesTableRepository.Count);
-            return $"{lastItem.Count}/{mainTable.Purpose}";
+            return count / Convert.ToDouble(purpose) * 100.0;
         }
-        private double GetPercent(ExercisesCount mainTable, ExercisesTable exercisesTable)
+
+        private double GetPercent(double purpose, double count)
         {
-            double percent = 0.0;
-            if (exercisesTableRepository.Count > 0)
-                percent = (double)exercisesTable.Count / Convert.ToDouble(mainTable.Purpose) * 100.0;
-            return percent;
+            return count / purpose * 100.0;
         }
-        private double GetPercent(ExercisesCount mainTable)
+
+        private int GetSum(string count)
         {
-            double percent = 0.0;
-            var lastItem = exercisesTableRepository.Count == 0 ? null : exercisesTableRepository.GetItem(exercisesTableRepository.Count);
-            if (exercisesTableRepository.Count >= 2)
-            {
-                var penultItem = exercisesTableRepository.GetItem(exercisesTableRepository.Count - 1);
-                percent = (double)lastItem.Count / Convert.ToDouble(mainTable.Purpose) * 100.0;
-            }
-            if (exercisesTableRepository.Count == 1)
-                percent = (double)lastItem.Count / Convert.ToDouble(mainTable.Purpose) * 100.0;
-            return percent;
+            return (from item in count.Split('/')
+                    select int.Parse(item)).Sum();
         }
-        private string GetProgress(ExercisesTable[] exercisesTables, int id)
-        {
-            string result = "";
-            int progressRes = exercisesTables[id].Count - exercisesTables[id - 1].Count;
-            if (progressRes > 0)
-                result = "+" + progressRes;
-            else
-                result = progressRes.ToString();
-            return result;
-        }
-        private int GetProgress(ExercisesCount mainTable)
-        {
-            int progress = 0;
-            var lastItem = exercisesTableRepository.Count == 0 ? null : exercisesTableRepository.GetItem(exercisesTableRepository.Count);
-            if (exercisesTableRepository.Count >= 2)
-            {
-                var penultItem = exercisesTableRepository.GetItem(exercisesTableRepository.Count - 1);
-                progress = lastItem.Count - penultItem.Count;
-            }
-            return progress;
-        }
-        private void CheckForProgress(Label label, ExercisesCount mainTable, RangePointer rangePointer, Label label1)
-        {
-            int progress = GetProgress(mainTable);
+
+        private void CheckForProgress(Label label, RangePointer rangePointer, Label label1, int progress)
+        {            
             if (progress > 0)
             {
                 label.TextColor = Color.Green;
@@ -128,6 +145,7 @@ namespace ArmorUp
                 label1.TextColor = Color.Red;
             }
         }
+
         private void NewExercisePage_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new NewExercisePage());
@@ -142,6 +160,7 @@ namespace ArmorUp
         {
             Navigation.PushAsync(new ProfilePage());
         }
+
         private StackLayout CreateNewItem(string data, int percent, string progress)
         {
             StackLayout stackLayout = new StackLayout()
