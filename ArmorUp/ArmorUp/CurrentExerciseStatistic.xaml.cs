@@ -53,19 +53,20 @@ namespace ArmorUp
                     ProgresSFCircularGauge.Value = (int)percent;
                     CheckForProgress(ProgresLabelWithConclusion, ProgresSFCircularGauge, ProgresLabel, progress);
                     ProgresLabel.Text = $"{arrayExercisesCountTable[arrayExercisesCountTable.Length - 1].Count}/{mainTable.Purpose}";
-                    for (int i = 0; i < exercisesCountTableRepository.Count; ++i)
+                    int CountOfExForChart = tableCount <= 20 ? tableCount : 20;
+                    for (int i = 0, j = tableCount - 1; i < CountOfExForChart; i++, j--)
                     {
-                        var exerciseHist = arrayExercisesCountTable[i];
+                        var exerciseHist = arrayExercisesCountTable[j];
                         var dataHist = exerciseHist.Data.ToString();
-                        var percentHist = (int)GetPercent(mainTable.Purpose, arrayExercisesCountTable[i].Count);
-                        ExerciseByDataStackLayout.Children.Add(CreateNewItem(dataHist, percentHist, arrayExercisesCountTable[i].Count.ToString()));
+                        var percentHist = (int)GetPercent(mainTable.Purpose, arrayExercisesCountTable[j].Count);
+                        ExerciseByDataStackLayout.Children.Add(CreateNewItem(dataHist, percentHist, arrayExercisesCountTable[j].Count.ToString()));
                     }
-                    int CountOfExForChart = exercisesCountTableRepository.Count <= 10 ? exercisesCountTableRepository.Count : 10;
-                    var TableCount = exercisesCountTableRepository.Count - CountOfExForChart;
+                    CountOfExForChart = tableCount <= 10 ? tableCount : 10;
+                    int TableCount = tableCount - CountOfExForChart;
                     for (int i = CountOfExForChart - 1; i >= 0; --i)
                     {
                         var exerciseHist = arrayExercisesCountTable[TableCount];
-                        if ((exerciseByDataViewModel.exerciseInfoByDates.Count != exercisesCountTableRepository.Count) && exerciseHist.Data.Month == DateTime.Now.Month)
+                        if ((exerciseByDataViewModel.exerciseInfoByDates.Count != tableCount) && exerciseHist.Data.Month == DateTime.Now.Month)
                             exerciseByDataViewModel.exerciseInfoByDates.Add(new ExerciseInfoByDate() { Data = exerciseHist.Data.Day.ToString() + "/" + exerciseHist.Data.Month.ToString(), Count = exerciseHist.Count, Purpose = int.Parse(mainTable.Purpose) });
                         TableCount++;
                     }
@@ -98,22 +99,24 @@ namespace ArmorUp
                     ProgresSFCircularGauge.Value = (int)percent;
                     CheckForProgress(ProgresLabelWithConclusion, ProgresSFCircularGauge, ProgresLabel, progress);
                     ProgresLabel.Text = $"{LastCount}/{Purpose}";
-                    for (int i = 0; i < exercisesApproachTableRepository.Count; ++i)
+                    int CountOfExForChart = tableCount <= 20 ? tableCount : 20;
+                    //var TableCount = tableCount - CountOfExForChart;
+                    for (int i = 0, j = tableCount - 1; i < CountOfExForChart; i++, j--)
                     {
-                        LastCount = GetSum(arrayExercisesApproachTable[i].Count);
-                        var exerciseHist = arrayExercisesApproachTable[i];
+                        LastCount = GetSum(arrayExercisesApproachTable[j].Count);
+                        var exerciseHist = arrayExercisesApproachTable[j];
                         var dataHist = $"{exerciseHist.Data.ToString()}\n{arrayExercisesApproachTable[i].Count}";
-                        int count = GetSum(arrayExercisesApproachTable[i].Count);
+                        int count = GetSum(arrayExercisesApproachTable[j].Count);
                         var percentHist = (int)GetPercent(Purpose, count);
                         ExerciseByDataStackLayout.Children.Add(CreateNewItem(dataHist, percentHist, $"{LastCount}"));
                     }
-                    int CountOfExForChart = exercisesApproachTableRepository.Count <= 10 ? exercisesApproachTableRepository.Count : 10;
-                    var TableCount = exercisesApproachTableRepository.Count - CountOfExForChart;
+                    CountOfExForChart = tableCount <= 10 ? tableCount : 10;
+                    int TableCount = tableCount - CountOfExForChart;
                     for (int i = CountOfExForChart - 1; i >= 0; --i)
                     {
                         var exerciseHist = arrayExercisesApproachTable[TableCount];
                         int count = GetSum(arrayExercisesApproachTable[TableCount].Count);
-                        if ((exerciseByDataViewModel.exerciseInfoByDates.Count != exercisesApproachTableRepository.Count) && exerciseHist.Data.Month == DateTime.Now.Month)
+                        if ((exerciseByDataViewModel.exerciseInfoByDates.Count != tableCount) && exerciseHist.Data.Month == DateTime.Now.Month)
                             exerciseByDataViewModel.exerciseInfoByDates.Add(new ExerciseInfoByDate() { Data = exerciseHist.Data.Day.ToString() + "/" + exerciseHist.Data.Month.ToString(), Count = count, Purpose = Purpose });
                         TableCount++;
                     }

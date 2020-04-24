@@ -33,8 +33,9 @@ namespace ArmorUp
         public int DeleteItem(int id)
         {
             var item = this.GetItem(id);
-            File.Delete(DBSaverLoader.documentsPath + item.StringID + ".db");
-            File.Delete(DBSaverLoader.documentsPath + item.StringID + ".json");
+            
+            File.Delete(Path.Combine(DBSaverLoader.documentsPath, item.StringID + ".db"));
+            File.Delete(Path.Combine(DBSaverLoader.documentsPath, item.StringID + ".json"));
             return database.Delete<MainTable>(id);
         }
 

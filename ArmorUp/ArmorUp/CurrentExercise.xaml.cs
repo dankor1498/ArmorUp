@@ -68,8 +68,13 @@ namespace ArmorUp
             if (type == App.TypeExercises.Count)
             {
                 progress = int.Parse((ResultStackLayout.Children[0] as Entry).Text);
-                new ExercisesCountTableRepository(Path.Combine(DBSaverLoader.documentsPath, App.Database.GetItem(Exercises.CurrentExercisesId).StringID + ".db"))
-                    .SaveItem(new ExercisesCountTable { Count = progress, Data = DateTime.Now });
+                var exercisesCountTableRepository = new ExercisesCountTableRepository(Path.Combine(DBSaverLoader.documentsPath, App.Database.GetItem(Exercises.CurrentExercisesId).StringID + ".db"));
+                exercisesCountTableRepository.SaveItem(new ExercisesCountTable { Count = progress, Data = DateTime.Now });
+                int count = exercisesCountTableRepository.Count;
+                if(count > App.Pivot)
+                {
+                    exercisesCountTableRepository.DeleteFirst();
+                }
             }
             else if(type == App.TypeExercises.Approach)
             {
@@ -80,8 +85,13 @@ namespace ArmorUp
                     result += string.Format($"{(ResultStackLayout.Children[i] as Entry).Text}/");
                 }
                 result += (ResultStackLayout.Children[Count - 2] as Entry).Text;
-                new ExercisesApproachTableRepository(Path.Combine(DBSaverLoader.documentsPath, App.Database.GetItem(Exercises.CurrentExercisesId).StringID + ".db"))
-                    .SaveItem(new ExercisesApproachTable { Count = result, Data = DateTime.Now });
+                var exercisesApproachTableRepository = new ExercisesApproachTableRepository(Path.Combine(DBSaverLoader.documentsPath, App.Database.GetItem(Exercises.CurrentExercisesId).StringID + ".db"));
+                exercisesApproachTableRepository.SaveItem(new ExercisesApproachTable { Count = result, Data = DateTime.Now });
+                int count = exercisesApproachTableRepository.Count;
+                if (count > App.Pivot)
+                {
+                    exercisesApproachTableRepository.DeleteFirst();
+                }
             }            
             Navigation.PushAsync(new StatisticPage());
         }

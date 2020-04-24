@@ -20,6 +20,11 @@ namespace ArmorUp
             }
         }
 
+        public void DeleteFirst()
+        {
+            database.Delete<ExercisesCountTable>(database.Table<ExercisesCountTable>().First().ID);
+        }
+
         public ExercisesCountTable[] GetItems()
         {
             return database.Table<ExercisesCountTable>().ToArray();
