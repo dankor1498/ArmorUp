@@ -58,9 +58,16 @@ namespace ArmorUp
                         var exerciseHist = arrayExercisesCountTable[i];
                         var dataHist = exerciseHist.Data.ToString();
                         var percentHist = (int)GetPercent(mainTable.Purpose, arrayExercisesCountTable[i].Count);
+                        ExerciseByDataStackLayout.Children.Add(CreateNewItem(dataHist, percentHist, arrayExercisesCountTable[i].Count.ToString()));
+                    }
+                    int CountOfExForChart = exercisesCountTableRepository.Count <= 10 ? exercisesCountTableRepository.Count : 10;
+                    var TableCount = exercisesCountTableRepository.Count - CountOfExForChart;
+                    for (int i = CountOfExForChart - 1; i >= 0; --i)
+                    {
+                        var exerciseHist = arrayExercisesCountTable[TableCount];
                         if ((exerciseByDataViewModel.exerciseInfoByDates.Count != exercisesCountTableRepository.Count) && exerciseHist.Data.Month == DateTime.Now.Month)
                             exerciseByDataViewModel.exerciseInfoByDates.Add(new ExerciseInfoByDate() { Data = exerciseHist.Data.Day.ToString() + "/" + exerciseHist.Data.Month.ToString(), Count = exerciseHist.Count, Purpose = int.Parse(mainTable.Purpose) });
-                        ExerciseByDataStackLayout.Children.Add(CreateNewItem(dataHist, percentHist, arrayExercisesCountTable[i].Count.ToString()));
+                        TableCount++;
                     }
                 }
             }
@@ -95,12 +102,20 @@ namespace ArmorUp
                     {
                         LastCount = GetSum(arrayExercisesApproachTable[i].Count);
                         var exerciseHist = arrayExercisesApproachTable[i];
-                        var dataHist = exerciseHist.Data.ToString();
+                        var dataHist = $"{exerciseHist.Data.ToString()}\n{arrayExercisesApproachTable[i].Count}";
                         int count = GetSum(arrayExercisesApproachTable[i].Count);
                         var percentHist = (int)GetPercent(Purpose, count);
+                        ExerciseByDataStackLayout.Children.Add(CreateNewItem(dataHist, percentHist, $"{LastCount}"));
+                    }
+                    int CountOfExForChart = exercisesApproachTableRepository.Count <= 10 ? exercisesApproachTableRepository.Count : 10;
+                    var TableCount = exercisesApproachTableRepository.Count - CountOfExForChart;
+                    for (int i = CountOfExForChart - 1; i >= 0; --i)
+                    {
+                        var exerciseHist = arrayExercisesApproachTable[TableCount];
+                        int count = GetSum(arrayExercisesApproachTable[TableCount].Count);
                         if ((exerciseByDataViewModel.exerciseInfoByDates.Count != exercisesApproachTableRepository.Count) && exerciseHist.Data.Month == DateTime.Now.Month)
                             exerciseByDataViewModel.exerciseInfoByDates.Add(new ExerciseInfoByDate() { Data = exerciseHist.Data.Day.ToString() + "/" + exerciseHist.Data.Month.ToString(), Count = count, Purpose = Purpose });
-                        ExerciseByDataStackLayout.Children.Add(CreateNewItem(dataHist, percentHist, $"{LastCount}/{Purpose}"));
+                        TableCount++;
                     }
                 }
             }
