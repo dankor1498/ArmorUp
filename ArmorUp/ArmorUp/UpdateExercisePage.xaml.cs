@@ -43,6 +43,17 @@ namespace ArmorUp
                 }
                 type = App.TypeExercises.Approach;
             }
+            else if (exercises is ExercisesTime)
+            {
+                ExercisesTime exercisesTime = (ExercisesTime)exercises;
+                NameEntry.Text = exercisesTime.Name;
+                InformationEditor.Text = exercisesTime.Information;
+                NameLinkEntry.Text = exercisesTime.LinkName;
+                UrlLinkEntry.Text = exercisesTime.LinkURL;
+                TypeLabel.Text += "Count";
+                type = App.TypeExercises.Time;
+                PurposeStackLayout.Children.Add(new Entry() { Text = exercisesTime.Time.TotalSeconds.ToString() });
+            }
         }
 
         private void UpdateApproachButton_Clicked(object sender, EventArgs e)
@@ -82,6 +93,22 @@ namespace ArmorUp
                         LinkName = NameLinkEntry.Text,
                         LinkURL = UrlLinkEntry.Text,
                         ApproachList = result
+                    }, App.Database);
+                    App.UpdateMainTableList();
+                }
+            }
+            else if (type == App.TypeExercises.Time)
+            {
+                Entry entry = PurposeStackLayout.Children[0] as Entry;
+                if (NameEntry != null && entry != null)
+                {
+                    DBSaverLoader.UPDATE_EXERCISE(Exercises.CurrentExercisesId, new ExercisesTime()
+                    {
+                        Name = NameEntry.Text,
+                        Information = InformationEditor.Text,
+                        LinkName = NameLinkEntry.Text,
+                        LinkURL = UrlLinkEntry.Text,
+                        Time = new TimeSpan(0, 0, Int32.Parse(entry.Text))
                     }, App.Database);
                     App.UpdateMainTableList();
                 }

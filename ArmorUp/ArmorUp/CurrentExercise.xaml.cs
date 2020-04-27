@@ -44,6 +44,15 @@ namespace ArmorUp
                 }
                 type = App.TypeExercises.Approach;
             }
+            if (objectExercises is ExercisesTime)
+            {
+                ExercisesTime currentExercises = (ExercisesTime)objectExercises;
+                InfoEditor.Text = String.Format($"{currentExercises.Name}\n{currentExercises.Information}");
+                UsfullLinkEditor.Text = String.Format($"{currentExercises.LinkName}\n{currentExercises.LinkURL}");
+                MissionLabel.Text = $"{currentExercises.Time.ToString()} = {currentExercises.PurposeToString()}s";
+                ResultStackLayout.Children.Add(new Entry() { BackgroundColor = Color.White });
+                type = App.TypeExercises.Time;
+            }
             ResultStackLayout.Children.Add(button);
         }
 
@@ -92,7 +101,18 @@ namespace ArmorUp
                 {
                     exercisesApproachTableRepository.DeleteFirst();
                 }
-            }            
+            }
+            else if (type == App.TypeExercises.Time)
+            {
+                progress = int.Parse((ResultStackLayout.Children[0] as Entry).Text);
+                var exercisesTimeTableRepository = new ExercisesTimeTableRepository(Path.Combine(DBSaverLoader.documentsPath, App.Database.GetItem(Exercises.CurrentExercisesId).StringID + ".db"));
+                exercisesTimeTableRepository.SaveItem(new ExercisesTimeTable { Count = new TimeSpan(0, 0, progress), Data = DateTime.Now });
+                int count = exercisesTimeTableRepository.Count;
+                if (count > App.Pivot)
+                {
+                    exercisesTimeTableRepository.DeleteFirst();
+                }
+            }
             Navigation.PushAsync(new StatisticPage());
         }
     }

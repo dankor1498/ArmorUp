@@ -29,6 +29,7 @@
                     <Picker.Items>
                         <x:String>Count</x:String>
                         <x:String>Approach</x:String>
+                        <x:String>Time</x:String>
                     </Picker.Items>
                 </Picker>
                 <Label Text="  Purpose: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />

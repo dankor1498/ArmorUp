@@ -33,7 +33,8 @@ namespace ArmorUp
             Navigation.PushAsync(new ProfilePage());
         }
 
-        private StackLayout AddStatisticFromScreen(string name, int id, int progress, double percent)
+
+        private StackLayout AddStatisticFromScreen(string name, int id, int progress, double percent, bool flag = false)
         {
             StackLayout stackLayout = new StackLayout()
             {
@@ -106,7 +107,7 @@ namespace ArmorUp
                 BackgroundColor = Color.FromHex("#262626"),
                 WidthRequest = 60
             };
-
+            
             Label SucsessLabel = new Label()
             {
                 Text = progress > 0 ? "+" + progress : progress.ToString(),
@@ -114,6 +115,7 @@ namespace ArmorUp
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center
             };
+            if (flag) SucsessLabel.Text = progress > 0 ? $"+{progress}s" : progress.ToString() + 's';
             //done 4
             SucsessFrame.Content = SucsessLabel;
 
@@ -137,7 +139,7 @@ namespace ArmorUp
                 {
                     return AddStatisticFromScreen(mainTable.Name, mainTable.ID, 0, 0.0);
                 }
-                ExercisesCountTable lastItem = exercisesCountTableRepository.GetItem(exercisesCountTableRepository.StartPosition + exercisesTableLength - 1);//exercisesTableLength == 0 ? null :
+                ExercisesCountTable lastItem = exercisesCountTableRepository.GetItem(exercisesCountTableRepository.StartPosition + exercisesTableLength - 1);
                 double purpose = double.Parse(mainTable.Purpose);
                 if (exercisesTableLength >= 2)
                 {
@@ -172,6 +174,29 @@ namespace ArmorUp
                 {
                     percent = (double)lastItem / purpose * 100.0;
                 }
+            }
+            else if (mainTable.Type == (byte)App.TypeExercises.Time)
+            {
+                ExercisesTimeTableRepository exercisesTimeTableRepository = new ExercisesTimeTableRepository(Path.Combine(DBSaverLoader.documentsPath, mainTable.StringID + ".db"));
+                int exercisesTableLength = exercisesTimeTableRepository.Count;
+                TimeSpan progressTime = new TimeSpan(0, 0, 0);
+                if (exercisesTableLength == 0)
+                {
+                    return AddStatisticFromScreen(mainTable.Name, mainTable.ID, 0, 0.0);
+                }
+                ExercisesTimeTable lastItem = exercisesTimeTableRepository.GetItem(exercisesTimeTableRepository.StartPosition + exercisesTableLength - 1);
+                double purpose = double.Parse(mainTable.Purpose);
+                if (exercisesTableLength >= 2)
+                {
+                    ExercisesTimeTable penultItem = exercisesTimeTableRepository.GetItem(exercisesTimeTableRepository.StartPosition + exercisesTableLength - 2);
+                    progressTime = lastItem.Count - penultItem.Count;
+                    percent = (double)lastItem.Count.TotalSeconds / purpose * 100.0;
+                }
+                if (exercisesTableLength == 1)
+                {
+                    percent = (double)lastItem.Count.TotalSeconds / purpose * 100.0;
+                }
+                return AddStatisticFromScreen(mainTable.Name, mainTable.ID, (int)progressTime.TotalSeconds, percent, true);
             }
             return AddStatisticFromScreen(mainTable.Name, mainTable.ID, progress, percent);
         }

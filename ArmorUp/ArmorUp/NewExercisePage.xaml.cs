@@ -55,6 +55,16 @@ namespace ArmorUp
                             ApproachList = new List<int>() { 30, 30, 30 }
                         }, App.Database);
                         App.UpdateMainTableList(); break;
+                    case 2:
+                        DBSaverLoader.SAVE_EXERCISE(new ExercisesTime()
+                        {
+                            Name = NameEntry.Text,
+                            Information = InformationEditor.Text,
+                            LinkName = NameLinkEntry.Text,
+                            LinkURL = UrlLinkEntry.Text,
+                            Time =  new TimeSpan(0, 0, Int32.Parse(PurposeEntry.Text))
+                        }, App.Database);
+                        App.UpdateMainTableList(); break;
                 }
             }
             Navigation.PushAsync(new ProfilePage());

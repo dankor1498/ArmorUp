@@ -22,6 +22,10 @@ namespace ArmorUp
             {
                 Database.SaveItem(new MainTable() { StringID = stringID, Type = (byte)App.TypeExercises.Approach, Name = exercises.Name, Purpose = exercises.PurposeToString() });
             }
+            else if (exercises is ExercisesTime)
+            {
+                Database.SaveItem(new MainTable() { StringID = stringID, Type = (byte)App.TypeExercises.Time, Name = exercises.Name, Purpose = exercises.PurposeToString() });
+            }
 
             var path = Path.Combine(documentsPath, stringID + ".json");
 
@@ -50,7 +54,11 @@ namespace ArmorUp
             else if (exercises is ExercisesApproach)
             {
                 Database.SaveItem(new MainTable() { ID = id, Name = exercises.Name, StringID = item.StringID, Purpose = exercises.PurposeToString(), Type = (byte)App.TypeExercises.Approach });
-            }            
+            }
+            else if (exercises is ExercisesTime)
+            {
+                Database.SaveItem(new MainTable() { ID = id, Name = exercises.Name, StringID = item.StringID, Purpose = exercises.PurposeToString(), Type = (byte)App.TypeExercises.Time });
+            }
             var path = Path.Combine(documentsPath, item.StringID + ".json");
 
             using (var file = new FileStream(path, FileMode.Create))

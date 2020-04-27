@@ -121,6 +121,50 @@ namespace ArmorUp
                     }
                 }
             }
+            else if (mainTable.Type == (byte)App.TypeExercises.Time)
+            {
+                ExercisesTimeTableRepository exercisesTimeTableRepository = new ExercisesTimeTableRepository(Path.Combine(DBSaverLoader.documentsPath, mainTable.StringID + ".db"));
+                if (exerciseByDataViewModel.exerciseInfoByDates.Count != exercisesTimeTableRepository.Count)
+                    exerciseByDataViewModel.exerciseInfoByDates.Clear();
+                int tableCount = exercisesTimeTableRepository.Count;
+                if (tableCount != 0)
+                {
+                    ExerciseName.Text = mainTable.Name;
+                    double percent = 0.0;
+                    TimeSpan progress = new TimeSpan(0, 0, 0);
+                    var arrayExercisesCountTable = exercisesTimeTableRepository.GetItems();
+                    if (tableCount >= 2)
+                    {
+                        percent = GetPercent(mainTable.Purpose, arrayExercisesCountTable[arrayExercisesCountTable.Length - 1].Count.TotalSeconds);
+                        progress = arrayExercisesCountTable[arrayExercisesCountTable.Length - 1].Count - arrayExercisesCountTable[arrayExercisesCountTable.Length - 2].Count;
+                    }
+                    if (tableCount == 1)
+                    {
+                        percent = GetPercent(mainTable.Purpose, arrayExercisesCountTable[arrayExercisesCountTable.Length - 1].Count.TotalSeconds);
+                    }
+                    PercentSFCircularGaugeLabel.Text = ((int)percent).ToString() + "%";
+                    ProgresSFCircularGauge.Value = (int)percent;
+                    CheckForProgress(ProgresLabelWithConclusion, ProgresSFCircularGauge, ProgresLabel, (int)progress.TotalSeconds, true);
+                    ProgresLabel.Text = $"{arrayExercisesCountTable[arrayExercisesCountTable.Length - 1].Count}/\n{new TimeSpan(0,0, int.Parse(mainTable.Purpose)).ToString()}";
+                    int CountOfExForChart = tableCount <= 20 ? tableCount : 20;
+                    for (int i = 0, j = tableCount - 1; i < CountOfExForChart; i++, j--)
+                    {
+                        var exerciseHist = arrayExercisesCountTable[j];
+                        var dataHist = exerciseHist.Data.ToString();
+                        var percentHist = (int)GetPercent(mainTable.Purpose, arrayExercisesCountTable[j].Count.TotalSeconds);
+                        ExerciseByDataStackLayout.Children.Add(CreateNewItem(dataHist, percentHist, arrayExercisesCountTable[j].Count.ToString()));
+                    }
+                    CountOfExForChart = tableCount <= 10 ? tableCount : 10;
+                    int TableCount = tableCount - CountOfExForChart;
+                    for (int i = CountOfExForChart - 1; i >= 0; --i)
+                    {
+                        var exerciseHist = arrayExercisesCountTable[TableCount];
+                        if ((exerciseByDataViewModel.exerciseInfoByDates.Count != tableCount) && exerciseHist.Data.Month == DateTime.Now.Month)
+                            exerciseByDataViewModel.exerciseInfoByDates.Add(new ExerciseInfoByDate() { Data = exerciseHist.Data.Day.ToString() + "/" + exerciseHist.Data.Month.ToString(), Count = (int)exerciseHist.Count.TotalSeconds, Purpose = int.Parse(mainTable.Purpose) });
+                        TableCount++;
+                    }
+                }
+            }
         }
 
         private double GetPercent(string purpose, double count)
@@ -139,26 +183,29 @@ namespace ArmorUp
                     select int.Parse(item)).Sum();
         }
 
-        private void CheckForProgress(Label label, RangePointer rangePointer, Label label1, int progress)
+        private void CheckForProgress(Label label, RangePointer rangePointer, Label label1, int progress, bool flag = false)
         {            
             if (progress > 0)
             {
                 label.TextColor = Color.Green;
-                label.Text = "+" + $"{progress}" + " Good job!";
+                if (!flag) label.Text = "+" + $"{progress}" + " Good job!";
+                else label.Text = "+" + $"{progress}s" + " Good job!";
                 rangePointer.Color = Color.Green;
                 label1.TextColor = Color.Green;
             }
             if (progress == 0)
             {
                 label.TextColor = Color.White;
-                label.Text = $"{progress}" + " It's fine.";
+                if (!flag) label.Text = $"{progress}" + " It's fine.";
+                else label.Text = $"{progress}s" + " It's fine.";
                 rangePointer.Color = Color.FromHex("#205be6");
                 label1.TextColor = Color.FromHex("#205be6");
             }
             if (progress < 0)
             {
                 label.TextColor = Color.Red;
-                label.Text = $"{progress}" + " Bad job!";
+                if (!flag) label.Text = $"{progress}s" + " Bad job!";
+                else label.Text = label.Text = $"{progress}s" + " Bad job!";
                 rangePointer.Color = Color.Red;
                 label1.TextColor = Color.Red;
             }
