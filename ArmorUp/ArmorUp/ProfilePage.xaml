@@ -26,7 +26,7 @@
                                HeightRequest="160"
                                WidthRequest="160"/>
                     </Frame>
-                    <Label Text="Roman Cholkan"
+                    <Label Text="Danyil Korotych"
                            VerticalOptions="Center"
                            HorizontalOptions="Center"
                            FontSize="25"

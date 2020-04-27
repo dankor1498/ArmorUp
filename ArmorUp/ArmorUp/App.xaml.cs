@@ -30,7 +30,7 @@ namespace ArmorUp
             {
                 if (database == null)
                 {
-                    database = new MainTableRepository(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "table.db"));
+                    database = new MainTableRepository(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "table1.db"));
                 }
                 return database;
             }

@@ -15,7 +15,7 @@ namespace ArmorUp
         public ProfilePage()
         {
             InitializeComponent();
-            
+
             //string _del = @"*.db";
             //string[] _files = Directory.GetFiles(DBSaverLoader.documentsPath, _del);
             //foreach (string fl in _files)
@@ -29,11 +29,11 @@ namespace ArmorUp
             //    File.Delete(fl);
             //}
 
-            var files = Directory.GetFiles(DBSaverLoader.documentsPath);
-            foreach (var item in files)
-            {
-                AllExercisesStackLayout.Children.Add(new Label { Text = item, TextColor = Color.White });
-            }
+            //var files = Directory.GetFiles(DBSaverLoader.documentsPath);
+            //foreach (var item in files)
+            //{
+            //    AllExercisesStackLayout.Children.Add(new Label { Text = item, TextColor = Color.White });
+            //}
             foreach (var item in App.MainTableArray)
             {
                 AllExercisesStackLayout.Children.Add(AddExercisesToProfilePage(item));

@@ -99,13 +99,12 @@ namespace ArmorUp
                     ProgresSFCircularGauge.Value = (int)percent;
                     CheckForProgress(ProgresLabelWithConclusion, ProgresSFCircularGauge, ProgresLabel, progress);
                     ProgresLabel.Text = $"{LastCount}/{Purpose}";
-                    int CountOfExForChart = tableCount <= 20 ? tableCount : 20;
-                    //var TableCount = tableCount - CountOfExForChart;
+                    int CountOfExForChart = tableCount <= 20 ? tableCount : 20;                    
                     for (int i = 0, j = tableCount - 1; i < CountOfExForChart; i++, j--)
                     {
                         LastCount = GetSum(arrayExercisesApproachTable[j].Count);
                         var exerciseHist = arrayExercisesApproachTable[j];
-                        var dataHist = $"{exerciseHist.Data.ToString()}\n{arrayExercisesApproachTable[i].Count}";
+                        var dataHist = $"{exerciseHist.Data.ToString()}\n{arrayExercisesApproachTable[j].Count}";
                         int count = GetSum(arrayExercisesApproachTable[j].Count);
                         var percentHist = (int)GetPercent(Purpose, count);
                         ExerciseByDataStackLayout.Children.Add(CreateNewItem(dataHist, percentHist, $"{LastCount}"));

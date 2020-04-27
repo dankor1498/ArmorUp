@@ -137,11 +137,11 @@ namespace ArmorUp
                 {
                     return AddStatisticFromScreen(mainTable.Name, mainTable.ID, 0, 0.0);
                 }
-                ExercisesCountTable lastItem = exercisesCountTableRepository.GetItem(exercisesTableLength);//exercisesTableLength == 0 ? null :
+                ExercisesCountTable lastItem = exercisesCountTableRepository.GetItem(exercisesCountTableRepository.StartPosition + exercisesTableLength - 1);//exercisesTableLength == 0 ? null :
                 double purpose = double.Parse(mainTable.Purpose);
                 if (exercisesTableLength >= 2)
                 {
-                    ExercisesCountTable penultItem = exercisesCountTableRepository.GetItem(exercisesTableLength - 1);
+                    ExercisesCountTable penultItem = exercisesCountTableRepository.GetItem(exercisesCountTableRepository.StartPosition + exercisesTableLength - 2);
                     progress = lastItem.Count - penultItem.Count;
                     percent = (double)lastItem.Count / purpose * 100.0;
                 }
@@ -158,12 +158,12 @@ namespace ArmorUp
                 {
                     return AddStatisticFromScreen(mainTable.Name, mainTable.ID, 0, 0.0);
                 }
-                int lastItem = (from item in exercisesApproachTableRepository.GetItem(exercisesTableLength).Count.Split('/')
+                int lastItem = (from item in exercisesApproachTableRepository.GetItem(exercisesApproachTableRepository.StartPosition + exercisesTableLength - 1).Count.Split('/')
                                 select int.Parse(item)).Sum();
                 double purpose = (from item in mainTable.Purpose.Split('/') select double.Parse(item)).Sum();
                 if (exercisesTableLength >= 2)
                 {
-                    int penultItem = (from item in exercisesApproachTableRepository.GetItem(exercisesTableLength - 1).Count.Split('/')
+                    int penultItem = (from item in exercisesApproachTableRepository.GetItem(exercisesApproachTableRepository.StartPosition + exercisesTableLength - 2).Count.Split('/')
                                       select int.Parse(item)).Sum();
                     progress = lastItem - penultItem;
                     percent = (double)lastItem / purpose * 100.0;

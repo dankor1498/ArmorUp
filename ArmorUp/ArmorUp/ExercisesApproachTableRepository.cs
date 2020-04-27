@@ -8,23 +8,31 @@ namespace ArmorUp
     class ExercisesApproachTableRepository 
     {
         SQLiteConnection database;
+        public int StartPosition = 1;
+        private int count;
+
         public ExercisesApproachTableRepository(string databasePath)
         {
             database = new SQLiteConnection(databasePath);
             database.CreateTable<ExercisesApproachTable>();
+            count = database.Table<ExercisesApproachTable>().Count();
+            if (count >= 1)
+                StartPosition = database.Table<ExercisesApproachTable>().First().ID;
         }
 
         public int Count
         {
             get
             {
-                return database.Table<ExercisesApproachTable>().Count();
+                return this.count;
             }
         }
 
         public void DeleteFirst()
-        {            
-            database.Delete<ExercisesApproachTable>(database.Table<ExercisesApproachTable>().First().ID);            
+        {
+            database.Delete<ExercisesApproachTable>(StartPosition);
+            StartPosition++;
+            count--;
         }
 
         public ExercisesApproachTable[] GetItems()
@@ -37,6 +45,7 @@ namespace ArmorUp
         }
         public int DeleteItem(int id)
         {
+            count--;
             return database.Delete<ExercisesApproachTable>(id);
         }
 
@@ -49,6 +58,7 @@ namespace ArmorUp
             }
             else
             {
+                count++;
                 return database.Insert(item);
             }
         }
