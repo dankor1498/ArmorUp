@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Pickers;assembly=Syncfusion.SfPicker.XForms"
              mc:Ignorable="d"
-             x:Class="ArmorUp.UpdateExercisePage">
+             x:Class="ArmorUp.UpdateExercisePage"
+              NavigationPage.HasNavigationBar="false">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -13,25 +14,25 @@
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         <ScrollView Grid.Row="0">
-            <StackLayout x:Name="UpdateStackLayout">
+            <StackLayout x:Name="UpdateStackLayout" Margin="5">
                 <Label Text="New exercise" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Center" />
-                <Label Text="  Name: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Label Text="Name:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
                 <Entry x:Name="NameEntry" Placeholder="" />
-                <Label Text="  Information: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Label Text="Information:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
                 <Editor x:Name="InformationEditor"/>
-                <Label Text="  Link: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
-                <Label Text="   Name: " FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Label Text="Link:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Label Text="Name:" FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start" />
                 <Entry x:Name="NameLinkEntry" Placeholder="" />
-                <Label Text="   URL: " FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Label Text="URL:" FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start" />
                 <Entry x:Name="UrlLinkEntry" Placeholder="" />
                 <Label x:Name="TypeLabel" Text="  Type: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
-                <Label Text = "  Purpose: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Label Text = "Purpose:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
             </StackLayout>     
         </ScrollView>
-        <StackLayout Grid.Row="1" HeightRequest="350" WidthRequest="350">
+        <StackLayout Grid.Row="1" HeightRequest="350" WidthRequest="350" Margin="5, 0, 5, 0">
             <StackLayout x:Name="PurposeStackLayout"></StackLayout>
-        </StackLayout>   
-        <StackLayout Grid.Row="2">
+        </StackLayout>
+        <StackLayout Grid.Row="2" Margin="5, 0, 5, 0">
             <Button x:Name="UpdateApproachButton" Text="Update approach" Clicked="UpdateApproachButton_Clicked"/>
         </StackLayout>
     </Grid>

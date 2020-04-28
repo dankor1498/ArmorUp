@@ -40,43 +40,59 @@ namespace ArmorUp
 
         private void CreateApproachButton_Clicked(object sender, EventArgs e)
         {
-            if (NameEntry != null && PurposeEntry != null && TypePicker.SelectedIndex != -1)
+            if (TypePicker.SelectedIndex == -1 || NameEntry == null || NameEntry.Text == "")
             {
-                switch (TypePicker.SelectedIndex)
+                DisplayAlert("Помилка", "Ви не вибрали тип або не ввели ім'я!", "Добре");
+            }
+            else
+            {
+                try
                 {
-                    case 0:
-                        DBSaverLoader.SAVE_EXERCISE(new ExercisesCount()
+                    if (NameEntry != null && PurposeEntry != null && NameEntry.Text != "" && TypePicker.SelectedIndex != -1)
+                    {
+                        switch (TypePicker.SelectedIndex)
                         {
-                            Name = NameEntry.Text,
-                            Information = InformationEditor.Text,
-                            LinkName = NameLinkEntry.Text,
-                            LinkURL = UrlLinkEntry.Text,
-                            Purpose = Int32.Parse(PurposeEntry.Text)
-                        }, App.Database);
-                        App.UpdateMainTableList(); break;
-                    case 1:
-                        DBSaverLoader.SAVE_EXERCISE(new ExercisesApproach()
-                        {
-                            Name = NameEntry.Text,
-                            Information = InformationEditor.Text,
-                            LinkName = NameLinkEntry.Text,
-                            LinkURL = UrlLinkEntry.Text,
-                            ApproachList = new List<int>() { 30, 30, 30 }
-                        }, App.Database);
-                        App.UpdateMainTableList(); break;
-                    case 2:
-                        DBSaverLoader.SAVE_EXERCISE(new ExercisesTime()
-                        {
-                            Name = NameEntry.Text,
-                            Information = InformationEditor.Text,
-                            LinkName = NameLinkEntry.Text,
-                            LinkURL = UrlLinkEntry.Text,
-                            Time =  new TimeSpan(0, 0, Int32.Parse(PurposeEntry.Text))
-                        }, App.Database);
-                        App.UpdateMainTableList(); break;
+                            case 0:
+                                DBSaverLoader.SAVE_EXERCISE(new ExercisesCount()
+                                {
+                                    Name = NameEntry.Text,
+                                    Information = InformationEditor.Text,
+                                    LinkName = NameLinkEntry.Text,
+                                    LinkURL = UrlLinkEntry.Text,
+                                    Purpose = Int32.Parse(PurposeEntry.Text)
+                                }, App.Database);
+                                App.UpdateMainTableList(); break;
+                            case 1:
+                                DBSaverLoader.SAVE_EXERCISE(new ExercisesApproach()
+                                {
+                                    Name = NameEntry.Text,
+                                    Information = InformationEditor.Text,
+                                    LinkName = NameLinkEntry.Text,
+                                    LinkURL = UrlLinkEntry.Text,
+                                    ApproachList = new List<int>() { 30, 30, 30 }
+                                }, App.Database);
+                                App.UpdateMainTableList(); break;
+                            case 2:
+                                DBSaverLoader.SAVE_EXERCISE(new ExercisesTime()
+                                {
+                                    Name = NameEntry.Text,
+                                    Information = InformationEditor.Text,
+                                    LinkName = NameLinkEntry.Text,
+                                    LinkURL = UrlLinkEntry.Text,
+                                    Time = new TimeSpan(0, 0, Int32.Parse(PurposeEntry.Text))
+                                }, App.Database);
+                                App.UpdateMainTableList(); break;
+                        }
+                    }
+                    Navigation.PushAsync(new ProfilePage());
+                }
+                catch(Exception)
+                {
+                    bool tryParse = Int32.TryParse(PurposeEntry.Text, out int result);
+                    if (tryParse == false)
+                        DisplayAlert("Помилка. Формат цілі.", "Невірно введена ціль!", "Добре");
                 }
             }
-            Navigation.PushAsync(new ProfilePage());
         }
     }
 }

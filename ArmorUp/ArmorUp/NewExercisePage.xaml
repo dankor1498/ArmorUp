@@ -14,18 +14,18 @@
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         <ScrollView Grid.Row="0">
-            <StackLayout x:Name="MainStackLayout">
+            <StackLayout x:Name="MainStackLayout" Margin="5">
                 <Label Text="New exercise" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Center" />
-                <Label Text="  Name: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
-                <Entry x:Name="NameEntry" Placeholder="" />
-                <Label Text="  Information: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Label Text="Name:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start"/>
+                <Entry x:Name="NameEntry" Placeholder=""/>
+                <Label Text="Information:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start"/>
                 <Editor x:Name="InformationEditor"/>
-                <Label Text="  Link: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
-                <Label Text="   Name: " FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start" />
-                <Entry x:Name="NameLinkEntry" Placeholder="" />
-                <Label Text="   URL: " FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Label Text="Link:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start"/>
+                <Label Text="Name:" FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start"/>
+                <Entry x:Name="NameLinkEntry" Placeholder=""/>
+                <Label Text="URL:" FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start" />
                 <Entry x:Name="UrlLinkEntry" Placeholder="" />
-                <Label Text="  Type: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Label Text="Type:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
                 <Picker x:Name="TypePicker">
                     <Picker.Items>
                         <x:String>Count</x:String>
@@ -33,16 +33,16 @@
                         <x:String>Time</x:String>
                     </Picker.Items>
                 </Picker>
-                <Label Text="  Purpose: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Label Text="Purpose:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
                 <Entry x:Name="PurposeEntry" Placeholder="" />
                 <syncfusion:SfTimePicker x:Name="timePicker"
-                                     PickerMode="Default"
-                                     ShowHeader="False"
-                                     EnableLooping="True"
-                                     IsOpen="False"
-                                     TimeSelected="TimePicker_TimeSelected"
-                                     HeightRequest="200"
-                                     WidthRequest="200"
+                                         PickerMode="Default"
+                                         ShowHeader="False"
+                                         EnableLooping="True"
+                                         IsOpen="False"
+                                         TimeSelected="TimePicker_TimeSelected"
+                                         HeightRequest="200"
+                                         WidthRequest="200"
                                          Time="0:0:0"/>
                 <Button x:Name="AddApproachButton" Text="Add approach" Clicked="AddApproachButton__Clicked"  />
             </StackLayout>

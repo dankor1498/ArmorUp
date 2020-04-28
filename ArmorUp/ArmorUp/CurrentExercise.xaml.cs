@@ -13,12 +13,7 @@ namespace ArmorUp
         private App.TypeExercises type;         
         private object objectExercises = DBSaverLoader.LOAD_EXERCISE(Exercises.CurrentExercisesId, App.Database);
         SfTimePicker timePicker;
-        Label TimeLabel = new Label()
-        {
-            TextColor = Color.White,
-            HorizontalOptions = LayoutOptions.Center,
-            VerticalOptions = LayoutOptions.Center
-        };
+        private string TimeResult;
 
         public CurrentExercise()
         {
@@ -58,7 +53,6 @@ namespace ArmorUp
                 InfoEditor.Text = String.Format($"{currentExercises.Name}\n{currentExercises.Information}");
                 UsfullLinkEditor.Text = String.Format($"{currentExercises.LinkName}\n{currentExercises.LinkURL}");
                 MissionLabel.Text = $"{currentExercises.Time.ToString()} = {currentExercises.PurposeToString()}s";
-                ResultStackLayout.Children.Add(TimeLabel);
                 ResultStackLayout.Children.Add(CreateNewTimePicker());
                 type = App.TypeExercises.Time;
             }
@@ -86,7 +80,7 @@ namespace ArmorUp
             int hour = Int32.Parse(time[0]) * 3600;
             int minute = Int32.Parse(time[1]) * 60;
             int second = Int32.Parse(time[2]);
-            TimeLabel.Text = (hour + minute + second).ToString();
+            TimeResult = (hour + minute + second).ToString();
         }
 
         private void NewExercisePage_Clicked(object sender, EventArgs e)
@@ -107,45 +101,49 @@ namespace ArmorUp
         private void SendButton_Clicked(object sender, EventArgs e)
         {
             int progress = 0;
-            if (type == App.TypeExercises.Count)
+            try
             {
-                progress = int.Parse((ResultStackLayout.Children[0] as Entry).Text);
-                var exercisesCountTableRepository = new ExercisesCountTableRepository(Path.Combine(DBSaverLoader.documentsPath, App.Database.GetItem(Exercises.CurrentExercisesId).StringID + ".db"));
-                exercisesCountTableRepository.SaveItem(new ExercisesCountTable { Count = progress, Data = DateTime.Now });
-                int count = exercisesCountTableRepository.Count;
-                if(count > App.Pivot)
+                if (type == App.TypeExercises.Count)
                 {
-                    exercisesCountTableRepository.DeleteFirst();
+                    progress = int.Parse((ResultStackLayout.Children[0] as Entry).Text);
+                    var exercisesCountTableRepository = new ExercisesCountTableRepository(Path.Combine(DBSaverLoader.documentsPath, App.Database.GetItem(Exercises.CurrentExercisesId).StringID + ".db"));
+                    exercisesCountTableRepository.SaveItem(new ExercisesCountTable { Count = progress, Data = DateTime.Now });
+                    int count = exercisesCountTableRepository.Count;
+                    if (count > App.Pivot)
+                    {
+                        exercisesCountTableRepository.DeleteFirst();
+                    }
+                }
+                else if (type == App.TypeExercises.Approach)
+                {
+                    string result = "";
+                    int Count = ResultStackLayout.Children.Count;
+                    for (int i = 0; i < Count - 2; i++)
+                    {
+                        result += string.Format($"{(ResultStackLayout.Children[i] as Entry).Text}/");
+                    }
+                    result += (ResultStackLayout.Children[Count - 2] as Entry).Text;
+                    var exercisesApproachTableRepository = new ExercisesApproachTableRepository(Path.Combine(DBSaverLoader.documentsPath, App.Database.GetItem(Exercises.CurrentExercisesId).StringID + ".db"));
+                    exercisesApproachTableRepository.SaveItem(new ExercisesApproachTable { Count = result, Data = DateTime.Now });
+                    int count = exercisesApproachTableRepository.Count;
+                    if (count > App.Pivot)
+                    {
+                        exercisesApproachTableRepository.DeleteFirst();
+                    }
+                }
+                else if (type == App.TypeExercises.Time)
+                {
+                    progress = int.Parse(TimeResult);
+                    var exercisesTimeTableRepository = new ExercisesTimeTableRepository(Path.Combine(DBSaverLoader.documentsPath, App.Database.GetItem(Exercises.CurrentExercisesId).StringID + ".db"));
+                    exercisesTimeTableRepository.SaveItem(new ExercisesTimeTable { Count = new TimeSpan(0, 0, progress), Data = DateTime.Now });
+                    int count = exercisesTimeTableRepository.Count;
+                    if (count > App.Pivot)
+                    {
+                        exercisesTimeTableRepository.DeleteFirst();
+                    }
                 }
             }
-            else if(type == App.TypeExercises.Approach)
-            {
-                string result = "";
-                int Count = ResultStackLayout.Children.Count;
-                for (int i = 0; i < Count - 2; i++)
-                {
-                    result += string.Format($"{(ResultStackLayout.Children[i] as Entry).Text}/");
-                }
-                result += (ResultStackLayout.Children[Count - 2] as Entry).Text;
-                var exercisesApproachTableRepository = new ExercisesApproachTableRepository(Path.Combine(DBSaverLoader.documentsPath, App.Database.GetItem(Exercises.CurrentExercisesId).StringID + ".db"));
-                exercisesApproachTableRepository.SaveItem(new ExercisesApproachTable { Count = result, Data = DateTime.Now });
-                int count = exercisesApproachTableRepository.Count;
-                if (count > App.Pivot)
-                {
-                    exercisesApproachTableRepository.DeleteFirst();
-                }
-            }
-            else if (type == App.TypeExercises.Time)
-            {
-                progress = int.Parse(TimeLabel.Text);
-                var exercisesTimeTableRepository = new ExercisesTimeTableRepository(Path.Combine(DBSaverLoader.documentsPath, App.Database.GetItem(Exercises.CurrentExercisesId).StringID + ".db"));
-                exercisesTimeTableRepository.SaveItem(new ExercisesTimeTable { Count = new TimeSpan(0, 0, progress), Data = DateTime.Now });
-                int count = exercisesTimeTableRepository.Count;
-                if (count > App.Pivot)
-                {
-                    exercisesTimeTableRepository.DeleteFirst();
-                }
-            }
+            catch(Exception) { }
             Navigation.PushAsync(new StatisticPage());
         }
     }
