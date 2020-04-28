@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Syncfusion.XForms.Pickers;
+using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -27,6 +28,14 @@ namespace ArmorUp
             Entry entry = new Entry();
             MainStackLayout.Children.Add(label);
             MainStackLayout.Children.Add(entry);
+        }
+        private void TimePicker_TimeSelected(object sender, TimeChangedEventArgs e)
+        {
+            var time = e.NewValue.ToString().Split(':');
+            int hour = Int32.Parse(time[0]) * 3600;
+            int minute = Int32.Parse(time[1]) * 60;
+            int second = Int32.Parse(time[2]);
+            PurposeEntry.Text = (hour + minute + second).ToString();
         }
 
         private void CreateApproachButton_Clicked(object sender, EventArgs e)

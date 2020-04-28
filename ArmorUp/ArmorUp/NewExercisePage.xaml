@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Pickers;assembly=Syncfusion.SfPicker.XForms"
              mc:Ignorable="d"
              x:Class="ArmorUp.NewExercisePage"
              NavigationPage.HasNavigationBar="false"
@@ -34,6 +35,15 @@
                 </Picker>
                 <Label Text="  Purpose: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
                 <Entry x:Name="PurposeEntry" Placeholder="" />
+                <syncfusion:SfTimePicker x:Name="timePicker"
+                                     PickerMode="Default"
+                                     ShowHeader="False"
+                                     EnableLooping="True"
+                                     IsOpen="False"
+                                     TimeSelected="TimePicker_TimeSelected"
+                                     HeightRequest="200"
+                                     WidthRequest="200"
+                                         Time="0:0:0"/>
                 <Button x:Name="AddApproachButton" Text="Add approach" Clicked="AddApproachButton__Clicked"  />
             </StackLayout>
         </ScrollView>

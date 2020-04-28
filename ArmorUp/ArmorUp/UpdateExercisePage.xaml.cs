@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Syncfusion.XForms.Pickers;
+using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,6 +11,8 @@ namespace ArmorUp
     {
         private object exercises = DBSaverLoader.LOAD_EXERCISE(Exercises.CurrentExercisesId, App.Database);
         private App.TypeExercises type;
+        SfTimePicker timePicker;
+        Entry entry;
         public UpdateExercisePage()
         {
             InitializeComponent();
@@ -46,14 +49,40 @@ namespace ArmorUp
             else if (exercises is ExercisesTime)
             {
                 ExercisesTime exercisesTime = (ExercisesTime)exercises;
+                entry = new Entry() { Text = exercisesTime.Time.TotalSeconds.ToString() };
                 NameEntry.Text = exercisesTime.Name;
                 InformationEditor.Text = exercisesTime.Information;
                 NameLinkEntry.Text = exercisesTime.LinkName;
                 UrlLinkEntry.Text = exercisesTime.LinkURL;
                 TypeLabel.Text += "Count";
                 type = App.TypeExercises.Time;
-                PurposeStackLayout.Children.Add(new Entry() { Text = exercisesTime.Time.TotalSeconds.ToString() });
+                PurposeStackLayout.Children.Add(entry);
+                PurposeStackLayout.Children.Add(CreateNewTimePicker());
             }
+        }
+        private SfTimePicker CreateNewTimePicker()
+        {
+            ExercisesTime currentExercises = (ExercisesTime)exercises;
+            timePicker = new SfTimePicker()
+            {
+                PickerMode = PickerMode.Default,
+                ShowHeader = false,
+                EnableLooping = true,
+                IsOpen = true,
+                HeightRequest = 200,
+                WidthRequest = 200,
+                Time = new TimeSpan(currentExercises.Time.Hours, currentExercises.Time.Minutes, currentExercises.Time.Seconds)
+            };
+            timePicker.TimeSelected += TimePicker_TimeSelected;
+            return timePicker;
+        }
+        private void TimePicker_TimeSelected(object sender, TimeChangedEventArgs e)
+        {
+            var time = e.NewValue.ToString().Split(':');
+            int hour = Int32.Parse(time[0]) * 3600;
+            int minute = Int32.Parse(time[1]) * 60;
+            int second = Int32.Parse(time[2]);
+            entry.Text = (hour + minute + second).ToString();
         }
 
         private void UpdateApproachButton_Clicked(object sender, EventArgs e)

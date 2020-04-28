@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Syncfusion.XForms.Pickers;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Xamarin.Forms;
@@ -11,7 +12,8 @@ namespace ArmorUp
     {
         private App.TypeExercises type;         
         private object objectExercises = DBSaverLoader.LOAD_EXERCISE(Exercises.CurrentExercisesId, App.Database);
-        
+        SfTimePicker timePicker;
+
         public CurrentExercise()
         {
             InitializeComponent();
@@ -50,10 +52,34 @@ namespace ArmorUp
                 InfoEditor.Text = String.Format($"{currentExercises.Name}\n{currentExercises.Information}");
                 UsfullLinkEditor.Text = String.Format($"{currentExercises.LinkName}\n{currentExercises.LinkURL}");
                 MissionLabel.Text = $"{currentExercises.Time.ToString()} = {currentExercises.PurposeToString()}s";
-                ResultStackLayout.Children.Add(new Entry() { BackgroundColor = Color.White });
+                ResultStackLayout.Children.Add(CreateNewTimePicker());
                 type = App.TypeExercises.Time;
             }
             ResultStackLayout.Children.Add(button);
+        }
+        private SfTimePicker CreateNewTimePicker()
+        {
+            ExercisesTime currentExercises = (ExercisesTime)objectExercises;
+            timePicker = new SfTimePicker()
+            {
+                PickerMode = PickerMode.Default,
+                ShowHeader = false,
+                EnableLooping = true,
+                IsOpen = true,
+                HeightRequest = 200,
+                WidthRequest = 200,
+                Time = new TimeSpan(currentExercises.Time.Hours, currentExercises.Time.Minutes, currentExercises.Time.Seconds)
+            };
+            timePicker.TimeSelected += TimePicker_TimeSelected;
+            return timePicker;
+        }
+        private void TimePicker_TimeSelected(object sender, TimeChangedEventArgs e)
+        {
+            var time = e.NewValue.ToString().Split(':');
+            int hour = Int32.Parse(time[0]) * 3600;
+            int minute = Int32.Parse(time[1]) * 60;
+            int second = Int32.Parse(time[2]);
+            TimeLabel.Text = (hour + minute + second).ToString();
         }
 
         private void NewExercisePage_Clicked(object sender, EventArgs e)
@@ -104,7 +130,7 @@ namespace ArmorUp
             }
             else if (type == App.TypeExercises.Time)
             {
-                progress = int.Parse((ResultStackLayout.Children[0] as Entry).Text);
+                progress = int.Parse(TimeLabel.Text);
                 var exercisesTimeTableRepository = new ExercisesTimeTableRepository(Path.Combine(DBSaverLoader.documentsPath, App.Database.GetItem(Exercises.CurrentExercisesId).StringID + ".db"));
                 exercisesTimeTableRepository.SaveItem(new ExercisesTimeTable { Count = new TimeSpan(0, 0, progress), Data = DateTime.Now });
                 int count = exercisesTimeTableRepository.Count;

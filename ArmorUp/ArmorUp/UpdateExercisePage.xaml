@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:syncfusion="clr-namespace:Syncfusion.XForms.Pickers;assembly=Syncfusion.SfPicker.XForms"
              mc:Ignorable="d"
              x:Class="ArmorUp.UpdateExercisePage">
     <Grid>
@@ -27,9 +28,9 @@
                 <Label Text = "  Purpose: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
             </StackLayout>     
         </ScrollView>
-        <ScrollView Grid.Row="1">
+        <StackLayout Grid.Row="1" HeightRequest="350" WidthRequest="350">
             <StackLayout x:Name="PurposeStackLayout"></StackLayout>
-        </ScrollView>            
+        </StackLayout>   
         <StackLayout Grid.Row="2">
             <Button x:Name="UpdateApproachButton" Text="Update approach" Clicked="UpdateApproachButton_Clicked"/>
         </StackLayout>

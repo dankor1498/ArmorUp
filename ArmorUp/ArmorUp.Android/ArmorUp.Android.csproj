@@ -72,6 +72,9 @@
     <PackageReference Include="Syncfusion.Xamarin.SfGauge">
       <Version>18.1.0.45</Version>
     </PackageReference>
+    <PackageReference Include="Syncfusion.Xamarin.SfPicker">
+      <Version>18.1.0.46</Version>
+    </PackageReference>
     <PackageReference Include="System.Runtime.Serialization.Json">
       <Version>4.3.0</Version>
     </PackageReference>

@@ -12,6 +12,7 @@
           "NETStandard.Library": "2.0.3",
           "Syncfusion.Xamarin.SfChart": "18.1.0.45",
           "Syncfusion.Xamarin.SfGauge": "18.1.0.45",
+          "Syncfusion.Xamarin.SfPicker": "18.1.0.46",
           "System.Runtime.Serialization.Json": "4.3.0",
           "Xamarin.Essentials": "1.5.3.1",
           "Xamarin.Forms": "4.5.0.657",
@@ -67,29 +68,29 @@
           }
         }
       },
-      "Syncfusion.Licensing/18.1.0.45": {
+      "Syncfusion.Licensing/18.1.0.46": {
         "runtime": {
           "lib/netstandard2.0/Syncfusion.Licensing.dll": {
-            "assemblyVersion": "18.1.0.45",
-            "fileVersion": "18.1.0.45"
+            "assemblyVersion": "18.1.0.46",
+            "fileVersion": "18.1.0.46"
           }
         }
       },
-      "Syncfusion.Xamarin.Core/18.1.0.45": {
+      "Syncfusion.Xamarin.Core/18.1.0.46": {
         "dependencies": {
-          "Syncfusion.Licensing": "18.1.0.45",
+          "Syncfusion.Licensing": "18.1.0.46",
           "Xamarin.Forms": "4.5.0.657"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.Core.XForms.dll": {
-            "assemblyVersion": "18.1451.0.45",
-            "fileVersion": "18.1451.0.45"
+            "assemblyVersion": "18.1451.0.46",
+            "fileVersion": "18.1451.0.46"
           }
         }
       },
       "Syncfusion.Xamarin.SfChart/18.1.0.45": {
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.1.0.45",
+          "Syncfusion.Xamarin.Core": "18.1.0.46",
           "Xamarin.Forms": "4.5.0.657"
         },
         "runtime": {
@@ -101,13 +102,25 @@
       },
       "Syncfusion.Xamarin.SfGauge/18.1.0.45": {
         "dependencies": {
-          "Syncfusion.Xamarin.Core": "18.1.0.45",
+          "Syncfusion.Xamarin.Core": "18.1.0.46",
           "Xamarin.Forms": "4.5.0.657"
         },
         "runtime": {
           "lib/netstandard2.0/Syncfusion.SfGauge.XForms.dll": {
             "assemblyVersion": "18.1451.0.45",
             "fileVersion": "18.1451.0.45"
+          }
+        }
+      },
+      "Syncfusion.Xamarin.SfPicker/18.1.0.46": {
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.46",
+          "Xamarin.Forms": "4.5.0.657"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Syncfusion.SfPicker.XForms.dll": {
+            "assemblyVersion": "18.1451.0.46",
+            "fileVersion": "18.1451.0.46"
           }
         }
       },
@@ -632,19 +645,19 @@
       "path": "sqlitepclraw.core/1.1.13",
       "hashPath": "sqlitepclraw.core.1.1.13.nupkg.sha512"
     },
-    "Syncfusion.Licensing/18.1.0.45": {
+    "Syncfusion.Licensing/18.1.0.46": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-C+YhSudANq6VAFfOUYmTcLCvHPjMt+yXJJ8xv65m+U+9H3t79wSGd1+mRc0SjACaGGGE+w3uTbJd+hq4C4Q9oA==",
-      "path": "syncfusion.licensing/18.1.0.45",
-      "hashPath": "syncfusion.licensing.18.1.0.45.nupkg.sha512"
+      "sha512": "sha512-uX66bUz9OU3RxdKc0nNyECzVrWxjF7SmlBnxSKFL4s0maUXfMHJrXGJHVD/Z7EDkcPzUk1eDL6aHI13Kgk511w==",
+      "path": "syncfusion.licensing/18.1.0.46",
+      "hashPath": "syncfusion.licensing.18.1.0.46.nupkg.sha512"
     },
-    "Syncfusion.Xamarin.Core/18.1.0.45": {
+    "Syncfusion.Xamarin.Core/18.1.0.46": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ybi81ZS3LthUObIE6Z2HD9sgWz+huuM86J6erFuQlkQzPiOPyr3MhB0cD1jsJ2uIdJfE00R75NMgc1i3dqXOnw==",
-      "path": "syncfusion.xamarin.core/18.1.0.45",
-      "hashPath": "syncfusion.xamarin.core.18.1.0.45.nupkg.sha512"
+      "sha512": "sha512-FSdxRnVGWG9RKBfjapFaIT6ael2gRGf584HWDi9J3mI/fxUdAFkIXIz+vn3g8AjM1Mar4z1TOs9/RpNcU+pRtA==",
+      "path": "syncfusion.xamarin.core/18.1.0.46",
+      "hashPath": "syncfusion.xamarin.core.18.1.0.46.nupkg.sha512"
     },
     "Syncfusion.Xamarin.SfChart/18.1.0.45": {
       "type": "package",
@@ -659,6 +672,13 @@
       "sha512": "sha512-kIXFXZhbUJMpMkExPHIJnK1Aep/0dnvwAA5NjO/ZuWoAQ8YtnS8sNKVH8CldoNBIYwlNitRnnjh+emBpV5nBgw==",
       "path": "syncfusion.xamarin.sfgauge/18.1.0.45",
       "hashPath": "syncfusion.xamarin.sfgauge.18.1.0.45.nupkg.sha512"
+    },
+    "Syncfusion.Xamarin.SfPicker/18.1.0.46": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fGHNZJxC07c4LYVWWNhI1xYaEuFH7eCjzyrV4c1wDR0FPTkSiAqVN5FHD1Ul+/kM6YJYccyKOsd0vyOxoWUDFA==",
+      "path": "syncfusion.xamarin.sfpicker/18.1.0.46",
+      "hashPath": "syncfusion.xamarin.sfpicker.18.1.0.46.nupkg.sha512"
     },
     "System.Collections/4.3.0": {
       "type": "package",

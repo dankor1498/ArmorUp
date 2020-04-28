@@ -84,7 +84,7 @@
           "lib/MonoAndroid/SQLitePCLRaw.provider.e_sqlite3.dll": {}
         }
       },
-      "Syncfusion.Licensing/18.1.0.45": {
+      "Syncfusion.Licensing/18.1.0.46": {
         "type": "package",
         "compile": {
           "lib/MonoAndroid10/Syncfusion.Licensing.dll": {}
@@ -93,10 +93,10 @@
           "lib/MonoAndroid10/Syncfusion.Licensing.dll": {}
         }
       },
-      "Syncfusion.Xamarin.Core/18.1.0.45": {
+      "Syncfusion.Xamarin.Core/18.1.0.46": {
         "type": "package",
         "dependencies": {
-          "Syncfusion.Licensing": "18.1.0.45",
+          "Syncfusion.Licensing": "18.1.0.46",
           "Xamarin.Forms": "3.6.0.344457"
         },
         "compile": {
@@ -138,6 +138,23 @@
           "lib/MonoAndroid10/Syncfusion.SfGauge.Android.dll": {},
           "lib/MonoAndroid10/Syncfusion.SfGauge.XForms.Android.dll": {},
           "lib/MonoAndroid10/Syncfusion.SfGauge.XForms.dll": {}
+        }
+      },
+      "Syncfusion.Xamarin.SfPicker/18.1.0.46": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Xamarin.Core": "18.1.0.46",
+          "Xamarin.Forms": "3.6.0.344457"
+        },
+        "compile": {
+          "lib/MonoAndroid10/Syncfusion.SfPicker.Android.dll": {},
+          "lib/MonoAndroid10/Syncfusion.SfPicker.XForms.Android.dll": {},
+          "lib/MonoAndroid10/Syncfusion.SfPicker.XForms.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/Syncfusion.SfPicker.Android.dll": {},
+          "lib/MonoAndroid10/Syncfusion.SfPicker.XForms.Android.dll": {},
+          "lib/MonoAndroid10/Syncfusion.SfPicker.XForms.dll": {}
         }
       },
       "System.Runtime.Serialization.Json/4.3.0": {
@@ -937,6 +954,7 @@
         "dependencies": {
           "Syncfusion.Xamarin.SfChart": "18.1.0.45",
           "Syncfusion.Xamarin.SfGauge": "18.1.0.45",
+          "Syncfusion.Xamarin.SfPicker": "18.1.0.46",
           "System.Runtime.Serialization.Json": "4.3.0",
           "Xamarin.Essentials": "1.5.3.1",
           "Xamarin.Forms": "4.5.0.657",
@@ -1209,10 +1227,10 @@
         "sqlitepclraw.provider.e_sqlite3.android.nuspec"
       ]
     },
-    "Syncfusion.Licensing/18.1.0.45": {
-      "sha512": "C+YhSudANq6VAFfOUYmTcLCvHPjMt+yXJJ8xv65m+U+9H3t79wSGd1+mRc0SjACaGGGE+w3uTbJd+hq4C4Q9oA==",
+    "Syncfusion.Licensing/18.1.0.46": {
+      "sha512": "uX66bUz9OU3RxdKc0nNyECzVrWxjF7SmlBnxSKFL4s0maUXfMHJrXGJHVD/Z7EDkcPzUk1eDL6aHI13Kgk511w==",
       "type": "package",
-      "path": "syncfusion.licensing/18.1.0.45",
+      "path": "syncfusion.licensing/18.1.0.46",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1232,14 +1250,14 @@
         "lib/netstandard2.0/Syncfusion.Licensing.dll",
         "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
         "lib/uap10.0/Syncfusion.Licensing.dll",
-        "syncfusion.licensing.18.1.0.45.nupkg.sha512",
+        "syncfusion.licensing.18.1.0.46.nupkg.sha512",
         "syncfusion.licensing.nuspec"
       ]
     },
-    "Syncfusion.Xamarin.Core/18.1.0.45": {
-      "sha512": "ybi81ZS3LthUObIE6Z2HD9sgWz+huuM86J6erFuQlkQzPiOPyr3MhB0cD1jsJ2uIdJfE00R75NMgc1i3dqXOnw==",
+    "Syncfusion.Xamarin.Core/18.1.0.46": {
+      "sha512": "FSdxRnVGWG9RKBfjapFaIT6ael2gRGf584HWDi9J3mI/fxUdAFkIXIz+vn3g8AjM1Mar4z1TOs9/RpNcU+pRtA==",
       "type": "package",
-      "path": "syncfusion.xamarin.core/18.1.0.45",
+      "path": "syncfusion.xamarin.core/18.1.0.46",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1263,7 +1281,7 @@
         "lib/uap10.0/Syncfusion.Core.XForms.UWP/TILRenderer/ToggleIcons/ToggleVisibleIcon.xaml",
         "lib/uap10.0/Syncfusion.Core.XForms.dll",
         "lib/uap10.0/Syncfusion.Core.XForms.xml",
-        "syncfusion.xamarin.core.18.1.0.45.nupkg.sha512",
+        "syncfusion.xamarin.core.18.1.0.46.nupkg.sha512",
         "syncfusion.xamarin.core.nuspec"
       ]
     },
@@ -1321,6 +1339,35 @@
         "lib/uap10.0/Syncfusion.SfGauge.XForms.xml",
         "syncfusion.xamarin.sfgauge.18.1.0.45.nupkg.sha512",
         "syncfusion.xamarin.sfgauge.nuspec"
+      ]
+    },
+    "Syncfusion.Xamarin.SfPicker/18.1.0.46": {
+      "sha512": "fGHNZJxC07c4LYVWWNhI1xYaEuFH7eCjzyrV4c1wDR0FPTkSiAqVN5FHD1Ul+/kM6YJYccyKOsd0vyOxoWUDFA==",
+      "type": "package",
+      "path": "syncfusion.xamarin.sfpicker/18.1.0.46",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Syncfusion.SfPicker.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfPicker.Android.xml",
+        "lib/MonoAndroid10/Syncfusion.SfPicker.XForms.Android.dll",
+        "lib/MonoAndroid10/Syncfusion.SfPicker.XForms.XML",
+        "lib/MonoAndroid10/Syncfusion.SfPicker.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfPicker.XForms.XML",
+        "lib/Xamarin.iOS10/Syncfusion.SfPicker.XForms.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfPicker.XForms.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfPicker.iOS.dll",
+        "lib/Xamarin.iOS10/Syncfusion.SfPicker.iOS.xml",
+        "lib/netstandard2.0/Syncfusion.SfPicker.XForms.XML",
+        "lib/netstandard2.0/Syncfusion.SfPicker.XForms.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfPicker.XForms.XML",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.SfPicker.XForms.dll",
+        "lib/uap10.0/Syncfusion.SfPicker.XForms.UWP.XML",
+        "lib/uap10.0/Syncfusion.SfPicker.XForms.UWP.dll",
+        "lib/uap10.0/Syncfusion.SfPicker.XForms.XML",
+        "lib/uap10.0/Syncfusion.SfPicker.XForms.dll",
+        "syncfusion.xamarin.sfpicker.18.1.0.46.nupkg.sha512",
+        "syncfusion.xamarin.sfpicker.nuspec"
       ]
     },
     "System.Runtime.Serialization.Json/4.3.0": {
@@ -2508,6 +2555,7 @@
       "NETStandard.Library >= 2.0.3",
       "Syncfusion.Xamarin.SfChart >= 18.1.0.45",
       "Syncfusion.Xamarin.SfGauge >= 18.1.0.45",
+      "Syncfusion.Xamarin.SfPicker >= 18.1.0.46",
       "System.Runtime.Serialization.Json >= 4.3.0",
       "Xamarin.Essentials >= 1.5.3.1",
       "Xamarin.Forms >= 4.5.0.657",
@@ -2515,24 +2563,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Danyil Korotych\\.nuget\\packages\\": {},
+    "C:\\Users\\rocho\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
+      "projectUniqueName": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
       "projectName": "ArmorUp.Android",
-      "projectPath": "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
-      "packagesPath": "C:\\Users\\Danyil Korotych\\.nuget\\packages\\",
-      "outputPath": "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp.Android\\obj\\",
+      "projectPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
+      "packagesPath": "C:\\Users\\rocho\\.nuget\\packages\\",
+      "outputPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Danyil Korotych\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rocho\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2546,8 +2594,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
-              "projectPath": "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj"
+            "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
+              "projectPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj"
             }
           }
         }
@@ -2567,6 +2615,10 @@
           "Syncfusion.Xamarin.SfGauge": {
             "target": "Package",
             "version": "[18.1.0.45, )"
+          },
+          "Syncfusion.Xamarin.SfPicker": {
+            "target": "Package",
+            "version": "[18.1.0.46, )"
           },
           "System.Runtime.Serialization.Json": {
             "target": "Package",
