@@ -130,9 +130,7 @@
                                 </Frame>                                
                             </StackLayout>
                             <StackLayout x:Name="ResultStackLayout">
-                                <Label x:Name="TimeLabel" TextColor="White"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="Center"/>
+                                
                             </StackLayout>
                         </StackLayout>
                     </ScrollView>

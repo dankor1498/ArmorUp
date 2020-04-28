@@ -13,6 +13,12 @@ namespace ArmorUp
         private App.TypeExercises type;         
         private object objectExercises = DBSaverLoader.LOAD_EXERCISE(Exercises.CurrentExercisesId, App.Database);
         SfTimePicker timePicker;
+        Label TimeLabel = new Label()
+        {
+            TextColor = Color.White,
+            HorizontalOptions = LayoutOptions.Center,
+            VerticalOptions = LayoutOptions.Center
+        };
 
         public CurrentExercise()
         {
@@ -52,6 +58,7 @@ namespace ArmorUp
                 InfoEditor.Text = String.Format($"{currentExercises.Name}\n{currentExercises.Information}");
                 UsfullLinkEditor.Text = String.Format($"{currentExercises.LinkName}\n{currentExercises.LinkURL}");
                 MissionLabel.Text = $"{currentExercises.Time.ToString()} = {currentExercises.PurposeToString()}s";
+                ResultStackLayout.Children.Add(TimeLabel);
                 ResultStackLayout.Children.Add(CreateNewTimePicker());
                 type = App.TypeExercises.Time;
             }
