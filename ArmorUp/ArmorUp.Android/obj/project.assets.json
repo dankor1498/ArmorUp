@@ -2555,7 +2555,6 @@
       "NETStandard.Library >= 2.0.3",
       "Syncfusion.Xamarin.SfChart >= 18.1.0.45",
       "Syncfusion.Xamarin.SfGauge >= 18.1.0.45",
-      "Syncfusion.Xamarin.SfPicker >= 18.1.0.46",
       "System.Runtime.Serialization.Json >= 4.3.0",
       "Xamarin.Essentials >= 1.5.3.1",
       "Xamarin.Forms >= 4.5.0.657",
@@ -2563,24 +2562,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rocho\\.nuget\\packages\\": {},
+    "C:\\Users\\ROMA\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
+      "projectUniqueName": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
       "projectName": "ArmorUp.Android",
-      "projectPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
-      "packagesPath": "C:\\Users\\rocho\\.nuget\\packages\\",
-      "outputPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\obj\\",
+      "projectPath": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
+      "packagesPath": "C:\\Users\\ROMA\\.nuget\\packages\\",
+      "outputPath": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\rocho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ROMA\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -2594,8 +2593,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
-              "projectPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj"
+            "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
+              "projectPath": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj"
             }
           }
         }
@@ -2615,10 +2614,6 @@
           "Syncfusion.Xamarin.SfGauge": {
             "target": "Package",
             "version": "[18.1.0.45, )"
-          },
-          "Syncfusion.Xamarin.SfPicker": {
-            "target": "Package",
-            "version": "[18.1.0.46, )"
           },
           "System.Runtime.Serialization.Json": {
             "target": "Package",

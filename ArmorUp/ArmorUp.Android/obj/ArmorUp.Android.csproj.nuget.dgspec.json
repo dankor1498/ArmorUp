@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj": {}
+    "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj": {}
   },
   "projects": {
-    "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj": {
+    "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
+        "projectUniqueName": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
         "projectName": "ArmorUp.Android",
-        "projectPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
-        "packagesPath": "C:\\Users\\rocho\\.nuget\\packages\\",
-        "outputPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp.Android\\obj\\",
+        "projectPath": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
+        "packagesPath": "C:\\Users\\ROMA\\.nuget\\packages\\",
+        "outputPath": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\rocho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ROMA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
-                "projectPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj"
+              "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
+                "projectPath": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj"
               }
             }
           }
@@ -53,10 +53,6 @@
             "Syncfusion.Xamarin.SfGauge": {
               "target": "Package",
               "version": "[18.1.0.45, )"
-            },
-            "Syncfusion.Xamarin.SfPicker": {
-              "target": "Package",
-              "version": "[18.1.0.46, )"
             },
             "System.Runtime.Serialization.Json": {
               "target": "Package",
@@ -78,20 +74,20 @@
         }
       }
     },
-    "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
+    "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
+        "projectUniqueName": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
         "projectName": "ArmorUp",
-        "projectPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
-        "packagesPath": "C:\\Users\\rocho\\.nuget\\packages\\",
-        "outputPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\obj\\",
+        "projectPath": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
+        "packagesPath": "C:\\Users\\ROMA\\.nuget\\packages\\",
+        "outputPath": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\rocho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ROMA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

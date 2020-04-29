@@ -3648,23 +3648,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rocho\\.nuget\\packages\\": {},
+    "C:\\Users\\ROMA\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
+      "projectUniqueName": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
       "projectName": "ArmorUp",
-      "projectPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
-      "packagesPath": "C:\\Users\\rocho\\.nuget\\packages\\",
-      "outputPath": "G:\\All\\ArmorUp\\ArmorUp\\ArmorUp\\obj\\",
+      "projectPath": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
+      "packagesPath": "C:\\Users\\ROMA\\.nuget\\packages\\",
+      "outputPath": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\rocho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ROMA\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
