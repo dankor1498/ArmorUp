@@ -10,14 +10,13 @@ namespace ArmorUp
         public string Author { get; set; }
     }
 
-
     public static class Motivation
     {
         public static Quote[] Quotes =
         {
             new Quote { Words = "Дойдя до конца, люди смеются над страхами, мучившими их вначале", Author = "Пауло Коэльо" },
             new Quote { Words = "Если ты не знаешь, чего хочешь, ты в итоге останешься с тем, чего точно не хочешь.", Author = "Чак Паланик"},
-            new Quote { Words = " Чтобы дойти до цели, надо идти.", Author = "Оноре де Бальзак" },
+            new Quote { Words = "Чтобы дойти до цели, надо идти.", Author = "Оноре де Бальзак" },
             new Quote { Words = "Это своего рода забава, делать невозможное.", Author = "Уолт Дисней" },
             new Quote { Words = "Если люди не смеются над вашими целями, значит ваши цели слишком мелкие.", Author = "Азим Премжи" },
             new Quote { Words = "Пробуйте и терпите неудачу, но не прерывайте ваших стараний.", Author = "Стивен Каггва" },

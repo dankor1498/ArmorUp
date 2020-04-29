@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj": {}
+    "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj": {}
   },
   "projects": {
-    "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj": {
+    "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
+        "projectUniqueName": "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
         "projectName": "ArmorUp.Android",
-        "projectPath": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
-        "packagesPath": "C:\\Users\\ROMA\\.nuget\\packages\\",
-        "outputPath": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp.Android\\obj\\",
+        "projectPath": "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
+        "packagesPath": "C:\\Users\\Danyil Korotych\\.nuget\\packages\\",
+        "outputPath": "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\ROMA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Danyil Korotych\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
-                "projectPath": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj"
+              "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
+                "projectPath": "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj"
               }
             }
           }
@@ -54,9 +54,17 @@
               "target": "Package",
               "version": "[18.1.0.45, )"
             },
+            "Syncfusion.Xamarin.SfPicker": {
+              "target": "Package",
+              "version": "[18.1.0.46, )"
+            },
             "System.Runtime.Serialization.Json": {
               "target": "Package",
               "version": "[4.3.0, )"
+            },
+            "Xam.Plugins.Settings": {
+              "target": "Package",
+              "version": "[3.1.1, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -74,20 +82,21 @@
         }
       }
     },
-    "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
+    "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
+        "projectUniqueName": "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
         "projectName": "ArmorUp",
-        "projectPath": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
-        "packagesPath": "C:\\Users\\ROMA\\.nuget\\packages\\",
-        "outputPath": "D:\\Git_project\\ArmorUp\\ArmorUp\\ArmorUp\\obj\\",
+        "projectPath": "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
+        "packagesPath": "C:\\Users\\Danyil Korotych\\.nuget\\packages\\",
+        "outputPath": "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ROMA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Danyil Korotych\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -133,6 +142,10 @@
             "System.Runtime.Serialization.Json": {
               "target": "Package",
               "version": "[4.3.0, )"
+            },
+            "Xam.Plugins.Settings": {
+              "target": "Package",
+              "version": "[3.1.1, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

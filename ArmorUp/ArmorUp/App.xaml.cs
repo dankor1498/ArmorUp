@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.Settings;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Xamarin.Forms;
@@ -11,7 +12,7 @@ namespace ArmorUp
         {
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjQzMzg4QDMxMzgyZTMxMmUzME04UFpEaGZSZlBPcXpBaVBFS0ZBbFFPNVJXbkFVcEtvNnNBWlBlOXhNaEE9");
 
-            InitializeComponent();
+            InitializeComponent();            
 
             MainPage = new NavigationPage(new ArmorUp.MainPage())
             {
@@ -40,18 +41,21 @@ namespace ArmorUp
         public static void UpdateMainTableList()
         {
             MainTableArray = Database.GetItems();
-        }      
+        }
+
+        public static int iteratorQuote = CrossSettings.Current.GetValueOrDefault("IteratorQuote", 0);
+        public static Quote CurrentQuote;
 
         protected override void OnStart()
-        {
+        {          
         }
 
         protected override void OnSleep()
-        {
+        {            
         }
 
         protected override void OnResume()
-        {
+        {            
         }
     }
 }

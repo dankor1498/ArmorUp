@@ -40,7 +40,7 @@ namespace ArmorUp
 
         private void CreateApproachButton_Clicked(object sender, EventArgs e)
         {
-            if (TypePicker.SelectedIndex == -1 || NameEntry == null || NameEntry.Text == "")
+            if (TypePicker.SelectedIndex == -1 || NameEntry == null || NameEntry.Text == "" || NameEntry.Text == null)
             {
                 DisplayAlert("Помилка", "Ви не вибрали тип або не ввели ім'я!", "Добре");
             }

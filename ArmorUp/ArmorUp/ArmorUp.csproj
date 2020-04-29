@@ -16,6 +16,7 @@
     <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="18.1.0.45" />
     <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="18.1.0.46" />
     <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
+    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.657" />
   </ItemGroup>

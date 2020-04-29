@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.Settings;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,36 +16,23 @@ namespace ArmorUp
         public ProfilePage()
         {
             InitializeComponent();
-
-            //string _del = @"*.db";
-            //string[] _files = Directory.GetFiles(DBSaverLoader.documentsPath, _del);
-            //foreach (string fl in _files)
-            //{
-            //    File.Delete(fl);
-            //}
-            // _del = @"*.json";
-            //_files = Directory.GetFiles(DBSaverLoader.documentsPath, _del);
-            //foreach (string fl in _files)
-            //{
-            //    File.Delete(fl);
-            //}
-
-            //var files = Directory.GetFiles(DBSaverLoader.documentsPath);
-            //foreach (var item in files)
-            //{
-            //    AllExercisesStackLayout.Children.Add(new Label { Text = item, TextColor = Color.White });
-            //}
             foreach (var item in App.MainTableArray)
             {
                 AllExercisesStackLayout.Children.Add(AddExercisesToProfilePage(item));
             }
-            //var table = App.Database.GetItems();
-            //foreach (var item in table)
-            //{
-            //    //AllExercisesStackLayout.Children.Add(new Label { Text = item, TextColor = Color.White });
-            //    AllExercisesStackLayout.Children.Add(new Label { Text = item.StringID.ToString(), TextColor = Color.White });
-            //}
+            PrintQuote();
+        }
 
+        public void PrintQuote()
+        {
+            if (App.iteratorQuote > Motivation.Quotes.Length - 1)
+            {
+                App.iteratorQuote = 0;
+            }
+            App.CurrentQuote = Motivation.Quotes[App.iteratorQuote];
+            CrossSettings.Current.AddOrUpdateValue("IteratorQuote", App.iteratorQuote++);
+            TextLabel.Text = App.CurrentQuote.Words;
+            AuthorLabel.Text = App.CurrentQuote.Author;
         }
 
         private void NewExercisePage_Clicked(object sender, EventArgs e)

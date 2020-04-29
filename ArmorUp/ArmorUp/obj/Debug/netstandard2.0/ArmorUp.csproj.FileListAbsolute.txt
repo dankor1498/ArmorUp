@@ -10,10 +10,8 @@ E:\Documents\Predmety\Mobile\WorkFolder\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netsta
 E:\Documents\Predmety\Mobile\WorkFolder\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ProfilePage.xaml.g.cs
 E:\Documents\Predmety\Mobile\WorkFolder\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\StatisticPage.xaml.g.cs
 E:\Documents\Predmety\Mobile\WorkFolder\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\UpdateExercisePage.xaml.g.cs
-E:\Documents\Predmety\Mobile\WorkFolder\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.csproj.CoreCompileInputs.cache
 E:\Documents\Predmety\Mobile\WorkFolder\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.AssemblyInfoInputs.cache
 E:\Documents\Predmety\Mobile\WorkFolder\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.AssemblyInfo.cs
-E:\Documents\Predmety\Mobile\WorkFolder\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\XamlC.stamp
 E:\Documents\Predmety\Mobile\WorkFolder\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.dll
 E:\Documents\Predmety\Mobile\WorkFolder\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ref\ArmorUp.dll
 E:\Documents\Predmety\Mobile\WorkFolder\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.pdb
@@ -38,3 +36,5 @@ G:\All\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ref\ArmorUp.dll
 G:\All\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.pdb
 G:\All\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.csproj.CoreCompileInputs.cache
 G:\All\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\XamlC.stamp
+E:\Documents\Predmety\Mobile\WorkFolder\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.csproj.CoreCompileInputs.cache
+E:\Documents\Predmety\Mobile\WorkFolder\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\XamlC.stamp
