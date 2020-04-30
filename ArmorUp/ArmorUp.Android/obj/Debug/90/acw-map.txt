@@ -1,6 +1,9 @@
 ArmorUp.Droid.MainActivity, ArmorUp.Android;crc64fa41bf8d8483e1e9.MainActivity
 ArmorUp.Droid.MainActivity;crc64fa41bf8d8483e1e9.MainActivity
 armorup.droid.MainActivity;crc64fa41bf8d8483e1e9.MainActivity
+Plugin.Media.MediaPickerActivity, Plugin.Media;crc646957603ea1820544.MediaPickerActivity
+Plugin.Media.MediaPickerActivity;crc646957603ea1820544.MediaPickerActivity
+plugin.media.MediaPickerActivity;crc646957603ea1820544.MediaPickerActivity
 Syncfusion.XForms.Android.Graphics.SfGradientViewRenderer, Syncfusion.Core.XForms.Android;crc640879981a986d658b.SfGradientViewRenderer
 Syncfusion.XForms.Android.Graphics.SfGradientViewRenderer;crc640879981a986d658b.SfGradientViewRenderer
 syncfusion.xforms.android.graphics.SfGradientViewRenderer;crc640879981a986d658b.SfGradientViewRenderer

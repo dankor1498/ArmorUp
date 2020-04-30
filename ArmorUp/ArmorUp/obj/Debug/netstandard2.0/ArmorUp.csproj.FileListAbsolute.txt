@@ -36,6 +36,6 @@ G:\All\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ref\ArmorUp.dll
 G:\All\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.pdb
 G:\All\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.csproj.CoreCompileInputs.cache
 G:\All\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\XamlC.stamp
+E:\Documents\Predmety\Mobile\WorkFolder\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\StartPage.xaml.g.cs
 E:\Documents\Predmety\Mobile\WorkFolder\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\ArmorUp.csproj.CoreCompileInputs.cache
 E:\Documents\Predmety\Mobile\WorkFolder\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\XamlC.stamp
-E:\Documents\Predmety\Mobile\WorkFolder\ArmorUp\ArmorUp\ArmorUp\obj\Debug\netstandard2.0\StartPage.xaml.g.cs

@@ -12,7 +12,7 @@ namespace ArmorUp
         public MainPage()
         {
             InitializeComponent();
-            
+
             if (User == null)
             {
                 Detail = new NavigationPage(new StartPage());
@@ -20,7 +20,7 @@ namespace ArmorUp
             else
             {
                 Detail = new NavigationPage(new ProfilePage());
-            }  
+            }
 
             IsPresented = false;
         }

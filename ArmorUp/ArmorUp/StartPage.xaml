@@ -18,7 +18,7 @@
                            Padding="0"
                            IsClippedToBounds="True"
                            Margin="0, 5, 0, 0" >
-                        <Image Source="photo.jpg"
+                        <Image x:Name="UserImage" Source="photo.jpg"
                                VerticalOptions="Center"
                                HorizontalOptions="Center"
                                Aspect="AspectFill"
@@ -40,10 +40,19 @@
                            FontSize="23"
                            TextColor="White"/>
                     <Entry x:Name="SurnameEntry" BackgroundColor="#292929" TextColor="White"/>
+                    <Button  x:Name="TakePictureButton"
+                             Text="Take picture" 
+                             FontSize="20" 
+                             WidthRequest="200" 
+                             HorizontalOptions="Center"
+                             TextColor="White"
+                             BackgroundColor="#292990" 
+                             Margin="0, 5, 0, 5"
+                             Clicked="TakePictureButton_Clicked"/>                    
                     <Button  x:Name="SubmitButton"
                              Text="Submit" 
                              FontSize="20" 
-                             WidthRequest="200" 
+                             WidthRequest="250" 
                              HorizontalOptions="Center"
                              TextColor="White"
                              BackgroundColor="#292990" 

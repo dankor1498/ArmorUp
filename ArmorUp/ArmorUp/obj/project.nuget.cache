@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QH9o05vHLQRbHWmtqUz34VROr2G5nuyvPeaUZsWPSTy7jityQkK8sW7weDvu4e1CZPbLWWkRc/qantvovHXv2A==",
+  "dgSpecHash": "eyzNqk5044pJkNTEmu+ghvB9RwfnX8K+3SVGaplkZlDkClMscZvjTQXqwmDHZ7HWgsPzEp35AZTGnuwj0MhWeA==",
   "success": true,
   "projectFilePath": "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp\\ArmorUp.csproj",
   "expectedPackageFiles": [
@@ -51,6 +51,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Danyil Korotych\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
+    "C:\\Users\\Danyil Korotych\\.nuget\\packages\\xam.plugin.media\\5.0.1\\xam.plugin.media.5.0.1.nupkg.sha512",
     "C:\\Users\\Danyil Korotych\\.nuget\\packages\\xam.plugins.settings\\3.1.1\\xam.plugins.settings.3.1.1.nupkg.sha512",
     "C:\\Users\\Danyil Korotych\\.nuget\\packages\\xamarin.essentials\\1.5.3.1\\xamarin.essentials.1.5.3.1.nupkg.sha512",
     "C:\\Users\\Danyil Korotych\\.nuget\\packages\\xamarin.forms\\4.5.0.657\\xamarin.forms.4.5.0.657.nupkg.sha512"

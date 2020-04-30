@@ -19,7 +19,7 @@ namespace ArmorUp
                 BarBackgroundColor = Color.FromHex("#65186e"),
             };
         }
-
+        public static string UserImagePath = CrossSettings.Current.GetValueOrDefault("UserImagePath", null);
         public enum TypeExercises : byte { Count = 1, Approach, Time };
         public static int Pivot = 2;
         

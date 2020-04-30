@@ -17,6 +17,7 @@ namespace ArmorUp
         {
             InitializeComponent();
             UserNameLabel.Text = MainPage.User;
+            UserImage.Source = ImageSource.FromFile(App.UserImagePath);
             foreach (var item in App.MainTableArray)
             {
                 AllExercisesStackLayout.Children.Add(AddExercisesToProfilePage(item));

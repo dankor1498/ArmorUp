@@ -62,6 +62,10 @@
               "target": "Package",
               "version": "[4.3.0, )"
             },
+            "Xam.Plugin.Media": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
             "Xam.Plugins.Settings": {
               "target": "Package",
               "version": "[3.1.1, )"
@@ -142,6 +146,10 @@
             "System.Runtime.Serialization.Json": {
               "target": "Package",
               "version": "[4.3.0, )"
+            },
+            "Xam.Plugin.Media": {
+              "target": "Package",
+              "version": "[5.0.1, )"
             },
             "Xam.Plugins.Settings": {
               "target": "Package",

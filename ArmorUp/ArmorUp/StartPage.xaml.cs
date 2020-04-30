@@ -1,10 +1,8 @@
-﻿using Plugin.Settings;
+﻿using Plugin.Media;
+using Plugin.Media.Abstractions;
+using Plugin.Settings;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System.IO;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -29,6 +27,20 @@ namespace ArmorUp
                 CrossSettings.Current.AddOrUpdateValue("User", $"{NameEntry.Text} {SurnameEntry.Text}");
                 MainPage.User = $"{NameEntry.Text} {SurnameEntry.Text}";
                 Navigation.PushAsync(new ProfilePage());
+            }
+        }
+
+        private async void TakePictureButton_Clicked(object sender, EventArgs e)
+        {
+            Image img = new Image();
+            if (CrossMedia.Current.IsPickPhotoSupported)
+            {
+                MediaFile photo = await CrossMedia.Current.PickPhotoAsync();
+                img.Source = ImageSource.FromFile(photo.Path);
+                UserImage.Source = img.Source;                
+                App.UserImagePath = Path.Combine(DBSaverLoader.documentsPath, "photo" + Path.GetExtension(photo.Path));
+                CrossSettings.Current.AddOrUpdateValue("UserImagePath", App.UserImagePath);
+                File.Copy(photo.Path, App.UserImagePath, true);
             }
         }
     }

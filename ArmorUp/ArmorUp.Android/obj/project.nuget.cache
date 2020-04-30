@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "65x7LFuSavhlgTxEm/lMfWAzHd8UMutWp3hL0WhqkzRzdWxcMTHc7tcT1u8ZsLg5TW/yFioZaovj4h6vWX/8gQ==",
+  "dgSpecHash": "em4D3j+wfsIMXa6jPniX5OPnkq7NVZlOgArK/kF+1axn7r7pbbVlhgEh0x2FODQqcoN3Uan/Nsl+Rz6CRsFMog==",
   "success": true,
   "projectFilePath": "E:\\Documents\\Predmety\\Mobile\\WorkFolder\\ArmorUp\\ArmorUp\\ArmorUp.Android\\ArmorUp.Android.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\Danyil Korotych\\.nuget\\packages\\syncfusion.xamarin.sfgauge\\18.1.0.45\\syncfusion.xamarin.sfgauge.18.1.0.45.nupkg.sha512",
     "C:\\Users\\Danyil Korotych\\.nuget\\packages\\syncfusion.xamarin.sfpicker\\18.1.0.46\\syncfusion.xamarin.sfpicker.18.1.0.46.nupkg.sha512",
     "C:\\Users\\Danyil Korotych\\.nuget\\packages\\system.runtime.serialization.json\\4.3.0\\system.runtime.serialization.json.4.3.0.nupkg.sha512",
+    "C:\\Users\\Danyil Korotych\\.nuget\\packages\\xam.plugin.media\\5.0.1\\xam.plugin.media.5.0.1.nupkg.sha512",
     "C:\\Users\\Danyil Korotych\\.nuget\\packages\\xam.plugins.settings\\3.1.1\\xam.plugins.settings.3.1.1.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.runtime\\1.1.1.3\\xamarin.android.arch.core.runtime.1.1.1.3.nupkg.sha512",

@@ -5,6 +5,7 @@ public class MonoPackageManager_Resources {
 		"ArmorUp.Android.dll",
 		"ArmorUp.dll",
 		"FormsViewGroup.dll",
+		"Plugin.Media.dll",
 		"Plugin.Settings.Abstractions.dll",
 		"Plugin.Settings.dll",
 		"SQLite-net.dll",
