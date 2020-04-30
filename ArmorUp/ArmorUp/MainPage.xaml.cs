@@ -34,5 +34,11 @@ namespace ArmorUp
             App.UpdateMainTableList();
             Navigation.PushAsync(new ProfilePage());
         }
+
+        private void ChnageUserName_Clicked(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new UserSettings());
+            IsPresented = false;
+        }
     }
 }

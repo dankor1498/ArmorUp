@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ArmorUp.UserSettings"
+             NavigationPage.HasNavigationBar="false"
+             Title="UserSettings">
+    <ContentPage.Content>
+        <Grid BackgroundColor="Black">
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Vertical" Margin="5">
+                    <Frame CornerRadius="80"
+                           HeightRequest="160"
+                           WidthRequest="160"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           Padding="0"
+                           IsClippedToBounds="True"
+                           Margin="0, 5, 0, 0">
+                        <Image x:Name="UserImage" Source="photo.jpg"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Aspect="AspectFill"
+                               HeightRequest="160"
+                               WidthRequest="160"/>
+                    </Frame>
+                    <Frame VerticalOptions="Center"
+                       BackgroundColor="Black"
+                       x:Name="UserNameFrame">
+                        <Editor TextColor="White"
+                                FontSize="25"
+                                FontFamily="Helvetica"
+                                x:Name="UserName"
+                                IsReadOnly="True"
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"/>
+                    </Frame>
+                    <Button x:Name="Change_UserName"
+                            Text="Change username"
+                            BackgroundColor="#262626"
+                            TextColor="White"
+                            FontFamily="helvetica"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Clicked="Change_UserName_Clicked"
+                            WidthRequest="200"/>
+                    <Button x:Name="ChangeUserPhoto"
+                            Text="Change user photo"
+                            BackgroundColor="#262626"
+                            TextColor="White"
+                            FontFamily="helvetica"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            Clicked="ChangeUserPhoto_Clicked"
+                            WidthRequest="200"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" BackgroundColor="Black">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0, 5, 0, 0">
+                    <StackLayout Orientation="Vertical" Spacing="0">
+                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="train.png" VerticalOptions="Start" HorizontalOptions="Center"/>
+                        <Button HeightRequest="33" 
+                                Text="Statistics" 
+                                FontSize="10" 
+                                WidthRequest="110" 
+                                HorizontalOptions="Center"
+                                TextColor="White"
+                                BackgroundColor="#292929" 
+                                Margin="0, 5, 0, 5"
+                                Clicked="StatisticsButton_Clicked"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Spacing="0">
+                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="Profile.png" VerticalOptions="Start" HorizontalOptions="Center"/>
+                        <Button HeightRequest="33" 
+                                Text="Profile" 
+                                FontSize="10" 
+                                WidthRequest="110" 
+                                HorizontalOptions="CenterAndExpand" 
+                                VerticalOptions="CenterAndExpand"
+                                TextColor="White"
+                                BackgroundColor="#292929" Margin="0, 5, 0, 5"
+                                Clicked="ProfileButton_Clicked"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical" Spacing="0">
+                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="Exercises.png" VerticalOptions="Start" HorizontalOptions="Center"/>
+                        <Button HeightRequest="33" 
+                                Text="Exercises"
+                                Clicked="NewExercisePage_Clicked"
+                                FontSize="10" 
+                                WidthRequest="110" 
+                                HorizontalOptions="Center"
+                                TextColor="White"
+                                BackgroundColor="#292929" 
+                                Margin="0, 5, 0, 5"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -33,7 +33,7 @@ namespace ArmorUp
             }
             App.CurrentQuote = Motivation.Quotes[App.iteratorQuote];
             CrossSettings.Current.AddOrUpdateValue("IteratorQuote", App.iteratorQuote++);
-            TextLabel.Text = App.CurrentQuote.Words;
+            TextLabel.Text = "\"" + App.CurrentQuote.Words + "\"";
             AuthorLabel.Text = App.CurrentQuote.Author;
         }
 
@@ -145,6 +145,11 @@ namespace ArmorUp
             App.Database.DeleteItem(int.Parse(button.ClassId));
             App.UpdateMainTableList();
             Navigation.PushAsync(new ProfilePage());
+        }
+
+        private void ChangeUserName_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new UserSettings());
         }
     }
 }

@@ -31,27 +31,34 @@
                            HorizontalOptions="Center"
                            FontSize="25"
                            TextColor="White"/>
-                    <Label x:Name="TextLabel"
-                           VerticalOptions="Center"
-                           HorizontalOptions="Center"
-                           VerticalTextAlignment = "Center"
-                           HorizontalTextAlignment = "Center"
-                           FontSize="18"
-                           TextColor="White"/>
-                    <Label x:Name="AuthorLabel"
-                           VerticalOptions="Center"
-                           HorizontalOptions="Center"
-                           VerticalTextAlignment = "Center"
-                           HorizontalTextAlignment = "Center"
-                           FontSize="16"
-                           TextColor="White"/>
                 </StackLayout>
-                <StackLayout HeightRequest="340">
-                    <ScrollView>
-                        <StackLayout x:Name="AllExercisesStackLayout" VerticalOptions="FillAndExpand" Orientation="Vertical" Padding="0, 0, 0, 20">
-                            
-                        </StackLayout>
-                    </ScrollView>
+                <StackLayout HeightRequest="350">
+                    <StackLayout Spacing="0">
+                        <Label x:Name="TextLabel"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               VerticalTextAlignment = "Center"
+                               HorizontalTextAlignment = "Center"
+                               FontSize="18"
+                               TextColor="Silver"
+                               Margin="5, 0, 5, 0"/>
+                        <Frame BackgroundColor="Black" HorizontalOptions="End">
+                            <Label x:Name="AuthorLabel"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               VerticalTextAlignment = "Center"
+                               HorizontalTextAlignment = "Center"
+                               FontSize="16"
+                               TextColor="Gold"/>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout>
+                        <ScrollView>
+                            <StackLayout x:Name="AllExercisesStackLayout" VerticalOptions="FillAndExpand" Orientation="Vertical" Padding="0, 0, 0, 20">
+
+                            </StackLayout>
+                        </ScrollView>
+                    </StackLayout>
                 </StackLayout>
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" BackgroundColor="Black">
