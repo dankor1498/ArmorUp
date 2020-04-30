@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.Settings;
+using System;
 using System.IO;
 using Xamarin.Forms;
 
@@ -6,10 +7,21 @@ namespace ArmorUp
 {
     public partial class MainPage : MasterDetailPage
     {
+        public static string User = CrossSettings.Current.GetValueOrDefault("User", null);
+
         public MainPage()
         {
             InitializeComponent();
-            Detail = new NavigationPage(new ProfilePage());
+            
+            if (User == null)
+            {
+                Detail = new NavigationPage(new StartPage());
+            }
+            else
+            {
+                Detail = new NavigationPage(new ProfilePage());
+            }  
+
             IsPresented = false;
         }
 

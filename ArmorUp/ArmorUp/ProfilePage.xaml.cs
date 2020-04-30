@@ -16,6 +16,7 @@ namespace ArmorUp
         public ProfilePage()
         {
             InitializeComponent();
+            UserNameLabel.Text = MainPage.User;
             foreach (var item in App.MainTableArray)
             {
                 AllExercisesStackLayout.Children.Add(AddExercisesToProfilePage(item));
