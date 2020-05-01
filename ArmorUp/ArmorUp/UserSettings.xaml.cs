@@ -54,7 +54,7 @@ namespace ArmorUp
             Image img = new Image();
             if (CrossMedia.Current.IsPickPhotoSupported)
             {
-                MediaFile photo = await CrossMedia.Current.PickPhotoAsync();
+                MediaFile photo = await CrossMedia.Current.PickPhotoAsync(new PickMediaOptions() { PhotoSize = PhotoSize.MaxWidthHeight, MaxWidthHeight = 600 });
                 img.Source = ImageSource.FromFile(photo.Path);
                 UserImage.Source = img.Source;
                 App.UserImagePath = Path.Combine(DBSaverLoader.documentsPath, "photo" + Path.GetExtension(photo.Path));
