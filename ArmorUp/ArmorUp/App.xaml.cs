@@ -21,7 +21,7 @@ namespace ArmorUp
         }
         public static string UserImagePath = CrossSettings.Current.GetValueOrDefault("UserImagePath", null);
         public enum TypeExercises : byte { Count = 1, Approach, Time };
-        public static int Pivot = 2;
+        public static int Pivot = 7;
         
         public static MainTableRepository database;
 

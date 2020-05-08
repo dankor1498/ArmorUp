@@ -20,7 +20,7 @@
                     <chart:SfChart HeightRequest="200">
 
                         <chart:SfChart.Title>
-                            <chart:ChartTitle Text="Purpose vs Count"/>
+                            <chart:ChartTitle Text="Ціль / Виконано"/>
                         </chart:SfChart.Title>
 
                         <chart:SfChart.Legend>
@@ -30,7 +30,7 @@
                         <chart:SfChart.PrimaryAxis>
                             <chart:CategoryAxis>
                                 <chart:CategoryAxis.Title>
-                                    <chart:ChartAxisTitle Text="Data"/>
+                                    <chart:ChartAxisTitle Text="Дата"/>
                                 </chart:CategoryAxis.Title>
                             </chart:CategoryAxis>
                         </chart:SfChart.PrimaryAxis>
@@ -42,12 +42,12 @@
                         <chart:ColumnSeries ItemsSource="{Binding exerciseInfoByDates}"
                             XBindingPath="Data"
                             YBindingPath="Purpose"
-                            Label="Purpose"/>
+                            Label="Ціль"/>
 
                         <chart:ColumnSeries ItemsSource="{Binding exerciseInfoByDates}"
                             XBindingPath="Data"
                             YBindingPath="Count"
-                            Label="Count"/>
+                            Label="Виконано"/>
 
                     </chart:SfChart>
                 </StackLayout>
@@ -56,7 +56,7 @@
                     <ScrollView>
                         <StackLayout Orientation="Vertical" Padding="5, 5, 5, 80">
                             <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                                <Label x:Name="ExerciseName" Text="Exercise Name" TextColor="White" FontSize="20"/>
+                                <Label x:Name="ExerciseName" Text="Назва вправи" TextColor="White" FontSize="20"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                                 <Frame CornerRadius="10"
@@ -68,12 +68,12 @@
                                        BackgroundColor="#292929">
                                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                                            <Label Text="Progres:" TextColor="White"
+                                            <Label Text="Прогрес:" TextColor="White"
                                                    Margin="5" FontSize="20" FontAttributes="Bold"/>
                                         </StackLayout>
                                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
                                             <Label x:Name="ProgresLabelWithConclusion" Margin="5"
-                                                   Text="Nothing" TextColor="LightGray" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+                                                   Text="Пусто" TextColor="LightGray" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center"/>
                                         </StackLayout>
                                     </StackLayout>
                                 </Frame>
@@ -115,7 +115,7 @@
                                                    HeightRequest="100"
                                                    BackgroundColor="Black">
                                                 <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
-                                                    <Label Text="General progres:" TextColor="White" FontSize="15"/>
+                                                    <Label Text="Поточний прогрес:" TextColor="White" FontSize="15"/>
                                                     <Label x:Name="ProgresLabel" Text="0/0" TextColor="White" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold"/>
                                                 </StackLayout>
                                             </Frame>
@@ -126,7 +126,7 @@
                             <BoxView Color="White" HeightRequest="1" />
                             <StackLayout Orientation="Vertical" x:Name="ExerciseByDataStackLayout">
                                 <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                                    <Label Text="This Exercise statistic by data" TextColor="White" FontSize="20"/>
+                                    <Label Text="Статистика попередніх вправ" TextColor="White" FontSize="20"/>
                                 </StackLayout>                               
                             </StackLayout>
                         </StackLayout>

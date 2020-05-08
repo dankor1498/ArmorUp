@@ -23,11 +23,22 @@ namespace ArmorUp
             {
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalTextAlignment = TextAlignment.Center,
-                Text = "Approach " + CountClick++,
+                Text = "Підхід " + CountClick++,
+                TextColor = Color.White
             };
             Entry entry = new Entry();
+            entry.TextColor = Color.White;
+            entry.Placeholder = "Введіть кількість підходів";
+            entry.PlaceholderColor = Color.LightGray;
+
+            BoxView boxView = new BoxView()
+            {
+                Color = Color.White,
+                HeightRequest = 1
+            };
             MainStackLayout.Children.Add(label);
             MainStackLayout.Children.Add(entry);
+            MainStackLayout.Children.Add(boxView);
         }
         private void TimePicker_TimeSelected(object sender, TimeChangedEventArgs e)
         {
@@ -43,6 +54,26 @@ namespace ArmorUp
             if (TypePicker.SelectedIndex == -1 || NameEntry == null || NameEntry.Text == "" || NameEntry.Text == null)
             {
                 DisplayAlert("Помилка", "Ви не вибрали тип або не ввели ім'я!", "Добре");
+                if (TypePicker.SelectedIndex == -1)
+                {
+                    PickerStackLayout.BorderColor = Color.Red;
+                    PickerStackLayout.CornerRadius = 10;
+                }
+                else
+                {
+                    PickerStackLayout.BorderColor = Color.Black;
+                    PickerStackLayout.CornerRadius = 10;
+                }
+                if (NameEntry == null || NameEntry.Text == "" || NameEntry.Text == null)
+                {
+                    NameStackLayout.BorderColor = Color.Red;
+                    NameStackLayout.CornerRadius = 10;
+                }
+                else
+                {
+                    NameStackLayout.BorderColor = Color.Black;
+                    NameStackLayout.CornerRadius = 10;
+                }
             }
             else
             {
@@ -90,7 +121,15 @@ namespace ArmorUp
                 {
                     bool tryParse = Int32.TryParse(PurposeEntry.Text, out int result);
                     if (tryParse == false)
-                        DisplayAlert("Помилка. Формат цілі.", "Невірно введена ціль!", "Добре");
+                    {
+                        DisplayAlert("Помилка. Формат цілі.", "Невірно введена кількість!", "Добре");
+                        PickerStackLayout.BorderColor = Color.Black;
+                        PickerStackLayout.CornerRadius = 10;
+                        NameStackLayout.BorderColor = Color.Black;
+                        NameStackLayout.CornerRadius = 10;
+                        MissionStackLayout.BorderColor = Color.Red;
+                        MissionStackLayout.CornerRadius = 10;
+                    }
                 }
             }
         }

@@ -188,24 +188,24 @@ namespace ArmorUp
             if (progress > 0)
             {
                 label.TextColor = Color.Green;
-                if (!flag) label.Text = "+" + $"{progress}" + " Good job!";
-                else label.Text = "+" + $"{progress}s" + " Good job!";
+                if (!flag) label.Text = "+" + $"{progress}" + " Молодець!";
+                else label.Text = "+" + $"{progress}s" + " Молодець!";
                 rangePointer.Color = Color.Green;
                 label1.TextColor = Color.Green;
             }
             if (progress == 0)
             {
                 label.TextColor = Color.White;
-                if (!flag) label.Text = $"{progress}" + " It's fine.";
-                else label.Text = $"{progress}s" + " It's fine.";
+                if (!flag) label.Text = $"{progress}" + " Непогано.";
+                else label.Text = $"{progress}s" + " Непогано.";
                 rangePointer.Color = Color.FromHex("#205be6");
                 label1.TextColor = Color.FromHex("#205be6");
             }
             if (progress < 0)
             {
                 label.TextColor = Color.Red;
-                if (!flag) label.Text = $"{progress}s" + " Bad job!";
-                else label.Text = label.Text = $"{progress}s" + " Bad job!";
+                if (!flag) label.Text = $"{progress}s" + " Можна краще!";
+                else label.Text = label.Text = $"{progress}s" + " Можна краще!";
                 rangePointer.Color = Color.Red;
                 label1.TextColor = Color.Red;
             }

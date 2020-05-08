@@ -21,6 +21,26 @@ namespace ArmorUp
             if (NameEntry.Text == null || SurnameEntry.Text == null || NameEntry.Text.Trim() == "" || SurnameEntry.Text.Trim() == "")
             {
                 DisplayAlert("Помилка", "Ви не не ввели ім'я або прізвище!", "Добре");
+                if (NameEntry.Text == null || NameEntry.Text.Trim() == "")
+                {
+                    NameFrame.CornerRadius = 10;
+                    NameFrame.BorderColor = Color.Red;
+                }
+                else
+                {
+                    NameFrame.CornerRadius = 10;
+                    NameFrame.BorderColor = Color.Black;
+                }
+                if (SurnameEntry.Text == null || SurnameEntry.Text.Trim() == "")
+                {
+                    SurnameFrame.CornerRadius = 10;
+                    SurnameFrame.BorderColor = Color.Red;
+                }
+                else
+                {
+                    SurnameFrame.CornerRadius = 10;
+                    SurnameFrame.BorderColor = Color.Black;
+                }
             }
             else
             {

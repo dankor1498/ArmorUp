@@ -34,7 +34,7 @@ namespace ArmorUp
         }
 
 
-        private StackLayout AddStatisticFromScreen(string name, int id, int progress, double percent, bool flag = false)
+        private StackLayout AddStatisticFromScreen(string name, int id, int progress, double percent, string picture, bool flag = false)
         {
             StackLayout stackLayout = new StackLayout()
             {
@@ -52,7 +52,7 @@ namespace ArmorUp
             {
                 VerticalOptions = LayoutOptions.Center,
                 HorizontalOptions = LayoutOptions.Center,
-                Source = "sport.jpg",
+                Source = picture,
                 HeightRequest = 60,
                 WidthRequest = 60,
                 Aspect = Aspect.AspectFill
@@ -137,7 +137,7 @@ namespace ArmorUp
                 int exercisesTableLength = exercisesCountTableRepository.Count;
                 if (exercisesTableLength == 0)
                 {
-                    return AddStatisticFromScreen(mainTable.Name, mainTable.ID, 0, 0.0);
+                    return AddStatisticFromScreen(mainTable.Name, mainTable.ID, 0, 0.0, "count.jpg");
                 }
                 ExercisesCountTable lastItem = exercisesCountTableRepository.GetItem(exercisesCountTableRepository.StartPosition + exercisesTableLength - 1);
                 double purpose = double.Parse(mainTable.Purpose);
@@ -158,7 +158,7 @@ namespace ArmorUp
                 int exercisesTableLength = exercisesApproachTableRepository.Count;
                 if (exercisesTableLength == 0)
                 {
-                    return AddStatisticFromScreen(mainTable.Name, mainTable.ID, 0, 0.0);
+                    return AddStatisticFromScreen(mainTable.Name, mainTable.ID, 0, 0.0, "approach.jpg");
                 }
                 int lastItem = (from item in exercisesApproachTableRepository.GetItem(exercisesApproachTableRepository.StartPosition + exercisesTableLength - 1).Count.Split('/')
                                 select int.Parse(item)).Sum();
@@ -182,7 +182,7 @@ namespace ArmorUp
                 TimeSpan progressTime = new TimeSpan(0, 0, 0);
                 if (exercisesTableLength == 0)
                 {
-                    return AddStatisticFromScreen(mainTable.Name, mainTable.ID, 0, 0.0);
+                    return AddStatisticFromScreen(mainTable.Name, mainTable.ID, 0, 0.0, "timer.jpg");
                 }
                 ExercisesTimeTable lastItem = exercisesTimeTableRepository.GetItem(exercisesTimeTableRepository.StartPosition + exercisesTableLength - 1);
                 double purpose = double.Parse(mainTable.Purpose);
@@ -196,9 +196,9 @@ namespace ArmorUp
                 {
                     percent = (double)lastItem.Count.TotalSeconds / purpose * 100.0;
                 }
-                return AddStatisticFromScreen(mainTable.Name, mainTable.ID, (int)progressTime.TotalSeconds, percent, true);
+                return AddStatisticFromScreen(mainTable.Name, mainTable.ID, (int)progressTime.TotalSeconds, percent, "timer.jpg", true);
             }
-            return AddStatisticFromScreen(mainTable.Name, mainTable.ID, progress, percent);
+            return AddStatisticFromScreen(mainTable.Name, mainTable.ID, progress, percent, "sport.jpg");
         }
 
         private void YourButtonClick(object sender, EventArgs e)

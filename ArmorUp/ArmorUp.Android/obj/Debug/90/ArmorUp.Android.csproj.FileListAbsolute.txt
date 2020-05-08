@@ -3158,3 +3158,8 @@ G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\android\assets\Plugin.Settin
 G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\android\assets\Plugin.Settings.dll
 G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\android\assets\Plugin.Settings.dll.mdb
 G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\android\src\crc646957603ea1820544\MediaPickerActivity.java
+G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\timer.jpg
+G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\count.jpg
+G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\approach.jpg
+G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\armourup.jpg
+G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\user.jpg

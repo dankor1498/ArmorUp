@@ -61,6 +61,7 @@ namespace ArmorUp
         private SfTimePicker CreateNewTimePicker()
         {
             ExercisesTime currentExercises = (ExercisesTime)objectExercises;
+            TimeResult = (currentExercises.Time.Hours * 3600 + currentExercises.Time.Minutes * 60 + currentExercises.Time.Seconds).ToString();
             timePicker = new SfTimePicker()
             {
                 PickerMode = PickerMode.Default,

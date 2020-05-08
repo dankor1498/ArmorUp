@@ -8,33 +8,110 @@
              x:Class="ArmorUp.NewExercisePage"
              NavigationPage.HasNavigationBar="false"
              Title="New exercise page">
-    <Grid>
+    <Grid BackgroundColor="Black">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
         <ScrollView Grid.Row="0">
             <StackLayout x:Name="MainStackLayout" Margin="5">
-                <Label Text="New exercise" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Center" />
-                <Label Text="Name:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start"/>
-                <Entry x:Name="NameEntry" Placeholder=""/>
-                <Label Text="Information:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start"/>
-                <Editor x:Name="InformationEditor"/>
-                <Label Text="Link:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start"/>
-                <Label Text="Name:" FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start"/>
-                <Entry x:Name="NameLinkEntry" Placeholder=""/>
-                <Label Text="URL:" FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start" />
-                <Entry x:Name="UrlLinkEntry" Placeholder="" />
-                <Label Text="Type:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
-                <Picker x:Name="TypePicker">
-                    <Picker.Items>
-                        <x:String>Count</x:String>
-                        <x:String>Approach</x:String>
-                        <x:String>Time</x:String>
-                    </Picker.Items>
-                </Picker>
-                <Label Text="Purpose:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
-                <Entry x:Name="PurposeEntry" Placeholder="" />
+                <Label Text="Створити нову вправу" FontSize = "25" FontAttributes="Bold" 
+                       HorizontalOptions="Center"
+                       TextColor="White"/>
+                <Frame BackgroundColor="Black" Padding="2" x:Name="NameStackLayout" Margin="0, 10, 0, 0">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="user.jpg"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Aspect="AspectFill"
+                               HeightRequest="40"
+                               WidthRequest="40"/>
+                        <Entry x:Name="NameEntry" Placeholder="Назва"
+                               PlaceholderColor="LightGray"
+                               BackgroundColor="Black"
+                               TextColor="White"
+                               HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <BoxView Color="White" HeightRequest="1"/>
+                <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0">
+                    <Image Source="user.jpg"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Aspect="AspectFill"
+                           HeightRequest="40"
+                           WidthRequest="40"/>
+                    <Editor x:Name="InformationEditor" Placeholder="Інформація по вправі"
+                            PlaceholderColor="LightGray"
+                            BackgroundColor="Black"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <BoxView Color="White" HeightRequest="1"/>
+                <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0">
+                    <Image Source="user.jpg"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Aspect="AspectFill"
+                           HeightRequest="40"
+                           WidthRequest="40"/>
+                    <Entry x:Name="NameLinkEntry" Placeholder="Назва посилання"
+                           PlaceholderColor="LightGray"
+                           BackgroundColor="Black"
+                           TextColor="White"
+                           HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <BoxView Color="White" HeightRequest="1"/>
+                <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0">
+                    <Image Source="user.jpg"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Aspect="AspectFill"
+                           HeightRequest="40"
+                           WidthRequest="40"/>
+                    <Entry x:Name="UrlLinkEntry" Placeholder="Посилання на ресурс URL"
+                           PlaceholderColor="LightGray"
+                           BackgroundColor="Black"
+                           TextColor="White"
+                           HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <BoxView Color="White" HeightRequest="1"/>
+                <Label Text="Тип вправи" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start"
+                       TextColor="White" Margin="0, 10, 0, 0"/>
+                <Frame BackgroundColor="Black" x:Name="PickerStackLayout" Padding="2">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="user.jpg"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Aspect="AspectFill"
+                           HeightRequest="40"
+                           WidthRequest="40"/>
+                        <Picker x:Name="TypePicker" HorizontalOptions="FillAndExpand" TextColor="White">
+                            <Picker.Items>
+                                <x:String>На кількість</x:String>
+                                <x:String>На підходи</x:String>
+                                <x:String>На час</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                </Frame>
+                <BoxView Color="White" HeightRequest="1"/>
+                <Frame BackgroundColor="Black" Padding="2" x:Name="MissionStackLayout" Margin="0, 10, 0, 0">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="user.jpg"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Aspect="AspectFill"
+                           HeightRequest="40"
+                           WidthRequest="40"/>
+                        <Entry x:Name="PurposeEntry" Placeholder="Кількість"
+                           PlaceholderColor="LightGray"
+                           BackgroundColor="Black"
+                           TextColor="White"
+                           HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <BoxView Color="White" HeightRequest="1"/>
                 <syncfusion:SfTimePicker x:Name="timePicker"
                                          PickerMode="Default"
                                          ShowHeader="False"
@@ -44,11 +121,13 @@
                                          HeightRequest="200"
                                          WidthRequest="200"
                                          Time="0:0:0"/>
-                <Button x:Name="AddApproachButton" Text="Add approach" Clicked="AddApproachButton__Clicked"  />
+                <Button x:Name="AddApproachButton" Text="Додати підхід" Clicked="AddApproachButton__Clicked"
+                        TextColor="White" BackgroundColor="#292990"/>
             </StackLayout>
         </ScrollView>
         <StackLayout Grid.Row="1">
-            <Button x:Name="CreateApproachButton" Text="Create approach" Clicked="CreateApproachButton_Clicked"/>
+            <Button x:Name="CreateApproachButton" Text="Створити вправу" Clicked="CreateApproachButton_Clicked"
+                    TextColor="White" BackgroundColor="#292990" Margin="5, 0, 5, 0"/>
         </StackLayout>
     </Grid>
 </ContentPage>
