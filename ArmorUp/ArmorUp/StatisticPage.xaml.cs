@@ -198,7 +198,14 @@ namespace ArmorUp
                 }
                 return AddStatisticFromScreen(mainTable.Name, mainTable.ID, (int)progressTime.TotalSeconds, percent, "timer.jpg", true);
             }
-            return AddStatisticFromScreen(mainTable.Name, mainTable.ID, progress, percent, "sport.jpg");
+            string photo = "";
+            if (mainTable.Type == (byte)App.TypeExercises.Time)
+                photo = "timer.jpg";
+            if (mainTable.Type == (byte)App.TypeExercises.Approach)
+                photo = "approach.jpg";
+            if (mainTable.Type == (byte)App.TypeExercises.Count)
+                photo = "count.jpg";
+            return AddStatisticFromScreen(mainTable.Name, mainTable.ID, progress, percent, photo);
         }
 
         private void YourButtonClick(object sender, EventArgs e)

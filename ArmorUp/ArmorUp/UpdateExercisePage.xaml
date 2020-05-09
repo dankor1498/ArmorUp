@@ -7,33 +7,85 @@
              mc:Ignorable="d"
              x:Class="ArmorUp.UpdateExercisePage"
               NavigationPage.HasNavigationBar="false">
-    <Grid>
+    <Grid BackgroundColor="Black">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="130" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="*"/> 
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <ScrollView Grid.Row="0">
-            <StackLayout x:Name="UpdateStackLayout" Margin="5">
-                <Label Text="New exercise" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Center" />
-                <Label Text="Name:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
-                <Entry x:Name="NameEntry" Placeholder="" />
-                <Label Text="Information:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
-                <Editor x:Name="InformationEditor"/>
-                <Label Text="Link:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
-                <Label Text="Name:" FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start" />
-                <Entry x:Name="NameLinkEntry" Placeholder="" />
-                <Label Text="URL:" FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start" />
-                <Entry x:Name="UrlLinkEntry" Placeholder="" />
-                <Label x:Name="TypeLabel" Text="  Type: " FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
-                <Label Text = "Purpose:" FontSize = "25" FontAttributes="Bold" HorizontalOptions="Start" />
-            </StackLayout>     
+        <ScrollView Grid.Row="0" VerticalOptions="FillAndExpand">
+            <StackLayout Margin="5">
+                <Label Text="Обновити вправу" FontSize = "25" FontAttributes="Bold" 
+                       HorizontalOptions="Center"
+                       TextColor="White"/>
+                <Frame BackgroundColor="Black" Padding="2" x:Name="NameStackLayout" Margin="0, 10, 0, 0">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="ExName.jpg"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Aspect="AspectFill"
+                               HeightRequest="40"
+                               WidthRequest="40"/>
+                        <Entry x:Name="NameEntry" Placeholder="Назва"
+                               PlaceholderColor="LightGray"
+                               BackgroundColor="Black"
+                               TextColor="White"
+                               HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+                <BoxView Color="White" HeightRequest="1"/>
+                <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0">
+                    <Image Source="ExInfo.jpg"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Aspect="AspectFill"
+                           HeightRequest="40"
+                           WidthRequest="40"/>
+                    <Editor x:Name="InformationEditor" Placeholder="Інформація по вправі"
+                            PlaceholderColor="LightGray"
+                            BackgroundColor="Black"
+                            TextColor="White"
+                            HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <BoxView Color="White" HeightRequest="1"/>
+                <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0">
+                    <Image Source="ExUrlName.jpg"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Aspect="AspectFill"
+                           HeightRequest="40"
+                           WidthRequest="40"/>
+                    <Entry x:Name="NameLinkEntry" Placeholder="Назва посилання"
+                           PlaceholderColor="LightGray"
+                           BackgroundColor="Black"
+                           TextColor="White"
+                           HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <BoxView Color="White" HeightRequest="1"/>
+                <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0">
+                    <Image Source="ExUrl.jpg"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Aspect="AspectFill"
+                           HeightRequest="40"
+                           WidthRequest="40"/>
+                    <Entry x:Name="UrlLinkEntry" Placeholder="Посилання на ресурс URL"
+                           PlaceholderColor="LightGray"
+                           BackgroundColor="Black"
+                           TextColor="White"
+                           HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <BoxView Color="White" HeightRequest="1"/>
+                <Label x:Name="TypeLabel" Text="Тип вправи: " FontSize = "20" FontAttributes="Bold" HorizontalOptions="Start"
+                       TextColor="White"/>
+                <BoxView Color="White" HeightRequest="1"/>
+                <StackLayout x:Name="UpdateStackLayout">
+                    
+                </StackLayout>
+            </StackLayout>
         </ScrollView>
-        <StackLayout Grid.Row="1" HeightRequest="350" WidthRequest="350" Margin="5, 0, 5, 0">
-            <StackLayout x:Name="PurposeStackLayout"></StackLayout>
-        </StackLayout>
-        <StackLayout Grid.Row="2" Margin="5, 0, 5, 0">
-            <Button x:Name="UpdateApproachButton" Text="Update approach" Clicked="UpdateApproachButton_Clicked"/>
+        <StackLayout Grid.Row="1" Margin="5, 0, 5, 0">
+            <Button x:Name="UpdateApproachButton" Text="Обновити вправу" Clicked="UpdateApproachButton_Clicked"
+                    TextColor="White" BackgroundColor="#292990" Margin="5, 0, 5, 0"/>
         </StackLayout>
     </Grid>
 </ContentPage>

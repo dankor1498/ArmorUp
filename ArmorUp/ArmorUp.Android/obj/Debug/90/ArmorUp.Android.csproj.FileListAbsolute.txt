@@ -3163,3 +3163,9 @@ G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\count.jpg
 G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\approach.jpg
 G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\armourup.jpg
 G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\user.jpg
+G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\exmission.jpg
+G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\exinfo.jpg
+G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\extype.jpg
+G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\exurlname.jpg
+G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\exurl.jpg
+G:\All\ArmorUp\ArmorUp\ArmorUp.Android\obj\Debug\90\res\drawable\exname.jpg

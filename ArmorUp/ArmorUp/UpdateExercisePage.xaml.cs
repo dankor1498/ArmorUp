@@ -12,7 +12,7 @@ namespace ArmorUp
         private object exercises = DBSaverLoader.LOAD_EXERCISE(Exercises.CurrentExercisesId, App.Database);
         private App.TypeExercises type;
         SfTimePicker timePicker;
-        Entry entry;
+        Entry entry = new Entry();
         public UpdateExercisePage()
         {
             InitializeComponent();
@@ -24,13 +24,14 @@ namespace ArmorUp
             if(exercises is ExercisesCount)
             {
                 ExercisesCount exercisesCount = (ExercisesCount)exercises;
+
                 NameEntry.Text = exercisesCount.Name;
                 InformationEditor.Text = exercisesCount.Information;
                 NameLinkEntry.Text = exercisesCount.LinkName;
                 UrlLinkEntry.Text = exercisesCount.LinkURL;
-                TypeLabel.Text += "Count";
+                TypeLabel.Text += "Вправа на кількість";
                 type = App.TypeExercises.Count;
-                PurposeStackLayout.Children.Add(new Entry() { Text = exercisesCount.Purpose.ToString() });
+                UpdateStackLayout.Children.Add(AddEntryFrame(exercisesCount.Purpose.ToString()));
             }
             else if(exercises is ExercisesApproach)
             {
@@ -39,26 +40,78 @@ namespace ArmorUp
                 InformationEditor.Text = exercisesApproach.Information;
                 NameLinkEntry.Text = exercisesApproach.LinkName;
                 UrlLinkEntry.Text = exercisesApproach.LinkURL;
-                TypeLabel.Text += "Approach";
+                TypeLabel.Text += "Вправа на підходи";
                 for (int i = 0; i < exercisesApproach.ApproachList.Count; i++)
                 {
-                    PurposeStackLayout.Children.Add(new Entry() { Text = exercisesApproach.ApproachList[i].ToString() });
+                    UpdateStackLayout.Children.Add(AddEntryFrame(exercisesApproach.ApproachList[i].ToString()));
                 }
                 type = App.TypeExercises.Approach;
             }
             else if (exercises is ExercisesTime)
             {
                 ExercisesTime exercisesTime = (ExercisesTime)exercises;
-                entry = new Entry() { Text = exercisesTime.Time.TotalSeconds.ToString() };
+
+                Frame frame = new Frame()
+                {
+                    BackgroundColor = Color.Black,
+                    Padding = 2,
+                };
+                StackLayout stackLayout = new StackLayout() { Orientation = StackOrientation.Horizontal };
+                Image image = new Image()
+                {
+                    Source = "ExMission.jpg",
+                    VerticalOptions = LayoutOptions.Center,
+                    HorizontalOptions = LayoutOptions.Center,
+                    Aspect = Aspect.AspectFill,
+                    HeightRequest = 40,
+                    WidthRequest = 40
+                };
+                entry.Text = exercisesTime.Time.TotalSeconds.ToString();
+                entry.TextColor = Color.White;
+                entry.BackgroundColor = Color.Black;
+                entry.HorizontalOptions = LayoutOptions.FillAndExpand;
+                stackLayout.Children.Add(image);
+                stackLayout.Children.Add(entry);
+                frame.Content = stackLayout;
+
                 NameEntry.Text = exercisesTime.Name;
                 InformationEditor.Text = exercisesTime.Information;
                 NameLinkEntry.Text = exercisesTime.LinkName;
                 UrlLinkEntry.Text = exercisesTime.LinkURL;
-                TypeLabel.Text += "Count";
+                TypeLabel.Text += "Вправа на час";
                 type = App.TypeExercises.Time;
-                PurposeStackLayout.Children.Add(entry);
-                PurposeStackLayout.Children.Add(CreateNewTimePicker());
+                UpdateStackLayout.Children.Add(frame);
+                UpdateStackLayout.Children.Add(CreateNewTimePicker());
             }
+        }
+        private Frame AddEntryFrame(string text)
+        {
+            Frame frame = new Frame()
+            {
+                BackgroundColor = Color.Black,
+                Padding = 2,
+            };
+            StackLayout stackLayout = new StackLayout() { Orientation = StackOrientation.Horizontal };
+            Image image = new Image()
+            {
+                Source = "ExMission.jpg",
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.Center,
+                Aspect = Aspect.AspectFill,
+                HeightRequest = 40,
+                WidthRequest = 40
+            };
+            Entry entry = new Entry()
+            {
+                BackgroundColor = Color.Black,
+                TextColor = Color.White,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Text = text
+            };
+            stackLayout.Children.Add(image);
+            stackLayout.Children.Add(entry);
+            frame.Content = stackLayout;
+            return frame;
         }
         private SfTimePicker CreateNewTimePicker()
         {
@@ -89,8 +142,10 @@ namespace ArmorUp
         {
             if (type == App.TypeExercises.Count)
             {
-                Entry entry = PurposeStackLayout.Children[0] as Entry;
-                if(NameEntry != null && entry != null)
+                Frame frame = UpdateStackLayout.Children[0] as Frame;
+                StackLayout stackLayout = frame.Content as StackLayout;
+                Entry entry = stackLayout.Children[1] as Entry;
+                if (NameEntry != null && entry != null)
                 {
                     DBSaverLoader.UPDATE_EXERCISE(Exercises.CurrentExercisesId, new ExercisesCount()
                     {
@@ -105,14 +160,20 @@ namespace ArmorUp
             }
             else if (type == App.TypeExercises.Approach)
             {
-                int Count = PurposeStackLayout.Children.Count;
+                int Count = UpdateStackLayout.Children.Count;
                 List<int> result = new List<int>();
                 for (int i = 0; i < Count - 1; i++)
                 {
-                    if (PurposeStackLayout.Children[i] == null) return;
-                    result.Add(Int32.Parse((PurposeStackLayout.Children[i] as Entry).Text));
+                    if (UpdateStackLayout.Children[i] == null) return;
+                    Frame frame = UpdateStackLayout.Children[i] as Frame;
+                    StackLayout stackLayout = frame.Content as StackLayout;
+                    Entry entry = stackLayout.Children[1] as Entry;
+                    result.Add(Int32.Parse(entry.Text));
                 }
-                result.Add(Int32.Parse((PurposeStackLayout.Children[Count - 1] as Entry).Text));
+                Frame frame1 = UpdateStackLayout.Children[Count - 1] as Frame;
+                StackLayout stackLayout1 = frame1.Content as StackLayout;
+                Entry entry1 = stackLayout1.Children[1] as Entry;
+                result.Add(Int32.Parse(entry1.Text));
                 if (NameEntry != null)
                 {
                     DBSaverLoader.UPDATE_EXERCISE(Exercises.CurrentExercisesId, new ExercisesApproach()
@@ -128,7 +189,9 @@ namespace ArmorUp
             }
             else if (type == App.TypeExercises.Time)
             {
-                Entry entry = PurposeStackLayout.Children[0] as Entry;
+                Frame frame = UpdateStackLayout.Children[0] as Frame;
+                StackLayout stackLayout = frame.Content as StackLayout;
+                Entry entry = stackLayout.Children[1] as Entry;
                 if (NameEntry != null && entry != null)
                 {
                     DBSaverLoader.UPDATE_EXERCISE(Exercises.CurrentExercisesId, new ExercisesTime()

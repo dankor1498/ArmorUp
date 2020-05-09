@@ -7,7 +7,7 @@
   <uses-feature android:name="android.hardware.camera" android:required="false" />
   <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <application android:label="ArmorUp.Android" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true">
+  <application android:label="ArmorUp.Android" android:icon="@mipmap/icon" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
     <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="ArmorUp" android:screenOrientation="portrait" android:theme="@style/MainTheme" android:name="crc64fa41bf8d8483e1e9.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

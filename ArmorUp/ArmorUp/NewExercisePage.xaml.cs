@@ -19,26 +19,34 @@ namespace ArmorUp
 
         private void AddApproachButton__Clicked(object sender, EventArgs e)
         {
-            Label label = new Label
+            Frame frame = new Frame()
             {
-                VerticalTextAlignment = TextAlignment.Center,
-                HorizontalTextAlignment = TextAlignment.Center,
-                Text = "Підхід " + CountClick++,
-                TextColor = Color.White
+                BackgroundColor = Color.Black,
+                Padding = 2,
             };
-            Entry entry = new Entry();
-            entry.TextColor = Color.White;
-            entry.Placeholder = "Введіть кількість підходів";
-            entry.PlaceholderColor = Color.LightGray;
+            StackLayout stackLayout = new StackLayout() { Orientation = StackOrientation.Horizontal };
+            Image image = new Image()
+            {
+                Source = "ExMission.jpg",
+                VerticalOptions = LayoutOptions.Center,
+                HorizontalOptions = LayoutOptions.Center,
+                Aspect = Aspect.AspectFill,
+                HeightRequest = 40,
+                WidthRequest = 40
+            };
+            Entry entry = new Entry()
+            {
+                BackgroundColor = Color.Black,
+                TextColor = Color.White,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Placeholder = "Підхід " + CountClick++,
+                PlaceholderColor = Color.LightGray
+            };
+            stackLayout.Children.Add(image);
+            stackLayout.Children.Add(entry);
+            frame.Content = stackLayout;
 
-            BoxView boxView = new BoxView()
-            {
-                Color = Color.White,
-                HeightRequest = 1
-            };
-            MainStackLayout.Children.Add(label);
-            MainStackLayout.Children.Add(entry);
-            MainStackLayout.Children.Add(boxView);
+            ApproachStackLayout.Children.Add(frame);
         }
         private void TimePicker_TimeSelected(object sender, TimeChangedEventArgs e)
         {
@@ -94,13 +102,21 @@ namespace ArmorUp
                                 }, App.Database);
                                 App.UpdateMainTableList(); break;
                             case 1:
+                                List<int> ApproachListInt = new List<int>();
+                                for (int i = 0; i < ApproachStackLayout.Children.Count; ++i)
+                                {
+                                    Frame frame = ApproachStackLayout.Children[i] as Frame;
+                                    StackLayout stackLayout = frame.Content as StackLayout;
+                                    Entry entry = stackLayout.Children[1] as Entry;
+                                    ApproachListInt.Add(Int32.Parse(entry.Text));
+                                }
                                 DBSaverLoader.SAVE_EXERCISE(new ExercisesApproach()
                                 {
                                     Name = NameEntry.Text,
                                     Information = InformationEditor.Text,
                                     LinkName = NameLinkEntry.Text,
                                     LinkURL = UrlLinkEntry.Text,
-                                    ApproachList = new List<int>() { 30, 30, 30 }
+                                    ApproachList = ApproachListInt
                                 }, App.Database);
                                 App.UpdateMainTableList(); break;
                             case 2:

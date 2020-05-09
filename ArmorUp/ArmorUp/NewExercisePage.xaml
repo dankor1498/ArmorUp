@@ -20,7 +20,7 @@
                        TextColor="White"/>
                 <Frame BackgroundColor="Black" Padding="2" x:Name="NameStackLayout" Margin="0, 10, 0, 0">
                     <StackLayout Orientation="Horizontal">
-                        <Image Source="user.jpg"
+                        <Image Source="ExName.jpg"
                                VerticalOptions="Center"
                                HorizontalOptions="Center"
                                Aspect="AspectFill"
@@ -35,7 +35,7 @@
                 </Frame>
                 <BoxView Color="White" HeightRequest="1"/>
                 <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0">
-                    <Image Source="user.jpg"
+                    <Image Source="ExInfo.jpg"
                            VerticalOptions="Center"
                            HorizontalOptions="Center"
                            Aspect="AspectFill"
@@ -49,7 +49,7 @@
                 </StackLayout>
                 <BoxView Color="White" HeightRequest="1"/>
                 <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0">
-                    <Image Source="user.jpg"
+                    <Image Source="ExUrlName.jpg"
                            VerticalOptions="Center"
                            HorizontalOptions="Center"
                            Aspect="AspectFill"
@@ -63,7 +63,7 @@
                 </StackLayout>
                 <BoxView Color="White" HeightRequest="1"/>
                 <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0">
-                    <Image Source="user.jpg"
+                    <Image Source="ExUrl.jpg"
                            VerticalOptions="Center"
                            HorizontalOptions="Center"
                            Aspect="AspectFill"
@@ -80,7 +80,7 @@
                        TextColor="White" Margin="0, 10, 0, 0"/>
                 <Frame BackgroundColor="Black" x:Name="PickerStackLayout" Padding="2">
                     <StackLayout Orientation="Horizontal">
-                        <Image Source="user.jpg"
+                        <Image Source="ExType.jpg"
                            VerticalOptions="Center"
                            HorizontalOptions="Center"
                            Aspect="AspectFill"
@@ -98,7 +98,7 @@
                 <BoxView Color="White" HeightRequest="1"/>
                 <Frame BackgroundColor="Black" Padding="2" x:Name="MissionStackLayout" Margin="0, 10, 0, 0">
                     <StackLayout Orientation="Horizontal">
-                        <Image Source="user.jpg"
+                        <Image Source="ExMission.jpg"
                            VerticalOptions="Center"
                            HorizontalOptions="Center"
                            Aspect="AspectFill"
@@ -123,6 +123,9 @@
                                          Time="0:0:0"/>
                 <Button x:Name="AddApproachButton" Text="Додати підхід" Clicked="AddApproachButton__Clicked"
                         TextColor="White" BackgroundColor="#292990"/>
+                <StackLayout x:Name="ApproachStackLayout">
+                    
+                </StackLayout>
             </StackLayout>
         </ScrollView>
         <StackLayout Grid.Row="1">
