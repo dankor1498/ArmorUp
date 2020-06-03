@@ -42,6 +42,7 @@
                 </StackLayout>
             </StackLayout>
             <StackLayout
+                BackgroundColor="#111"
                 Padding="0,10,0,0"
                 HorizontalOptions="FillAndExpand"
                 Orientation="Vertical"

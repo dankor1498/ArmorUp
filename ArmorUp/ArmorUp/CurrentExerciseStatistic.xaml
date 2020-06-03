@@ -17,11 +17,10 @@
         <StyleSheet Source="../../Styles/main.css" />
     </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid BackgroundColor="#111">
+        <Grid BackgroundColor="#111111">
             <StackLayout Orientation="Vertical" VerticalOptions="Start">
                 <StackLayout>
                     <chart:SfChart HeightRequest="200">
-
                         <chart:SfChart.Title>
                             <chart:ChartTitle Text="Ціль / Виконано"/>
                         </chart:SfChart.Title>
@@ -62,12 +61,12 @@
                                 <Label x:Name="ExerciseName" Text="Назва вправи" TextColor="White" FontSize="20"/>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                                <Frame CornerRadius="10"
+                                <Frame CornerRadius="5"
                                        Padding="0"
                                        Margin="5"
                                        IsClippedToBounds="True"
                                        WidthRequest="350"
-                                       HeightRequest="60"
+                                       HeightRequest="50"
                                        BackgroundColor="#292929">
                                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
@@ -82,7 +81,7 @@
                                 </Frame>
                             </StackLayout>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                                <Frame CornerRadius="10"
+                                <Frame CornerRadius="5"
                                        Padding="0"
                                        Margin="5"
                                        IsClippedToBounds="True"
@@ -110,13 +109,13 @@
                                             </gauge:SfCircularGauge>
                                         </StackLayout>
                                         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                                            <Frame CornerRadius="10"
+                                            <Frame CornerRadius="5"
                                                    Padding="0"
                                                    Margin="5"
                                                    IsClippedToBounds="True"
                                                    WidthRequest="175"
                                                    HeightRequest="100"
-                                                   BackgroundColor="Black">
+                                                   BackgroundColor="#292929">
                                                 <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
                                                     <Label Text="Поточний прогрес:" TextColor="White" FontSize="15"/>
                                                     <Label x:Name="ProgresLabel" Text="0/0" TextColor="White" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold"/>

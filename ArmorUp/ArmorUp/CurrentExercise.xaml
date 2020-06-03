@@ -37,8 +37,8 @@
                                     Margin="5,5,0,5"
                                     Padding="0"
                                     BackgroundColor="#205be6"
-                                    CornerRadius="10"
-                                    HeightRequest="60"
+                                    CornerRadius="5"
+                                    HeightRequest="50"
                                     IsClippedToBounds="True"
                                     WidthRequest="120">
                                     <Label
@@ -54,8 +54,8 @@
                                     Margin="0,5,5,5"
                                     Padding="0"
                                     BackgroundColor="#292929"
-                                    CornerRadius="10"
-                                    HeightRequest="60"
+                                    CornerRadius="5"
+                                    HeightRequest="50"
                                     IsClippedToBounds="True"
                                     WidthRequest="225">
                                     <Label
@@ -90,7 +90,7 @@
                                 <Frame
                                     Padding="0"
                                     BackgroundColor="#292929"
-                                    CornerRadius="10"
+                                    CornerRadius="5"
                                     HeightRequest="120"
                                     IsClippedToBounds="True"
                                     WidthRequest="350">
@@ -112,8 +112,8 @@
                                 <Frame
                                     Padding="0"
                                     BackgroundColor="#205be6"
-                                    CornerRadius="10"
-                                    HeightRequest="60"
+                                    CornerRadius="5"
+                                    HeightRequest="50"
                                     IsClippedToBounds="True"
                                     WidthRequest="350">
                                     <Label
@@ -128,7 +128,7 @@
                                 <Frame
                                     Padding="0"
                                     BackgroundColor="#292929"
-                                    CornerRadius="10"
+                                    CornerRadius="5"
                                     HeightRequest="120"
                                     IsClippedToBounds="True"
                                     WidthRequest="350">
@@ -150,8 +150,8 @@
                                 <Frame
                                     Padding="0"
                                     BackgroundColor="#205be6"
-                                    CornerRadius="10"
-                                    HeightRequest="60"
+                                    CornerRadius="5"
+                                    HeightRequest="50"
                                     IsClippedToBounds="True"
                                     WidthRequest="350">
                                     <Label

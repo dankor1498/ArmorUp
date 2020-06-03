@@ -44,7 +44,7 @@
                         TextColor="White"
                         VerticalOptions="Center" />
                 </StackLayout>
-                <StackLayout Margin="0,0,0,0" HeightRequest="350">
+                <StackLayout Margin="0,0,0,0">
                     <StackLayout Spacing="0">
                         <Label
                             x:Name="TextLabel"
@@ -71,7 +71,7 @@
                         <ScrollView>
                             <StackLayout
                                 x:Name="AllExercisesStackLayout"
-                                Padding="0,0,0,0"
+                                Padding="0,0,0,80"
                                 Orientation="Vertical"
                                 VerticalOptions="FillAndExpand" />
                         </ScrollView>
@@ -118,6 +118,7 @@
                 </StackLayout>
             </StackLayout>-->
             <StackLayout
+                BackgroundColor="#111"
                 Padding="0,10,0,0"
                 HorizontalOptions="FillAndExpand"
                 Orientation="Vertical"
