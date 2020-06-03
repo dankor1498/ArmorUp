@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Syncfusion.XForms.Buttons;
 
 namespace ArmorUp
 {
@@ -38,23 +39,31 @@ namespace ArmorUp
         {
             StackLayout stackLayout = new StackLayout()
             {
-                Orientation = StackOrientation.Horizontal
+                Orientation = StackOrientation.Horizontal,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Margin = new Thickness(0),
+                Padding = new Thickness(10, 0, 10, 0),
+                BackgroundColor = Color.FromHex("#262626")
             };
             Frame PictureFrame = new Frame()
             {
                 CornerRadius = 10,
                 Padding = new Thickness(0),
+                BorderColor = Color.FromHex("#262626"),
+                BackgroundColor = Color.FromHex("#262626"),
                 Margin = new Thickness(5),
                 IsClippedToBounds = true,
-                HorizontalOptions = LayoutOptions.Start
+                HorizontalOptions = LayoutOptions.Start,
+
             };
             Image image = new Image()
             {
                 VerticalOptions = LayoutOptions.Center,
                 HorizontalOptions = LayoutOptions.Center,
+                BackgroundColor = Color.FromHex("#262626"),
                 Source = picture,
-                HeightRequest = 60,
-                WidthRequest = 60,
+                HeightRequest = 50,
+                WidthRequest = 50,
                 Aspect = Aspect.AspectFill
             };
             //done 1
@@ -63,17 +72,22 @@ namespace ArmorUp
             Frame TextFrame = new Frame()
             {
                 CornerRadius = 10,
+                BorderColor = Color.FromHex("#262626"),
+                BackgroundColor = Color.FromHex("#262626"),
                 Padding = new Thickness(0),
                 Margin = new Thickness(0, 5, 0, 5),
                 IsClippedToBounds = true,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
-            Button ExercisesButton = new Button()
+            SfButton ExercisesButton = new SfButton()
             {
                 ClassId = id.ToString(),
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                FontAttributes = FontAttributes.Bold,
                 Text = name,
                 WidthRequest = 100,
-                HeightRequest = 60,
+                HeightRequest = 50,
                 BackgroundColor = Color.FromHex("#262626"),
                 TextColor = Color.White,
             };
@@ -86,8 +100,9 @@ namespace ArmorUp
                 CornerRadius = 10,
                 Padding = new Thickness(0),
                 Margin = new Thickness(2, 5, 0, 5),
+                BorderColor = Color.FromHex("#262626"),
                 BackgroundColor = Color.FromHex("#262626"),
-                WidthRequest = 60
+                WidthRequest = 50
             };
             Label PercentLabel = new Label()
             {
@@ -105,7 +120,8 @@ namespace ArmorUp
                 Padding = new Thickness(0),
                 Margin = new Thickness(2, 5, 5, 5),
                 BackgroundColor = Color.FromHex("#262626"),
-                WidthRequest = 60
+                BorderColor = Color.FromHex("#262626"),
+                WidthRequest = 50
             };
             
             Label SucsessLabel = new Label()
@@ -210,7 +226,7 @@ namespace ArmorUp
 
         private void YourButtonClick(object sender, EventArgs e)
         {
-            Button button = sender as Button;
+            SfButton button = sender as SfButton;
             Exercises.CurrentExercisesId = int.Parse(button.ClassId);
             Navigation.PushAsync(new CurrentExerciseStatistic());
         }

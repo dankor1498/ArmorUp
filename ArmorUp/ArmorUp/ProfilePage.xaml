@@ -1,104 +1,162 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="ArmorUp.ProfilePage"
-             Title="ProfilePage"
-             NavigationPage.HasNavigationBar="false">
+<ContentPage
+    x:Class="ArmorUp.ProfilePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="ProfilePage"
+    NavigationPage.HasNavigationBar="false"
+    mc:Ignorable="d">
+    <ContentPage.Resources>
+        <StyleSheet Source="../../Styles/main.css" />
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid BackgroundColor="Black">
+        <Grid BackgroundColor="#111">
             <StackLayout Orientation="Vertical" VerticalOptions="Start">
-                <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                    <Frame CornerRadius="80"
-                           HeightRequest="160"
-                           WidthRequest="160"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           Padding="0"
-                           IsClippedToBounds="True"
-                           Margin="0, 5, 0, 0" >
-                        <Image x:Name="UserImage" Source="photo.jpg"
-                               VerticalOptions="Center"
-                               HorizontalOptions="Center"
-                               Aspect="AspectFill"
-                               HeightRequest="160"
-                               WidthRequest="160"/>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Vertical"
+                    VerticalOptions="FillAndExpand">
+                    <Frame
+                        Margin="0,40,0,0"
+                        Padding="0"
+                        CornerRadius="60"
+                        HeightRequest="120"
+                        HorizontalOptions="Center"
+                        IsClippedToBounds="True"
+                        VerticalOptions="Center"
+                        WidthRequest="120">
+                        <Image
+                            x:Name="UserImage"
+                            Aspect="AspectFill"
+                            HeightRequest="120"
+                            HorizontalOptions="Center"
+                            Source="photo.jpg"
+                            VerticalOptions="Center"
+                            WidthRequest="120" />
                     </Frame>
-                    <Label x:Name="UserNameLabel" 
-                           VerticalOptions="Center"
-                           HorizontalOptions="Center"
-                           FontSize="25"
-                           TextColor="White"/>
+                    <Label
+                        x:Name="UserNameLabel"
+                        FontSize="25"
+                        HorizontalOptions="Center"
+                        TextColor="White"
+                        VerticalOptions="Center" />
                 </StackLayout>
-                <StackLayout HeightRequest="350">
+                <StackLayout Margin="0,0,0,0" HeightRequest="350">
                     <StackLayout Spacing="0">
-                        <Label x:Name="TextLabel"
-                               VerticalOptions="Center"
-                               HorizontalOptions="Center"
-                               VerticalTextAlignment = "Center"
-                               HorizontalTextAlignment = "Center"
-                               FontSize="18"
-                               TextColor="Silver"
-                               Margin="5, 0, 5, 0"/>
-                        <Frame BackgroundColor="Black" HorizontalOptions="End">
-                            <Label x:Name="AuthorLabel"
-                               VerticalOptions="Center"
-                               HorizontalOptions="Center"
-                               VerticalTextAlignment = "Center"
-                               HorizontalTextAlignment = "Center"
-                               FontSize="16"
-                               TextColor="Gold"/>
+                        <Label
+                            x:Name="TextLabel"
+                            Margin="10"
+                            FontSize="18"
+                            HorizontalOptions="Center"
+                            HorizontalTextAlignment="Center"
+                            TextColor="Silver"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center" />
+                        <Frame BackgroundColor="#111" HorizontalOptions="End">
+                            <Label
+                                Margin="0, 10, 20, 20"
+                                x:Name="AuthorLabel"
+                                FontSize="16"
+                                HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                TextColor="Gold"
+                                VerticalOptions="Center"
+                                VerticalTextAlignment="Center" />
                         </Frame>
                     </StackLayout>
                     <StackLayout>
                         <ScrollView>
-                            <StackLayout x:Name="AllExercisesStackLayout" VerticalOptions="FillAndExpand" Orientation="Vertical" Padding="0, 0, 0, 20">
-
-                            </StackLayout>
+                            <StackLayout
+                                x:Name="AllExercisesStackLayout"
+                                Padding="0,0,0,0"
+                                Orientation="Vertical"
+                                VerticalOptions="FillAndExpand" />
                         </ScrollView>
                     </StackLayout>
                 </StackLayout>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" BackgroundColor="Black">
+            <!--<StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" BackgroundColor="Black">
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0, 5, 0, 0">
                     <StackLayout Orientation="Vertical" Spacing="0">
                         <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="train.png" VerticalOptions="Start" HorizontalOptions="Center"/>
-                        <Button HeightRequest="33" 
-                                Text="Statistics" 
-                                FontSize="10" 
-                                WidthRequest="110" 
+                        <Button HeightRequest="33"
+                                Text="Statistics"
+                                FontSize="10"
+                                WidthRequest="110"
                                 HorizontalOptions="Center"
                                 TextColor="White"
-                                BackgroundColor="#292929" 
+                                BackgroundColor="#292929"
                                 Margin="0, 5, 0, 5"
                                 Clicked="StatisticsButton_Clicked"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Spacing="0">
                         <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="Profile.png" VerticalOptions="Start" HorizontalOptions="Center"/>
-                        <Button HeightRequest="33" 
-                                Text="Profile" 
-                                FontSize="10" 
-                                WidthRequest="110" 
-                                HorizontalOptions="CenterAndExpand" 
+                        <Button HeightRequest="33"
+                                Text="Profile"
+                                FontSize="10"
+                                WidthRequest="110"
+                                HorizontalOptions="CenterAndExpand"
                                 VerticalOptions="CenterAndExpand"
                                 TextColor="White"
                                 BackgroundColor="#205be6" Margin="0, 5, 0, 5"/>
                     </StackLayout>
                     <StackLayout Orientation="Vertical" Spacing="0">
                         <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="Exercises.png" VerticalOptions="Start" HorizontalOptions="Center"/>
-                        <Button HeightRequest="33" 
+                        <Button HeightRequest="33"
                                 Text="Exercises"
                                 Clicked="NewExercisePage_Clicked"
-                                FontSize="10" 
-                                WidthRequest="110" 
+                                FontSize="10"
+                                WidthRequest="110"
                                 HorizontalOptions="Center"
                                 TextColor="White"
-                                BackgroundColor="#292929" 
+                                BackgroundColor="#292929"
                                 Margin="0, 5, 0, 5"/>
                     </StackLayout>
                 </StackLayout>
+            </StackLayout>-->
+            <StackLayout
+                Padding="0,10,0,0"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Vertical"
+                StyleClass="nav1"
+                VerticalOptions="End">
+                <FlexLayout StyleClass="nav">
+
+                    <button:SfButton
+                        BackgroundColor="#111"
+                        Clicked="StatisticsButton_Clicked"
+                        CornerRadius="20"
+                        HeightRequest="40"
+                        ImageAlignment="Top"
+                        ImageSource="baseline_bar_chart_black_36dp.png"
+                        ImageWidth="30"
+                        ShowIcon="True"
+                        WidthRequest="100" />
+
+                    <button:SfButton
+                        BackgroundColor="#111"
+                        CornerRadius="20"
+                        HeightRequest="40"
+                        ImageAlignment="Top"
+                        ImageSource="baseline_home_black_36dp_color.png"
+                        ImageWidth="30"
+                        ShowIcon="True"
+                        WidthRequest="100" />
+
+                    <button:SfButton
+                        BackgroundColor="#111"
+                        Clicked="NewExercisePage_Clicked"
+                        CornerRadius="20"
+                        HeightRequest="40"
+                        ImageAlignment="Top"
+                        ImageSource="baseline_playlist_add_black_36dp.png"
+                        ImageWidth="30"
+                        ShowIcon="True"
+                        WidthRequest="100" />
+                </FlexLayout>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

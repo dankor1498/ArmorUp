@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Syncfusion.XForms.Buttons;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -57,22 +58,27 @@ namespace ArmorUp
             {
                 Orientation = StackOrientation.Horizontal,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
-                Margin = new Thickness(5)
+                Margin = new Thickness(0),
+                Padding = new Thickness(10, 0, 10, 0),
+                BackgroundColor = Color.FromHex("#262626")
             };
             Frame frame = new Frame()
             {
                 CornerRadius = 10,
+                BorderColor = Color.FromHex("#262626"),
                 Padding = new Thickness(0),
                 Margin = new Thickness(0, 5, 0, 5),
+                //WidthRequest = 150,
                 IsClippedToBounds = true,
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
-            Button button = new Button()
+            SfButton button = new SfButton()
             {
                 ClassId = mainTable.ID.ToString(),
                 Text = mainTable.Name,
-                WidthRequest = 90,
-                HeightRequest = 60,
+                FontAttributes = FontAttributes.Bold,
+                //WidthRequest = 150,
+                HeightRequest = 50,
                 BackgroundColor = Color.FromHex("#262626"),
                 TextColor = Color.White
             };     
@@ -81,17 +87,26 @@ namespace ArmorUp
             Frame frame1 = new Frame()
             {
                 CornerRadius = 10,
+                BorderColor = Color.FromHex("#262626"),
                 Padding = new Thickness(0),
                 Margin = new Thickness(0, 5, 0, 5),
                 IsClippedToBounds = true,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
             };
-            Button button1 = new Button()
+            SfButton button1 = new SfButton()
             {
                 ClassId = mainTable.ID.ToString(),
-                Text = "Del",
-                WidthRequest = 5,
-                HeightRequest = 60,
+                //Text = "Del",
+                CornerRadius = 10,
+                ImageSource = "delete_outline_white_36dp.png",
+                ImageWidth = 36,
+
+                ShowIcon = true,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                HeightRequest = 50,
+                WidthRequest = 50,
                 BackgroundColor = Color.FromHex("#262626"),
                 TextColor = Color.White
             };
@@ -101,16 +116,24 @@ namespace ArmorUp
             {
                 CornerRadius = 10,
                 Padding = new Thickness(0),
+                BorderColor = Color.FromHex("#262626"),
                 Margin = new Thickness(0, 5, 0, 5),
                 IsClippedToBounds = true,
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
             };
-            Button button2 = new Button()
+            SfButton button2 = new SfButton()
             {
                 ClassId = mainTable.ID.ToString(),
-                Text = "Upd",
-                WidthRequest = 5,
-                HeightRequest = 60,
+                //Text = "Edit",
+                ImageSource = "baseline_create_white_36dp.png",
+                ImageWidth = 36,
+                HeightRequest = 50,
+                WidthRequest = 50,
+                ShowIcon = true,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center,
+                //Padding = new Thickness(7, 7, 7, 7),
                 BackgroundColor = Color.FromHex("#262626"),
                 TextColor = Color.White
             };
@@ -128,20 +151,20 @@ namespace ArmorUp
 
         private void UpdateExerciseButton_Click(object sender, EventArgs e)
         {
-            Button button = sender as Button;
+            SfButton button = sender as SfButton;
             Exercises.CurrentExercisesId = int.Parse(button.ClassId);
             Navigation.PushAsync(new UpdateExercisePage());
         }
 
         private void YourButtonClick(object sender, EventArgs e)
         {
-            Button button = sender as Button;            
+            SfButton button = sender as SfButton;            
             Exercises.CurrentExercisesId = int.Parse(button.ClassId);
             Navigation.PushAsync(new CurrentExercise());
         }
         private void DeleteExerciseButton_Click(object sender, EventArgs e)
         {
-            Button button = sender as Button;            
+            SfButton button = sender as SfButton;            
             App.Database.DeleteItem(int.Parse(button.ClassId));
             App.UpdateMainTableList();
             Navigation.PushAsync(new ProfilePage());

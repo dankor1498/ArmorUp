@@ -1,88 +1,118 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             NavigationPage.HasNavigationBar="false"
-             x:Class="ArmorUp.StartPage">
+<ContentPage
+    x:Class="ArmorUp.StartPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    NavigationPage.HasNavigationBar="false"
+    mc:Ignorable="d">
     <ContentPage.Content>
         <Grid BackgroundColor="Black">
             <StackLayout Orientation="Vertical" VerticalOptions="Start">
-                <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                    <Frame CornerRadius="80"
-                           HeightRequest="160"
-                           WidthRequest="160"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"
-                           Padding="0"
-                           IsClippedToBounds="True"
-                           Margin="0, 5, 0, 0" >
-                        <Image x:Name="UserImage" Source="ArmourUp.jpg"
-                               VerticalOptions="Center"
-                               HorizontalOptions="Center"
-                               Aspect="AspectFill"
-                               HeightRequest="160"
-                               WidthRequest="160"/>
+                <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    Orientation="Vertical"
+                    VerticalOptions="FillAndExpand">
+                    <Frame
+                        Margin="0,5,0,0"
+                        Padding="0"
+                        CornerRadius="80"
+                        HeightRequest="160"
+                        HorizontalOptions="Center"
+                        IsClippedToBounds="True"
+                        VerticalOptions="Center"
+                        WidthRequest="160">
+                        <Image
+                            x:Name="UserImage"
+                            Aspect="AspectFill"
+                            HeightRequest="160"
+                            HorizontalOptions="Center"
+                            Source="ArmourUp.jpg"
+                            VerticalOptions="Center"
+                            WidthRequest="160" />
                     </Frame>
-                    <Label Text="Вітаємо в ArmorUp!"
-                           VerticalOptions="Center"
-                           HorizontalOptions="Center"
-                           FontSize="25"
-                           TextColor="White"
-                           FontAttributes="Bold"/>
-                    <StackLayout Orientation="Vertical" Margin="0, 25, 0, 0">
-                        <Frame BackgroundColor="Black" Padding="2" x:Name="NameFrame">
-                            <StackLayout Orientation="Horizontal" Margin="5, 0, 5, 0">
-                                <Image Source="user.jpg"
-                                       VerticalOptions="Center"
-                                       HorizontalOptions="Center"
-                                       Aspect="AspectFill"
-                                       HeightRequest="40"
-                                       WidthRequest="40"/>
-                                <Entry x:Name="NameEntry" BackgroundColor="Black" TextColor="White" 
-                                       HorizontalOptions="FillAndExpand"
-                                       Placeholder="Ім'я"
-                                       PlaceholderColor="LightGray"/>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="25"
+                        HorizontalOptions="Center"
+                        Text="Вітаємо в ArmorUp!"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+                    <StackLayout Margin="0,25,0,0" Orientation="Vertical">
+                        <Frame
+                            x:Name="NameFrame"
+                            Padding="2"
+                            BackgroundColor="Black">
+                            <StackLayout Margin="5,0,5,0" Orientation="Horizontal">
+                                <Image
+                                    Aspect="AspectFill"
+                                    HeightRequest="40"
+                                    HorizontalOptions="Center"
+                                    Source="user.jpg"
+                                    VerticalOptions="Center"
+                                    WidthRequest="40" />
+                                <Entry
+                                    x:Name="NameEntry"
+                                    BackgroundColor="Black"
+                                    HorizontalOptions="FillAndExpand"
+                                    Placeholder="Ім'я"
+                                    PlaceholderColor="LightGray"
+                                    TextColor="White" />
                             </StackLayout>
                         </Frame>
                     </StackLayout>
-                    <BoxView Color="White" HeightRequest="1" Margin="5, 0, 5, 0"/>
-                    <Frame BackgroundColor="Black" Padding="2" x:Name="SurnameFrame">
+                    <BoxView
+                        Margin="5,0,5,0"
+                        HeightRequest="1"
+                        Color="White" />
+                    <Frame
+                        x:Name="SurnameFrame"
+                        Padding="2"
+                        BackgroundColor="Black">
                         <StackLayout Orientation="Vertical">
-                            <StackLayout Orientation="Horizontal" Margin="5, 0, 5, 0">
-                                <Image Source="user.jpg"
-                                       VerticalOptions="Center"
-                                       HorizontalOptions="Center"
-                                       Aspect="AspectFill"
-                                       HeightRequest="40"
-                                       WidthRequest="40"/>
-                                <Entry x:Name="SurnameEntry" BackgroundColor="Black" TextColor="White" 
-                                       HorizontalOptions="FillAndExpand"
-                                       Placeholder="Прізвище"
-                                       PlaceholderColor="LightGray"/>
+                            <StackLayout Margin="5,0,5,0" Orientation="Horizontal">
+                                <Image
+                                    Aspect="AspectFill"
+                                    HeightRequest="40"
+                                    HorizontalOptions="Center"
+                                    Source="user.jpg"
+                                    VerticalOptions="Center"
+                                    WidthRequest="40" />
+                                <Entry
+                                    x:Name="SurnameEntry"
+                                    BackgroundColor="Black"
+                                    HorizontalOptions="FillAndExpand"
+                                    Placeholder="Прізвище"
+                                    PlaceholderColor="LightGray"
+                                    TextColor="White" />
                             </StackLayout>
                         </StackLayout>
                     </Frame>
-                    <BoxView Color="White" HeightRequest="1" Margin="5, 0, 5, 0"/>
-                    <Button  x:Name="TakePictureButton"
-                             Text="Вибрати фото профілю"
-                             FontSize="20" 
-                             HorizontalOptions="FillAndExpand"
-                             TextColor="White"
-                             BackgroundColor="#292990" 
-                             Margin="5"
-                             Clicked="TakePictureButton_Clicked"/>                    
-                    <Button  x:Name="SubmitButton"
-                             Text="Створити" 
-                             FontSize="20" 
-                             HorizontalOptions="FillAndExpand"
-                             TextColor="White"
-                             BackgroundColor="#292990" 
-                             Margin="5"
-                             Clicked="SubmitButton_Clicked"/>
-                </StackLayout>                
-            </StackLayout>      
+                    <BoxView
+                        Margin="5,0,5,0"
+                        HeightRequest="1"
+                        Color="White" />
+                    <Button
+                        x:Name="TakePictureButton"
+                        Margin="5"
+                        BackgroundColor="#292990"
+                        Clicked="TakePictureButton_Clicked"
+                        FontSize="20"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Вибрати фото профілю"
+                        TextColor="White" />
+                    <Button
+                        x:Name="SubmitButton"
+                        Margin="5"
+                        BackgroundColor="#292990"
+                        Clicked="SubmitButton_Clicked"
+                        FontSize="20"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Створити"
+                        TextColor="White" />
+                </StackLayout>
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

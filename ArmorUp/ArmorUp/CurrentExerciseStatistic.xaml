@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:gauge="clr-namespace:Syncfusion.SfGauge.XForms;assembly=Syncfusion.SfGauge.XForms"
              xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms" xmlns:local="clr-namespace:ArmorUp"
+             xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              mc:Ignorable="d"
              x:Class="ArmorUp.CurrentExerciseStatistic"
              NavigationPage.HasNavigationBar="false">
@@ -12,9 +13,11 @@
     <ContentPage.BindingContext>
         <local:ExerciseByDataViewModel/>
     </ContentPage.BindingContext>
-
+    <ContentPage.Resources>
+        <StyleSheet Source="../../Styles/main.css" />
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid BackgroundColor="Black">
+        <Grid BackgroundColor="#111">
             <StackLayout Orientation="Vertical" VerticalOptions="Start">
                 <StackLayout>
                     <chart:SfChart HeightRequest="200">
@@ -133,45 +136,48 @@
                     </ScrollView>
                 </StackLayout>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" BackgroundColor="Black">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0, 5, 0, 0">
-                    <StackLayout Orientation="Vertical" Spacing="0">
-                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="train.png" VerticalOptions="Start" HorizontalOptions="Center" />
-                        <Button HeightRequest="33"
-                                Text="Statistics"
-                                FontSize="10"
-                                WidthRequest="110"
-                                HorizontalOptions="Center"
-                                TextColor="White"
-                                BackgroundColor="#292929"
-                                Margin="0, 5, 0, 5"
-                                Clicked="StatisticsButton_Clicked" />
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical" Spacing="0">
-                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="Profile.png" VerticalOptions="Start" HorizontalOptions="Center" />
-                        <Button HeightRequest="33"
-                                Text="Profile"
-                                FontSize="10"
-                                WidthRequest="110"
-                                HorizontalOptions="CenterAndExpand"
-                                VerticalOptions="CenterAndExpand"
-                                TextColor="White"
-                                BackgroundColor="#292929" Margin="0, 5, 0, 5"
-                                Clicked="ProfileButton_Clicked" />
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical" Spacing="0">
-                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="Exercises.png" VerticalOptions="Start" HorizontalOptions="Center" />
-                        <Button HeightRequest="33"
-                                Text="Exercises"
-                                Clicked="NewExercisePage_Clicked"
-                                FontSize="10"
-                                WidthRequest="110"
-                                HorizontalOptions="Center"
-                                TextColor="White"
-                                BackgroundColor="#292929"
-                                Margin="0, 5, 0, 5" />
-                    </StackLayout>
-                </StackLayout>
+            <StackLayout
+                Padding="0,10,0,0"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Vertical"
+                StyleClass="nav1"
+                VerticalOptions="End">
+                <FlexLayout StyleClass="nav"
+                BackgroundColor="#111">
+
+                    <button:SfButton
+                        BackgroundColor="#111"
+                        Clicked="StatisticsButton_Clicked"
+                        CornerRadius="20"
+                        HeightRequest="40"
+                        ImageAlignment="Top"
+                        ImageSource="baseline_bar_chart_black_36dp.png"
+                        ImageWidth="30"
+                        ShowIcon="True"
+                        WidthRequest="100" />
+
+                    <button:SfButton
+                        BackgroundColor="#111"
+                        Clicked="ProfileButton_Clicked"
+                        CornerRadius="20"
+                        HeightRequest="40"
+                        ImageAlignment="Top"
+                        ImageSource="baseline_home_black_36dp.png"
+                        ImageWidth="30"
+                        ShowIcon="True"
+                        WidthRequest="100" />
+
+                    <button:SfButton
+                        BackgroundColor="#111"
+                        Clicked="NewExercisePage_Clicked"
+                        CornerRadius="20"
+                        HeightRequest="40"
+                        ImageAlignment="Top"
+                        ImageSource="baseline_playlist_add_black_36dp.png"
+                        ImageWidth="30"
+                        ShowIcon="True"
+                        WidthRequest="100" />
+                </FlexLayout>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

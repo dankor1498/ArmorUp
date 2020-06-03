@@ -1,181 +1,219 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="ArmorUp.CurrentExercise"
-             NavigationPage.HasNavigationBar="false">
+<ContentPage
+    x:Class="ArmorUp.CurrentExercise"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    NavigationPage.HasNavigationBar="false"
+    mc:Ignorable="d">
+    <ContentPage.Resources>
+        <StyleSheet Source="../../Styles/main.css" />
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <Grid BackgroundColor="Black">
+        <Grid BackgroundColor="#111">
             <StackLayout Orientation="Vertical" VerticalOptions="Start">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                    <Frame CornerRadius="10" Padding="0" Margin="5" IsClippedToBounds="True">
-                        <Image VerticalOptions="Center"
-                                   HorizontalOptions="Center"
-                                   Source="CurrentExercises2.png"
-                                   HeightRequest="175"
-                                   WidthRequest="350"
-                                   Aspect="AspectFill" />
+                <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                    <Frame
+                        Margin="5"
+                        Padding="0"
+                        CornerRadius="0"
+                        IsClippedToBounds="True">
+                        <Image
+                            Aspect="AspectFill"
+                            HeightRequest="175"
+                            HorizontalOptions="Center"
+                            Source="CurrentExercises2.png"
+                            VerticalOptions="Center"
+                            WidthRequest="350" />
                     </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
                     <ScrollView>
-                        <StackLayout Orientation="Vertical" Padding="5, 5, 5, 80">
-                            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                                <Frame CornerRadius="10"
-                                       Padding="0"
-                                       Margin="5, 5, 0, 5"
-                                       IsClippedToBounds="True"
-                                       WidthRequest="120"
-                                       HeightRequest="60"
-                                       BackgroundColor="#205be6">
-                                    <Label Text="Ціль" TextColor="White"
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Center"
-                                           FontFamily="Helvetica"
-                                           FontAttributes="Bold"
-                                           FontSize="20" />
+                        <StackLayout Padding="5,5,5,80" Orientation="Vertical">
+                            <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                <Frame
+                                    Margin="5,5,0,5"
+                                    Padding="0"
+                                    BackgroundColor="#205be6"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    IsClippedToBounds="True"
+                                    WidthRequest="120">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontFamily="Helvetica"
+                                        FontSize="20"
+                                        HorizontalOptions="Center"
+                                        Text="Ціль"
+                                        TextColor="White"
+                                        VerticalOptions="Center" />
                                 </Frame>
-                                <Frame CornerRadius="10"
-                                       Padding="0"
-                                       Margin="0,5,5,5"
-                                       IsClippedToBounds="True"
-                                       WidthRequest="225"
-                                       HeightRequest="60"
-                                       BackgroundColor="#292929">
-                                    <Label Text="" TextColor="White"
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Center"
-                                           FontFamily="Helvetica"
-                                           FontAttributes="Bold"
-                                           FontSize="20"
-                                           x:Name="MissionLabel" />
-                                </Frame>
-                            </StackLayout>
-                            <BoxView Color="White" HeightRequest="1" />
-                            <StackLayout Orientation="Vertical" HorizontalOptions="Center">
-                                <Frame CornerRadius="10"
-                                       Padding="0"
-                                       IsClippedToBounds="True"
-                                       WidthRequest="350"
-                                       HeightRequest="60"
-                                       BackgroundColor="#205be6">
-                                    <Label Text="Назва та Інформація про вправу" TextColor="White"
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Center"
-                                           FontFamily="Helvetica"
-                                           FontAttributes="Bold"
-                                           FontSize="20" />
-                                </Frame>
-                                <Frame CornerRadius="10"
-                                       Padding="0"
-                                       IsClippedToBounds="True"
-                                       WidthRequest="350"
-                                       HeightRequest="120"
-                                       BackgroundColor="#292929">
-                                    <Editor TextColor="White"
-                                            Text=""
-                                            FontSize="16"
-                                            Margin="5"
-                                            FontFamily="Helvetica"
-                                            x:Name="InfoEditor"
-                                            IsReadOnly="True" />
+                                <Frame
+                                    Margin="0,5,5,5"
+                                    Padding="0"
+                                    BackgroundColor="#292929"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    IsClippedToBounds="True"
+                                    WidthRequest="225">
+                                    <Label
+                                        x:Name="MissionLabel"
+                                        FontAttributes="Bold"
+                                        FontFamily="Helvetica"
+                                        FontSize="20"
+                                        HorizontalOptions="Center"
+                                        Text=""
+                                        TextColor="White"
+                                        VerticalOptions="Center" />
                                 </Frame>
                             </StackLayout>
-                            <BoxView Color="White" HeightRequest="1" Margin="0, 5, 0, 5" />
-                            <StackLayout Orientation="Vertical" HorizontalOptions="Center">
-                                <Frame CornerRadius="10"
-                                       Padding="0"
-                                       IsClippedToBounds="True"
-                                       WidthRequest="350"
-                                       HeightRequest="60"
-                                       BackgroundColor="#205be6">
-                                    <Label Text="Корисні посилання" TextColor="White"
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Center"
-                                           FontFamily="Helvetica"
-                                           FontAttributes="Bold"
-                                           FontSize="20" />
+                            <BoxView HeightRequest="1" Color="White" />
+                            <StackLayout HorizontalOptions="Center" Orientation="Vertical">
+                                <Frame
+                                    Padding="0"
+                                    BackgroundColor="#205be6"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    IsClippedToBounds="True"
+                                    WidthRequest="350">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontFamily="Helvetica"
+                                        FontSize="20"
+                                        HorizontalOptions="Center"
+                                        Text="Назва та Інформація про вправу"
+                                        TextColor="White"
+                                        VerticalOptions="Center" />
                                 </Frame>
-                                <Frame CornerRadius="10"
-                                       Padding="0"
-                                       IsClippedToBounds="True"
-                                       WidthRequest="350"
-                                       HeightRequest="120"
-                                       BackgroundColor="#292929">
-                                    <Editor TextColor="White"
-                                            Text=""
-                                            FontSize="16"
-                                            Margin="5"
-                                            FontFamily="Helvetica"
-                                            x:Name="UsfullLinkEditor"
-                                            IsReadOnly="True" />
+                                <Frame
+                                    Padding="0"
+                                    BackgroundColor="#292929"
+                                    CornerRadius="10"
+                                    HeightRequest="120"
+                                    IsClippedToBounds="True"
+                                    WidthRequest="350">
+                                    <Editor
+                                        x:Name="InfoEditor"
+                                        Margin="5"
+                                        FontFamily="Helvetica"
+                                        FontSize="16"
+                                        IsReadOnly="True"
+                                        Text=""
+                                        TextColor="White" />
                                 </Frame>
                             </StackLayout>
-                            <BoxView Color="White" HeightRequest="1" Margin="0, 5, 0, 5" />
-                            <StackLayout Orientation="Vertical" HorizontalOptions="Center">
-                                <Frame CornerRadius="10"
-                                       Padding="0"
-                                       IsClippedToBounds="True"
-                                       WidthRequest="350"
-                                       HeightRequest="60"
-                                       BackgroundColor="#205be6">
-                                    <Label Text="Зроблено за сьогодні" TextColor="White"
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Center"
-                                           FontFamily="Helvetica"
-                                           FontAttributes="Bold"
-                                           FontSize="20" />
-                                </Frame>                                
+                            <BoxView
+                                Margin="0,5,0,5"
+                                HeightRequest="1"
+                                Color="White" />
+                            <StackLayout HorizontalOptions="Center" Orientation="Vertical">
+                                <Frame
+                                    Padding="0"
+                                    BackgroundColor="#205be6"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    IsClippedToBounds="True"
+                                    WidthRequest="350">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontFamily="Helvetica"
+                                        FontSize="20"
+                                        HorizontalOptions="Center"
+                                        Text="Корисні посилання"
+                                        TextColor="White"
+                                        VerticalOptions="Center" />
+                                </Frame>
+                                <Frame
+                                    Padding="0"
+                                    BackgroundColor="#292929"
+                                    CornerRadius="10"
+                                    HeightRequest="120"
+                                    IsClippedToBounds="True"
+                                    WidthRequest="350">
+                                    <Editor
+                                        x:Name="UsfullLinkEditor"
+                                        Margin="5"
+                                        FontFamily="Helvetica"
+                                        FontSize="16"
+                                        IsReadOnly="True"
+                                        Text=""
+                                        TextColor="White" />
+                                </Frame>
                             </StackLayout>
-                            <StackLayout x:Name="ResultStackLayout">
-                                
+                            <BoxView
+                                Margin="0,5,0,5"
+                                HeightRequest="1"
+                                Color="White" />
+                            <StackLayout HorizontalOptions="Center" Orientation="Vertical">
+                                <Frame
+                                    Padding="0"
+                                    BackgroundColor="#205be6"
+                                    CornerRadius="10"
+                                    HeightRequest="60"
+                                    IsClippedToBounds="True"
+                                    WidthRequest="350">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        FontFamily="Helvetica"
+                                        FontSize="20"
+                                        HorizontalOptions="Center"
+                                        Text="Зроблено за сьогодні"
+                                        TextColor="White"
+                                        VerticalOptions="Center" />
+                                </Frame>
                             </StackLayout>
+                            <StackLayout x:Name="ResultStackLayout" />
                         </StackLayout>
                     </ScrollView>
                 </StackLayout>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="FillAndExpand" BackgroundColor="Black">
-                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0, 5, 0, 0">
-                    <StackLayout Orientation="Vertical" Spacing="0">
-                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="train.png" VerticalOptions="Start" HorizontalOptions="Center" />
-                        <Button HeightRequest="33"
-                                Text="Statistics"
-                                FontSize="10"
-                                WidthRequest="110"
-                                HorizontalOptions="Center"
-                                TextColor="White"
-                                BackgroundColor="#292929"
-                                Margin="0, 5, 0, 5"
-                                Clicked="StatisticsButton_Clicked" />
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical" Spacing="0">
-                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="Profile.png" VerticalOptions="Start" HorizontalOptions="Center" />
-                        <Button HeightRequest="33"
-                                Text="Profile"
-                                FontSize="10"
-                                WidthRequest="110"
-                                HorizontalOptions="CenterAndExpand"
-                                VerticalOptions="CenterAndExpand"
-                                TextColor="White"
-                                BackgroundColor="#292929" Margin="0, 5, 0, 5"
-                                Clicked="ProfileButton_Clicked" />
-                    </StackLayout>
-                    <StackLayout Orientation="Vertical" Spacing="0">
-                        <Image WidthRequest="25" HeightRequest="25" Aspect="AspectFit" Source="Exercises.png" VerticalOptions="Start" HorizontalOptions="Center" />
-                        <Button HeightRequest="33"
-                                Text="Exercises"
-                                Clicked="NewExercisePage_Clicked"
-                                FontSize="10"
-                                WidthRequest="110"
-                                HorizontalOptions="Center"
-                                TextColor="White"
-                                BackgroundColor="#292929"
-                                Margin="0, 5, 0, 5" />
-                    </StackLayout>
-                </StackLayout>
+            <StackLayout
+                Padding="0,10,0,0"
+                HorizontalOptions="FillAndExpand"
+                Orientation="Vertical"
+                StyleClass="nav1"
+                VerticalOptions="End"
+                BackgroundColor="#111">
+                
+                <FlexLayout StyleClass="nav">
+
+                    <button:SfButton
+                        BackgroundColor="#111"
+                        Clicked="StatisticsButton_Clicked"
+                        CornerRadius="20"
+                        HeightRequest="40"
+                        ImageAlignment="Top"
+                        ImageSource="baseline_bar_chart_black_36dp.png"
+                        ImageWidth="30"
+                        ShowIcon="True"
+                        WidthRequest="100" />
+
+                    <button:SfButton
+                        BackgroundColor="#111"
+                        Clicked="ProfileButton_Clicked"
+                        CornerRadius="20"
+                        HeightRequest="40"
+                        ImageAlignment="Top"
+                        ImageSource="baseline_home_black_36dp.png"
+                        ImageWidth="30"
+                        ShowIcon="True"
+                        WidthRequest="100" />
+
+                    <button:SfButton
+                        BackgroundColor="#111"
+                        Clicked="NewExercisePage_Clicked"
+                        CornerRadius="20"
+                        HeightRequest="40"
+                        ImageAlignment="Top"
+                        ImageSource="baseline_playlist_add_black_36dp.png"
+                        ImageWidth="30"
+                        ShowIcon="True"
+                        WidthRequest="100" />
+                </FlexLayout>
             </StackLayout>
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>
